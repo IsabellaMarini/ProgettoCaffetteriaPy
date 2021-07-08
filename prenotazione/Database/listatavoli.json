@@ -1,0 +1,406 @@
+[
+{
+{
+  "tavolo": "1",
+  "disponibilità": {
+    "type" : "bool",
+    "value" : "[and(bool('true'), bool('false'))]"
+  }
+
+ },
+  {
+    "tavolo": "2",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+   "tavolo": "3",
+   "disponibilità": {
+    "type" : "bool",
+    "value" : "[and(bool('true'), bool('false'))]"
+  }
+
+  },
+  {
+    "tavolo": "4",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "5",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "6",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "7",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "8",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "9",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "10",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "11",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "12",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "13",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "14",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "15",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "16",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "17",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "18",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "19",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "20",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "21",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "22",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "23",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "24",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "25",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "26",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "27",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "28",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "29",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "30",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "31",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "32",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "33",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "34",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "35",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "36",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "37",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "38",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "39",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "40",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "41",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "42",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "43",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "44",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "45",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "46",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "47",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "48",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "49",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+  {
+    "tavolo": "50",
+    "disponibilità": {
+      "type" : "bool",
+      "value" : "[and(bool('true'), bool('false'))]"
+    }
+
+  },
+
+
+}
+]
