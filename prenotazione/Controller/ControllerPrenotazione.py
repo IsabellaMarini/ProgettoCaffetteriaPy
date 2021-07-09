@@ -1,8 +1,7 @@
-import json
+
 
 class ControllerPrenotazione():
 
-    lista_tavoli = json.load(open("listatavoli.json"))
 
     def __init__(self, Prenotazione):
         self.model = Prenotazione
