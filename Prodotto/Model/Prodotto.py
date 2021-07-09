@@ -1,4 +1,7 @@
+import json
+p = json.load(open("personalizzazioni.json"))
 class Prodotto():
+
     def __init__(self, nome, descrizione, immagine, valoriNutrizionali, listaIngredienti,
                  categoria, sottocategoria, prezzo, personalizzazioni):
         super(Prodotto, self).__init__()
@@ -10,4 +13,8 @@ class Prodotto():
         self.categoria=categoria
         self.sottocategoria=sottocategoria
         self.prezzo=prezzo
-        self.personalizzazioni=personalizzazioni
+        self.p.append(personalizzazioni)
+
+    def personalizza(self):
+        if (p.sottocategoria==self.sottocategoria):
+            return p.personalizzazioni

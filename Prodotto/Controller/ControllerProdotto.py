@@ -1,7 +1,5 @@
-import json
-class ControllerProdotto():
 
-    personalizzazioni= json.load(open"personalizzazioni.json")
+class ControllerProdotto():
 
     def __init__(self, Prodotto):
         self.model=Prodotto
@@ -60,6 +58,8 @@ class ControllerProdotto():
     def setPersonalizzazioni(self, personalizzazioni):
         self.model.personalizzazioni = personalizzazioni
 
-    def personalizza(self):
+
+
+
 
 

@@ -30,7 +30,7 @@
   "4": "frutti di bosco",
   "5": "mirtilli",
   "6": "vaniglia",
-  "7": "agrumi",
+  "7": "agrumi"
 }
 },
 {
@@ -41,7 +41,7 @@
         "3": "bianca",
         "4": "panna",
         "5": "nocciola",
-        "6": "biscotti sbriciolati",
+        "6": "biscotti sbriciolati"
 }
 },
 {
@@ -57,7 +57,7 @@
         "8": "marmellata di mirtilli",
         "9": "impasto classico",
         "10": "impasto al carbone",
-        "11": "impasto integrale",
+        "11": "impasto integrale"
 }
 },
 {
@@ -67,14 +67,14 @@
         "2": "crema",
         "3": "cioccolato",
         "4": "vaniglia",
-        "5": "pistacchio",
+        "5": "pistacchio"
 }
 },
 {
  "sottocategoria": "biscotti",
   "personalizzazioni": {
         "1": "burro",
-        "2": "gocce di cioccolato",
+        "2": "gocce di cioccolato"
 }
 },
 {
@@ -85,7 +85,7 @@
         "3": "crostata di mele",
         "4": "caprese",
         "5": "sacher",
-        "6": "crostata con marmellata",
+        "6": "crostata con marmellata"
 }
 }
 ]
