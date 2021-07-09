@@ -14,8 +14,5 @@ class ControllerPrenotazione():
         return self.model.orario
 
     def get_disponibilita(self):
-        if (self.model.lista_tavoli["disponibilità"] = true):
-            return "disponibile"
-        else:
-            return "non disponibile"
+        return self.model.is_disponibile()
 

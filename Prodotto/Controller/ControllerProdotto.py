@@ -59,7 +59,7 @@ class ControllerProdotto():
         self.model.personalizzazioni = personalizzazioni
 
     def getPersonalizza(self):
-        self.model.personalizza
+        self.model.personalizza()
 
 
 
