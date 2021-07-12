@@ -2,64 +2,64 @@
 class ControllerProdotto():
 
     def __init__(self, Prodotto):
-        self.model=Prodotto
+        self.Model=Prodotto
 
     def getNome(self):
-        return self.model.nome
+        return self.Model.nome
 
     def getDescrizione(self):
-        return self.model.descrizione
+        return self.Model.descrizione
 
     def getImmagine(self):
-        return self.model.immagine
+        return self.Model.immagine
 
     def getValoriNutrizionali(self):
-        return self.model.valoriNutrizionali
+        return self.Model.valoriNutrizionali
 
     def getListaIngredienti(self):
-        return self.model.listaIngredienti
+        return self.Model.listaIngredienti
 
     def getCategoria(self):
-        return self.model.categoria
+        return self.Model.categoria
 
     def getSottocategoria(self):
-        return self.model.sottocategoria
+        return self.Model.sottocategoria
 
     def getPrezzo(self):
-        return self.model.prezzo
+        return self.Model.prezzo
 
     def getPersonalizzazioni(self):
-        return self.model.personalizzazioni
+        return self.Model.personalizzazioni
 
     def setNome(self, nome):
-        self.model.nome=nome
+        self.Model.nome=nome
 
     def setDescrizione(self, descrizione):
-        self.model.descrizione = descrizione
+        self.Model.descrizione = descrizione
 
     def setImmagine(self, immagine):
-        self.model.immagine = immagine
+        self.Model.immagine = immagine
 
     def setValoriNutrizionali(self, valoriNutrizionali):
-        self.model.valoriNutrizionali = valoriNutrizionali
+        self.Model.valoriNutrizionali = valoriNutrizionali
 
     def setListaIngredienti(self, listaIngredienti):
-        self.model.listaIngredienti = listaIngredienti
+        self.Model.listaIngredienti = listaIngredienti
 
     def setCategoria(self, categoria):
-        self.model.categoria = categoria
+        self.Model.categoria = categoria
 
     def setSottocategoria(self, sottocategoria):
-        self.model.sottocategoria = sottocategoria
+        self.Model.sottocategoria = sottocategoria
 
     def setPrezzo(self, prezzo):
-        self.model.prezzo = prezzo
+        self.Model.prezzo = prezzo
 
     def setPersonalizzazioni(self, personalizzazioni):
-        self.model.personalizzazioni = personalizzazioni
+        self.Model.personalizzazioni = personalizzazioni
 
     def getPersonalizza(self):
-        self.model.personalizza()
+        self.Model.personalizza()
 
 
 
