@@ -1,7 +1,8 @@
+from Prodotto.Model.Prodotto import Prodotto
 
 class ControllerProdotto():
 
-    def __init__(self, Prodotto):
+    def __init__(self):
         self.Model=Prodotto
 
     def getNome(self):

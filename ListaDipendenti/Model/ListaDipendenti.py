@@ -1,5 +1,5 @@
 from json
-from Dipendente.Model import Dipendente
+from Dipendente.Model.Dipendente import Dipendente
 lD=json.load(open("ListaDipendenti.json"))
 
 class ListaDipendenti():
@@ -7,12 +7,12 @@ class ListaDipendenti():
         super(ListaDipendenti, self).__init__()
         self.lD.append(ListaDipendenti)
 
-    def getListaDipendente(self):
+    def ListaDipendente(self):
         return self.lD
 
     def aggiungiDipendente(self, Dipendente):
         for dipendenteDaAggiungere in lD:
-            self.lD.append(Dipendente( dipendenteDaAggiungere["nome"],
+           self.lD.append(Dipendente( dipendenteDaAggiungere["nome"],
                                        dipendenteDaAggiungere["cognome"],
                                        dipendenteDaAggiungere["numero"],
                                        dipendenteDaAggiungere["email"],

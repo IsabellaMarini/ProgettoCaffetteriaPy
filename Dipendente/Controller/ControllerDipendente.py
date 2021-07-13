@@ -1,5 +1,9 @@
+from Dipendente.Model.Dipendente import Dipendente
+
+
 class ControllerDipendente():
-    def __init__(self, Dipendente):
+    def __init__(self):
+        super(ControllerDipendente, self).__init__()
         self.Model=Dipendente
 
     def getNome(self):
