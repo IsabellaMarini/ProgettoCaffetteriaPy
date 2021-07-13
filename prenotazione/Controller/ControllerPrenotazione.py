@@ -1,9 +1,11 @@
 
+from prenotazione.Model.Prenotazione import Prenotazione
+
 
 class ControllerPrenotazione():
 
 
-    def __init__(self, Prenotazione):
+    def __init__(self,):
         self.model = Prenotazione
 
     def get_lista_tavoli(self):

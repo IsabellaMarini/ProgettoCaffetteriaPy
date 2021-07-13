@@ -1,6 +1,6 @@
 from json
 from Dipendente.Model.Dipendente import Dipendente
-lD=json.load(open("ListaDipendenti.json"))
+lD=json.load(open("listaDipendenti.json"))
 
 class ListaDipendenti():
     def __init__(self):
@@ -10,7 +10,7 @@ class ListaDipendenti():
     def ListaDipendente(self):
         return self.lD
 
-    def aggiungiDipendente(self, Dipendente):
+    def aggiungiDipendente(self):
         for dipendenteDaAggiungere in lD:
            self.lD.append(Dipendente( dipendenteDaAggiungere["nome"],
                                        dipendenteDaAggiungere["cognome"],
@@ -19,7 +19,7 @@ class ListaDipendenti():
                                        dipendenteDaAggiungere["password"]
                                      ))
 
-    def eliminaDipendente(self, Dipendente):
+    def eliminaDipendente(self):
         self.lD.remove(Dipendente)
 
 
