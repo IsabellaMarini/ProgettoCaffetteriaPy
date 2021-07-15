@@ -1,0 +1,37 @@
+[
+  {
+    "email" : "marioDraghi@gmail.com",
+    "password": "mario123",
+    "role" : "Amministratore"
+  },
+  {
+    "email" : "aldo.paganica@gmail.com",
+    "password": "950327",
+    "role" : "Dipendente"
+  },
+  {
+    "email" : "francesco.rossi21@outlook.it",
+    "password": "204123",
+    "role" : "Dipendente"
+  },
+  {
+    "email" : "elisa.bianchi12@gmail.com",
+    "password": "458972",
+    "role" : "Dipendente"
+  },
+  {
+    "email" : "sara.neri@outlook.it",
+    "password": "010357",
+    "role" : "Dipendente"
+  },
+  {
+    "email" : "isa.marini@gmail.com",
+    "password": "isa123",
+    "role" : "Cliente"
+  },
+  {
+    "email" : "fede.paganica@gmail.com",
+    "password": "fede123",
+    "role" : "Cliente"
+  }
+]
