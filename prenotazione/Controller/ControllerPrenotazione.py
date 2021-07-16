@@ -17,3 +17,10 @@ class ControllerPrenotazione():
     def get_disponibilita(self):
         return self.model.is_disponibile()
 
+    def set_lista_tavoli(self, lista_tavoli):
+        self.Model.lista_tavoli = lista_tavoli
+
+    def set_orario(self, orario):
+        self.Model.orario = orario
+
+

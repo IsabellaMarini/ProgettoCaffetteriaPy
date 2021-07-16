@@ -1,4 +1,4 @@
-from json
+import json
 from Dipendente.Model.Dipendente import Dipendente
 lD=json.load(open("listaDipendenti.json"))
 
