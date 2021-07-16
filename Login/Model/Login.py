@@ -3,6 +3,7 @@ class Login():
         super(Login, self).__init__()
         self.email = email
         self.password = password
+        self.role = None
 
 
 
