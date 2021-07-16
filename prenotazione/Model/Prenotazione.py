@@ -1,21 +1,25 @@
 import json
 
-o = json.load(open("prenotazioni.json"))
+
 
 class Prenotazione():
 
         def __init__(self, lista_tavoli, orario):
             super(Prenotazione, self).__init__()
-            self.listatavoli = lista_tavoli
+            self.lista_tavoli = lista_tavoli
             self.orario = orario
             self.disponibile = True
 
-        def is_disponibile(self):
-            return self.disponibile
 
         def prenota(self):
-            o.orario
+
             self.disponibile = False
 
-
+        def refresh(self):
+            with open('prenotazione/Database/prenotazioni.json') as o:
+                self.orario = json.load(o)
+            if (o.orario == self.orario):
+                return self.disponibile
+            else:
+                self.disponibile = True
 

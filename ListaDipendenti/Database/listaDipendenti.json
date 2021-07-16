@@ -18,14 +18,14 @@
     "nome" : "Elisa",
     "cognome" : "Bianchi",
     "numero" : "3894523809",
-    "email" : "elisa.bianchi12@gmail.com"
+    "email" : "elisa.bianchi12@gmail.com",
     "password" : "458972"
   },
   "dipendente4":{
     "nome" : "Sara",
     "cognome" : "Neri",
     "numero" : "3237801548",
-    "email" : "sara.neri@outlook.it"
+    "email" : "sara.neri@outlook.it",
     "password" : "010357"
   }
 
