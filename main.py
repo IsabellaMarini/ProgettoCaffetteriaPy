@@ -1,12 +1,13 @@
 import sys
 from PyQt5 import QtWidgets
-from Login.View.ViewLogin import Ui_Login
+from Login.View.ViewLogin import Ui_Window
 
 if __name__ == "__main__":
-
+    import sys
     app = QtWidgets.QApplication(sys.argv)
-    Login = QtWidgets.QDialog()
-    ui = Ui_Login()
-    ui.setupUi(Login)
-    Login.show()
+    Window = QtWidgets.QDialog()
+    ui = Ui_Window()
+    ui.setupUi(Window)
+    Window.show()
     sys.exit(app.exec_())
+

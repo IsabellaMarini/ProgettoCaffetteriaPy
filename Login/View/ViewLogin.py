@@ -2,18 +2,20 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-from Login.Controller import ControllerLogin
-
-from Home.View import HomeCliente
+from Home.View.HomeCliente import Ui_Dialog
 
 
-class Ui_Login(object):
-    def setupUi(self, Login):
-        self.controller = None
-        Login.setObjectName("Login")
-        Login.resize(454, 215)
-        Login.setMinimumSize(QtCore.QSize(454, 215))
-        Login.setSizeIncrement(QtCore.QSize(1, 1))
+
+from Login.Controller.ControllerLogin import ControllerLogin
+from Login.Model.Login import Login
+
+
+class Ui_Window(object):
+    def setupUi(self, Window):
+        Window.setObjectName("Window")
+        Window.resize(454, 215)
+        Window.setMinimumSize(QtCore.QSize(454, 215))
+        Window.setSizeIncrement(QtCore.QSize(1, 1))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(240, 216, 198))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -24,18 +26,18 @@ class Ui_Login(object):
         brush = QtGui.QBrush(QtGui.QColor(240, 216, 198))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
-        Login.setPalette(palette)
-        Login.setAutoFillBackground(False)
-        Login.setSizeGripEnabled(False)
-        Login.setModal(False)
-        self.pushButton = QtWidgets.QPushButton(Login)
+        Window.setPalette(palette)
+        Window.setAutoFillBackground(False)
+        Window.setSizeGripEnabled(False)
+        Window.setModal(False)
+        self.pushButton = QtWidgets.QPushButton(Window)
         self.pushButton.setGeometry(QtCore.QRect(180, 160, 93, 28))
         self.pushButton.setMinimumSize(QtCore.QSize(93, 28))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
-        self.formWidget = QtWidgets.QWidget(Login)
+        self.formWidget = QtWidgets.QWidget(Window)
         self.formWidget.setGeometry(QtCore.QRect(40, 30, 391, 101))
         self.formWidget.setObjectName("formWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formWidget)
@@ -66,54 +68,55 @@ class Ui_Login(object):
         self.lineEdit.setText("")
         self.lineEdit.setObjectName("lineEdit")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
-        self.label_3 = QtWidgets.QLabel(Login)
+        self.label_3 = QtWidgets.QLabel(Window)
         self.label_3.setGeometry(QtCore.QRect(140, 125, 211, 21))
         self.label_3.setObjectName("label_3")
 
-        self.retranslateUi(Login)
-        QtCore.QMetaObject.connectSlotsByName(Login)
+        self.retranslateUi(Window)
+        QtCore.QMetaObject.connectSlotsByName(Window)
+
+
+        model = Login("def","def")
+        self.controller = ControllerLogin(model)
 
         self.pushButton.clicked.connect(self.clicked)
 
-    def retranslateUi(self, Login):
+    def retranslateUi(self, Window):
         _translate = QtCore.QCoreApplication.translate
-        Login.setWindowTitle(_translate("Login", "Login"))
-        self.pushButton.setText(_translate("Login", "Login"))
-        self.label.setText(_translate("Login", "Email:"))
-        self.label_2.setText(_translate("Login", "Password:"))
-        self.label_3.setText(_translate("Login", "<html><head/><body><p><span style=\" font-size:9pt; color:#0055ff;\">Inserire email e password...</span></p></body></html>"))
-
+        Window.setWindowTitle(_translate("Window", "Login"))
+        self.pushButton.setText(_translate("Window", "Login"))
+        self.label.setText(_translate("Window", "Email:"))
+        self.label_2.setText(_translate("Window", "Password:"))
+        self.label_3.setText(_translate("Window",
+                                        "<html><head/><body><p><span style=\" font-size:9pt; color:#0055ff;\">Inserire email e password...</span></p></body></html>"))
 
     def clicked(self):
-            self.controller.set_email = self.get_from_entry1
-            self.controller.set_password = self.get_from_entry2
-            if self.controller.is_logged == "Cliente":
-                self.go_homeC
-            else:
-                self.errore()
+        print(self.lineEdit.text())
+        app = self.lineEdit.text()
+        print(app)
+        self.controller.set_email(app)
+        print(self.controller.getEmail())
+        app = self.lineEdit_2.text()
+        print(app)
+        self.controller.set_password(app)
+        print(self.controller.getPassword())
+        self.controller.is_logged()
+        print(self.controller.getRole())
+        if self.controller.getRole() == "Cliente":
+            self.go_homeC()
+        else:
+            self.errore()
 
 
 
 
 
     def go_homeC(self):
-         self.home_cliente = HomeCliente()
-         self.home_cliente.show()
+        self.Dialog = QtWidgets.QDialog()
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.Dialog)
+        self.Dialog.show()
 
-
-
-
-
-
-
-
-
-
-    def get_from_entry1(self):
-        return  self.lineEdit.text()
-
-    def get_from_entry2(self):
-        return  self.lineEdit_2.text()
 
 
     def errore(self):
