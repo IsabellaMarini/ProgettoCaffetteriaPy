@@ -2,9 +2,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-from Home.View.HomeCliente import Ui_Dialog
-
-
+from Home.View.HomeCliente import Ui_MainWindow
 
 from Login.Controller.ControllerLogin import ControllerLogin
 from Login.Model.Login import Login
@@ -112,10 +110,10 @@ class Ui_Window(object):
 
 
     def go_homeC(self):
-        self.Dialog = QtWidgets.QDialog()
-        self.ui = Ui_Dialog()
-        self.ui.setupUi(self.Dialog)
-        self.Dialog.show()
+        self.MainWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.MainWindow)
+        self.MainWindow.show()
 
 
 

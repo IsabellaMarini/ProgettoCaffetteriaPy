@@ -31,6 +31,8 @@ class ControllerLogin():
             if i["email"] == self.model.email :
                 if i["password"] == self.model.password :
                     self.model.setRole(i["role"])
+                else:
+                    self.model.setRole(None)
 
 
 
