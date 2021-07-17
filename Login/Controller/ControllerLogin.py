@@ -5,11 +5,20 @@ class ControllerLogin():
         self.model = login
 
     def set_email(self, email):
-        self.model.email = email
+        self.model.setEmail(email)
 
 
     def set_password(self, password):
-        self.model.password = password
+        self.model.setPassword(password)
+
+    def getPassword(self):
+        return self.model.password
+
+    def getEmail(self):
+        return self.model.email
+
+    def getRole(self):
+        return self.model.role
 
 
 
@@ -19,11 +28,11 @@ class ControllerLogin():
         jsonContent = fileObject.read()
         aList = json.loads(jsonContent)
         for i in aList:
-            if aList[i]["email"] == self.model.email :
-                if aList[i]["password"] == self.model.password :
-                    self.model.role = aList[i]["role"]
+            if i["email"] == self.model.email :
+                if i["password"] == self.model.password :
+                    self.model.setRole(i["role"])
 
-        return self.model.role
+
 
 
 
