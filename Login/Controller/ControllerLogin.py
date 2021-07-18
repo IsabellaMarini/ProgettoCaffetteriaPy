@@ -27,12 +27,12 @@ class ControllerLogin():
         fileObject = open("Login/Database/DatabaseLogin.json", "r")
         jsonContent = fileObject.read()
         aList = json.loads(jsonContent)
+        self.model.setRole(None)
         for i in aList:
-            if i["email"] == self.model.email :
-                if i["password"] == self.model.password :
-                    self.model.setRole(i["role"])
-                else:
-                    self.model.setRole(None)
+            if i["email"] == self.model.email and i["password"] == self.model.password :
+                self.model.setRole(i["role"])
+
+
 
 
 
