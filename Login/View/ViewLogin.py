@@ -90,17 +90,11 @@ class Ui_Window(object):
                                         "<html><head/><body><p><span style=\" font-size:9pt; color:#0055ff;\">Inserire email e password...</span></p></body></html>"))
 
     def clicked(self):
-        print(self.lineEdit.text())
         app = self.lineEdit.text()
-        print(app)
         self.controller.set_email(app)
-        print(self.controller.getEmail())
         app = self.lineEdit_2.text()
-        print(app)
         self.controller.set_password(app)
-        print(self.controller.getPassword())
         self.controller.is_logged()
-        print(self.controller.getRole())
         if self.controller.getRole() == "Cliente":
            self.go_homeC()
         elif self.controller.getRole() == "Amministratore":
