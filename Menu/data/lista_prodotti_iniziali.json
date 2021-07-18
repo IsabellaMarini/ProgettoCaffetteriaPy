@@ -1,0 +1,101 @@
+[
+  {
+    "nome": "Cappuccino",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Bevande",
+    "sottocategoria": "Caffè",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Latte Macchiato",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè.",
+    "categoria": "Bevande",
+    "sottocategoria": "Caffè",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Muffin",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Cibo",
+    "sottocategoria": "Bakery",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Donut",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Cibo",
+    "sottocategoria": "Bakery",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Patatine fritte",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Cibo",
+    "sottocategoria": "Salato",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Cappuccino",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Bevande",
+    "sottocategoria": "Caffè",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Latte Macchiato",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè.",
+    "categoria": "Bevande",
+    "sottocategoria": "Caffè",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Muffin",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Cibo",
+    "sottocategoria": "Bakery",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Donut",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Cibo",
+    "sottocategoria": "Bakery",
+    "prezzo":"3.99"
+
+  },
+
+  {
+    "nome": "Patatine fritte",
+    "immagine": "immagine",
+    "lista_ingredienti": "Latte, caffè, zucchero.",
+    "categoria": "Cibo",
+    "sottocategoria": "Salato",
+    "prezzo":"3.99"
+
+  }
+]
