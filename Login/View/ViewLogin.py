@@ -9,6 +9,7 @@ from Login.Controller.ControllerLogin import ControllerLogin
 from Login.Model.Login import Login
 
 
+
 class Ui_Window(object):
     def setupUi(self, Window):
         Window.setObjectName("Window")
@@ -131,5 +132,3 @@ class Ui_Window(object):
         self.label_3.setText("<html><head/><body><p><span style=\" font-size:9pt; color:#ff0000;\">Email e/o password sbagliati!</span></p></body></html>")
         self.label_3.adjustSize()
 
-    def nulla(self):
-        return
