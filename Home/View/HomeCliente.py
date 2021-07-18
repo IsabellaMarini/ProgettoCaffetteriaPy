@@ -3,6 +3,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Menu.View.ViewMenu import Ui_Menu
+
 
 class Ui_MainWindowCliente(object):
     def setupUi(self, MainWindowCliente):
@@ -206,6 +208,8 @@ class Ui_MainWindowCliente(object):
         self.retranslateUi(MainWindowCliente)
         QtCore.QMetaObject.connectSlotsByName(MainWindowCliente)
 
+        self.pushButton.clicked.connect(self.go_menu)
+
     def retranslateUi(self, MainWindowCliente):
         _translate = QtCore.QCoreApplication.translate
         MainWindowCliente.setWindowTitle(_translate("MainWindowCliente", "Home"))
@@ -215,3 +219,10 @@ class Ui_MainWindowCliente(object):
         self.pushButton_4.setText(_translate("MainWindowCliente", "Prenotazioni"))
         self.label.setText(_translate("MainWindowCliente", "  Benvenuti nell\'app del "))
         self.label_2.setText(_translate("MainWindowCliente", "Penguin Cafè"))
+
+
+    def go_menu(self):
+        self.Menu = QtWidgets.QDialog()
+        self.ui = Ui_Menu()
+        self.ui.setupUi(self.Menu)
+        self.Menu.show()
