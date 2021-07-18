@@ -4,11 +4,12 @@ import json
 
 class Prenotazione():
 
-        def __init__(self, lista_tavoli, orario):
+        def __init__(self, lista_tavoli, orario, email):
             super(Prenotazione, self).__init__()
             self.lista_tavoli = lista_tavoli
             self.orario = orario
             self.disponibile = True
+            self.email = email
 
 
         def prenota(self):

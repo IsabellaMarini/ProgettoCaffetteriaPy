@@ -10,7 +10,7 @@ class PrenotazioneAttiva():
         self.prenotazione = Prenotazione
 
     def show_prenotazione(self):
-        if (self.login.role == "Cliente") and (self.login.email == Login.email):
+        if (self.prenotazione.email == Prenotazione.email) :
             return self.prenotazione
         else:
             print("Non ci sono prenotazioni attive!")
