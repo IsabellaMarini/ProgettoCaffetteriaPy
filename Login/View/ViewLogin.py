@@ -1,8 +1,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
+from Home.View.HomeAmministratore import Ui_MainWindowAmministratore
 from Home.View.HomeCliente import  Ui_MainWindowCliente
+from Home.View.HomeDipendente import Ui_MainWindowDipendente
 
 from Login.Controller.ControllerLogin import ControllerLogin
 from Login.Model.Login import Login
@@ -101,11 +102,26 @@ class Ui_Window(object):
         self.controller.is_logged()
         print(self.controller.getRole())
         if self.controller.getRole() == "Cliente":
-            self.go_homeC()
+           self.go_homeC()
+        elif self.controller.getRole() == "Amministratore":
+            self.go_homeA()
+        elif self.controller.getRole() == "Dipendente":
+            self.go_homeD()
         else:
             self.errore()
 
 
+    def go_homeD(self):
+        self.MainWindowDipendente = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindowDipendente()
+        self.ui.setupUi(self.MainWindowDipendente)
+        self.MainWindowDipendente.show()
+
+    def go_homeA(self):
+        self.MainWindowAmministratore = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindowAmministratore()
+        self.ui.setupUi(self.MainWindowAmministratore)
+        self.MainWindowAmministratore.show()
 
 
 

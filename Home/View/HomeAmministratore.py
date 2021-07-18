@@ -1,15 +1,12 @@
-
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindowCliente(object):
-    def setupUi(self, MainWindowCliente):
-        MainWindowCliente.setObjectName("MainWindowCliente")
-        MainWindowCliente.resize(752, 551)
-        MainWindowCliente.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
-        self.centralwidget = QtWidgets.QWidget(MainWindowCliente)
+class Ui_MainWindowAmministratore(object):
+    def setupUi(self, MainWindowAmministratore):
+        MainWindowAmministratore.setObjectName("MainWindowAmministratore")
+        MainWindowAmministratore.resize(752, 551)
+        MainWindowAmministratore.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
+        self.centralwidget = QtWidgets.QWidget(MainWindowAmministratore)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(60, 130, 621, 371))
@@ -71,7 +68,7 @@ class Ui_MainWindowCliente(object):
         self.pushButton_2.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(20)
+        font.setPointSize(16)
         font.setBold(False)
         font.setItalic(True)
         font.setWeight(50)
@@ -102,7 +99,7 @@ class Ui_MainWindowCliente(object):
         self.pushButton_3.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(28)
+        font.setPointSize(22)
         font.setBold(False)
         font.setItalic(True)
         font.setWeight(50)
@@ -133,7 +130,7 @@ class Ui_MainWindowCliente(object):
         self.pushButton_4.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(24)
+        font.setPointSize(16)
         font.setBold(False)
         font.setItalic(True)
         font.setWeight(50)
@@ -194,24 +191,24 @@ class Ui_MainWindowCliente(object):
         self.logo_3.setPixmap(QtGui.QPixmap("Pictures/logo.png"))
         self.logo_3.setScaledContents(True)
         self.logo_3.setObjectName("logo_3")
-        MainWindowCliente.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindowCliente)
+        MainWindowAmministratore.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindowAmministratore)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 752, 26))
         self.menubar.setObjectName("menubar")
-        MainWindowCliente.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindowCliente)
+        MainWindowAmministratore.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindowAmministratore)
         self.statusbar.setObjectName("statusbar")
-        MainWindowCliente.setStatusBar(self.statusbar)
+        MainWindowAmministratore.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindowCliente)
-        QtCore.QMetaObject.connectSlotsByName(MainWindowCliente)
+        self.retranslateUi(MainWindowAmministratore)
+        QtCore.QMetaObject.connectSlotsByName(MainWindowAmministratore)
 
-    def retranslateUi(self, MainWindowCliente):
+    def retranslateUi(self, MainWindowAmministratore):
         _translate = QtCore.QCoreApplication.translate
-        MainWindowCliente.setWindowTitle(_translate("MainWindowCliente", "Home"))
-        self.pushButton.setText(_translate("MainWindowCliente", "Menù"))
-        self.pushButton_2.setText(_translate("MainWindowCliente", "Area Riservata"))
-        self.pushButton_3.setText(_translate("MainWindowCliente", "Carrello"))
-        self.pushButton_4.setText(_translate("MainWindowCliente", "Prenotazioni"))
-        self.label.setText(_translate("MainWindowCliente", "  Benvenuti nell\'app del "))
-        self.label_2.setText(_translate("MainWindowCliente", "Penguin Cafè"))
+        MainWindowAmministratore.setWindowTitle(_translate("MainWindowAmministratore", "Home"))
+        self.pushButton.setText(_translate("MainWindowAmministratore", "Menù"))
+        self.pushButton_2.setText(_translate("MainWindowAmministratore", "Gestione Dipendenti"))
+        self.pushButton_3.setText(_translate("MainWindowAmministratore", "Storico Ordini"))
+        self.pushButton_4.setText(_translate("MainWindowAmministratore", "Storico Prenotazioni"))
+        self.label.setText(_translate("MainWindowAmministratore", "  Benvenuti nell\'app del "))
+        self.label_2.setText(_translate("MainWindowAmministratore", "Penguin Cafè"))
