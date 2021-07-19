@@ -1,31 +1,24 @@
 [
   {
-    "nome": "Cappuccino",
+    "nome": "Caffè",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Bevande",
-    "sottocategoria": "Caffè",
-    "prezzo":"3.99"
+    "categoria": "Bevande"
 
   },
 
   {
-    "nome": "Latte Macchiato",
+    "nome": "Latte",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè.",
-    "categoria": "Bevande",
-    "sottocategoria": "Caffè",
-    "prezzo":"3.99"
-
+    "categoria": "Bevande"
   },
 
   {
-    "nome": "Muffin",
+    "nome": "Croissant",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Cibo",
-    "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "categoria": "Cibo"
 
   },
 
@@ -33,69 +26,32 @@
     "nome": "Donut",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Cibo",
-    "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "categoria": "Cibo"
 
   },
 
   {
-    "nome": "Patatine fritte",
+    "nome": "Cookie",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Cibo",
-    "sottocategoria": "Salato",
-    "prezzo":"3.99"
-
+    "categoria": "Cibo"
   },
 
   {
-    "nome": "Cappuccino",
+    "nome": "Tè",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Bevande",
-    "sottocategoria": "Caffè",
-    "prezzo":"3.99"
+    "categoria": "Bevande"
+
 
   },
 
   {
-    "nome": "Latte Macchiato",
-    "immagine": "immagine",
-    "lista_ingredienti": "Latte, caffè.",
-    "categoria": "Bevande",
-    "sottocategoria": "Caffè",
-    "prezzo":"3.99"
-
-  },
-
-  {
-    "nome": "Muffin",
+    "nome": "Sandwitch",
     "immagine": "immagine",
     "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Cibo",
-    "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "categoria": "Cibo"
 
-  },
-
-  {
-    "nome": "Donut",
-    "immagine": "immagine",
-    "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Cibo",
-    "sottocategoria": "Bakery",
-    "prezzo":"3.99"
-
-  },
-
-  {
-    "nome": "Patatine fritte",
-    "immagine": "immagine",
-    "lista_ingredienti": "Latte, caffè, zucchero.",
-    "categoria": "Cibo",
-    "sottocategoria": "Salato",
-    "prezzo":"3.99"
 
   }
 ]

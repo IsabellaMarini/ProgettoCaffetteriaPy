@@ -1,0 +1,174 @@
+[
+  {
+    "nome": "Caffè",
+    "personalizzazione": [
+      { "tipo": "lungo",
+        "prezzo": 1.50
+      },
+      { "tipo": "corto",
+        "prezzo": 1.20
+      },
+      { "tipo": "macchiato",
+        "prezzo": 2.20
+      },
+      { "tipo": "americano",
+        "prezzo": 1.50
+      }
+    ],
+    "personalizzazioneMultipla":[
+      { "tipo": "zucchero",
+        "prezzo": 0.20
+      },
+      { "tipo": "panna",
+        "prezzo": 1.00
+      },
+      { "tipo": "freddo",
+        "prezzo": 0.00
+      }
+
+    ]
+
+  },
+
+
+  {
+    "nome": "Latte",
+    "personalizzazione": [
+      { "tipo": "macchiato",
+        "prezzo": 1.50
+      },
+      { "tipo": "caramel macchiato",
+        "prezzo": 1.20
+      },
+      { "tipo": "vanilla macchiato",
+        "prezzo": 2.20
+      },
+      { "tipo": "cappuccino",
+        "prezzo": 1.50
+      }
+    ],
+    "personalizzazioneMultipla":[
+      { "tipo": "zucchero",
+        "prezzo": 0.20
+      },
+      { "tipo": "panna",
+        "prezzo": 1.00
+      },
+      { "tipo": "freddo",
+        "prezzo": 0.00
+      }
+
+    ]
+
+  },
+
+
+  {
+    "nome": "Croissant",
+    "personalizzazione": [
+      { "tipo": "vuoto",
+        "prezzo": 2.00
+      },
+      { "tipo": "al cioccolato",
+        "prezzo": 2.20
+      },
+      { "tipo": "al miele",
+        "prezzo": 2.20
+      },
+      { "tipo": "alla crema",
+        "prezzo": 2.20
+      }
+    ]
+
+
+  },
+  {
+    "nome": "Donut",
+    "personalizzazione": [
+      {
+        "tipo": "cioccolato al latte",
+        "prezzo": 3.50
+      },
+      {
+        "tipo": "cioccolato bianco",
+        "prezzo": 3.50
+      }
+    ]
+  },
+
+
+
+
+    {
+    "nome": "Cookie",
+    "personalizzazione": [
+      { "tipo": "al burro",
+        "prezzo": 1.50
+      },
+      { "tipo": "gocce di cioccolato",
+        "prezzo": 1.20
+      }
+
+    ]
+  },
+
+  {
+    "nome": "Tè",
+    "personalizzazione": [
+      { "tipo": "pesca",
+        "prezzo": 1.50
+      },
+      { "tipo": "limone",
+        "prezzo": 1.20
+      },
+      { "tipo": "nero",
+        "prezzo": 2.20
+      },
+      { "tipo": "verde",
+        "prezzo": 1.50
+      }
+    ],
+    "personalizzazioneMultipla":[
+      { "tipo": "zucchero",
+        "prezzo": 0.20
+      },
+
+      { "tipo": "freddo",
+        "prezzo": 0.00
+      }
+
+    ]
+
+  },
+
+  {
+    "nome": "Sandwitch",
+    "personalizzazione": [
+      { "tipo": "pomodoro e mozzarella",
+        "prezzo": 5.50
+      },
+      { "tipo": "pollo e bacon",
+        "prezzo": 7.20
+      },
+      { "tipo": "prosciutto e formaggio",
+        "prezzo": 6.20
+      },
+      { "tipo": "uova strapazzate e bacon",
+        "prezzo": 6.50
+      }
+    ],
+    "personalizzazioneMultipla":[
+      { "tipo": "maionese",
+        "prezzo": 1.20
+      },
+      { "tipo": "senape",
+        "prezzo": 1.20
+      },
+      { "tipo": "salsa barbecue",
+        "prezzo": 1.20
+      }
+
+    ]
+
+  }
+]
