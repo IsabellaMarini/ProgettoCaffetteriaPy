@@ -17,13 +17,17 @@ class ListaProdotti():
         for prodotto_iniziale in lista_prodotti_iniziali:
             if prodotto_iniziale["categoria"]=="Bevande":
                 self.aggiungi_bevanda(Prodotto(prodotto_iniziale["nome"],  prodotto_iniziale["immagine"],
-                                                prodotto_iniziale["lista_ingredienti"],
+                                               prodotto_iniziale["lista_ingredienti1"],
+                                               prodotto_iniziale["lista_ingredienti2"],
+                                               prodotto_iniziale["lista_ingredienti3"],
                                                 prodotto_iniziale["categoria"], prodotto_iniziale["sottocategoria"],
                                                 prodotto_iniziale["prezzo"]))
 
-            elif prodotto_iniziale["categoria"] =="Cibo":
+            if prodotto_iniziale["categoria"] =="Cibo":
                 self.aggiungi_cibo(Prodotto(prodotto_iniziale["nome"],  prodotto_iniziale["immagine"],
-                                                prodotto_iniziale["lista_ingredienti"],
+                                                prodotto_iniziale["lista_ingredienti1"],
+                                                prodotto_iniziale["lista_ingredienti2"],
+                                                prodotto_iniziale["lista_ingredienti3"],
                                                 prodotto_iniziale["categoria"], prodotto_iniziale["sottocategoria"],
                                                 prodotto_iniziale["prezzo"]))
 

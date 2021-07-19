@@ -113,8 +113,8 @@ class Ui_Menu(object):
         self.retranslateUi(Menu)
         QtCore.QMetaObject.connectSlotsByName(Menu)
 
-        self.pushButton_2.clicked.connect(self.cibo)
-        self.pushButton_3.clicked.connect(self.bevande)
+        self.pushButton_2.clicked.connect(self.bevande)
+        self.pushButton_3.clicked.connect(self.cibo)
         self.pushButton.clicked.connect(self.clicked)
 
     def retranslateUi(self, Menu):
@@ -137,7 +137,7 @@ class Ui_Menu(object):
             item.setFont(font)
             self.model.appendRow(item)
 
-    def cibo(self):
+    def bevande(self):
 
         self.model.clear()
         self.aList = self.controller.get_bevande()
@@ -153,7 +153,7 @@ class Ui_Menu(object):
             item.setFont(font)
             self.model.appendRow(item)
 
-    def bevande(self):
+    def cibo(self):
 
         self.model.clear()
         self.aList = self.controller.get_cibi()
@@ -172,13 +172,15 @@ class Ui_Menu(object):
     def clicked(self):
         selected = self.listView.selectedIndexes()[0].row()
 
-        #if self.aList == self.controller.get_bevande():
-
-        #else:
-            #prodotto_selezionato = self.controller.get_cibo_by_index(selected)
 
 
-        prodotto_selezionato = self.controller.get_bevanda_by_index(selected)
+        if self.aList == self.controller.get_bevande():
+            prodotto_selezionato = self.controller.get_bevanda_by_index(selected)
+        else:
+            prodotto_selezionato = self.controller.get_cibo_by_index(selected)
+
+
+
         self.ViewProdotto = QtWidgets.QDialog()
         self.ui = Ui_ViewProdotto(prodotto_selezionato)
         self.ui.setupUi(self.ViewProdotto)

@@ -4,12 +4,14 @@ import json
 
 class Prodotto():
 
-    def __init__(self, nome, immagine, listaIngredienti,
+    def __init__(self, nome, immagine, listaIngredienti, listaIngredienti2, listaIngredienti3,
                  categoria, sottocategoria, prezzo):
         super(Prodotto, self).__init__()
         self.nome=nome
         self.immagine=immagine
-        self.listaIngredienti=listaIngredienti
+        self.listaIngredienti1=listaIngredienti
+        self.listaIngredienti2=listaIngredienti2
+        self.listaIngredienti3=listaIngredienti3
         self.categoria=categoria
         self.sottocategoria=sottocategoria
         self.prezzo=prezzo

@@ -15,4 +15,7 @@ class ControllerListaProdotti():
     def get_bevanda_by_index(self, index):
         return self.model.get_bevanda_by_index(index)
 
+    def get_cibo_by_index(self, index):
+        return self.model.get_cibo_by_index(index)
+
 
