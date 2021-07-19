@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QStandardItem
 
-
-from PyQt5 import QtCore, QtGui, QtWidgets
+from Menu.controller.ControllerListaProdotti import ControllerListaProdotti
 
 
 class Ui_Menu(object):
@@ -103,8 +103,16 @@ class Ui_Menu(object):
         self.listView.setFont(font)
         self.listView.setObjectName("listView")
 
+        self.controller = ControllerListaProdotti()
+
+        self.model = QtGui.QStandardItemModel()
+        self.listView.setModel(self.model)
+
         self.retranslateUi(Menu)
         QtCore.QMetaObject.connectSlotsByName(Menu)
+
+        self.pushButton_2.clicked.connect(self.cibo)
+        self.pushButton_3.clicked.connect(self.bevande)
 
     def retranslateUi(self, Menu):
         _translate = QtCore.QCoreApplication.translate
@@ -112,3 +120,48 @@ class Ui_Menu(object):
         self.pushButton.setText(_translate("Menu", "Visualizza Prodotto"))
         self.pushButton_2.setText(_translate("Menu", "Bevande"))
         self.pushButton_3.setText(_translate("Menu", "Cibo"))
+
+        aList = self.controller.get_bevande()
+        for i in aList:
+            app = i.get_nome()
+
+
+            item = QStandardItem()
+            item.setText(app)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
+
+    def cibo(self):
+
+        self.model.clear()
+        aList = self.controller.get_bevande()
+        for i in aList:
+            app = i.get_nome()
+
+
+            item = QStandardItem()
+            item.setText(app)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
+
+    def bevande(self):
+
+        self.model.clear()
+        aList = self.controller.get_cibi()
+        for i in aList:
+            app = i.get_nome()
+
+
+            item = QStandardItem()
+            item.setText(app)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
