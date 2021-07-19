@@ -1,6 +1,6 @@
 import json
 
-p = json.load(open("Menu/data/lista_prodotti_iniziali.json"))
+
 
 class Prodotto():
 
@@ -14,13 +14,14 @@ class Prodotto():
         self.sottocategoria=sottocategoria
         self.prezzo=prezzo
 
-        self.personalizzazioni = []
+        self.personalizzazioni = self.personalizza()
 
     def personalizza(self):
-        with open("Prodotto/Database/personalizzazioni.json") as p:
-            self.personalizzazioni = json.load(p)
-        if (self.personalizzazioni.sottocategoria==self.sottocategoria):
-            return self.personalizzazioni.personalizzazioni
+        with open("Prodotto/Database/personalizzazioni.json") as f:
+            personalizzazioni = json.load(f)
+        for i in personalizzazioni:
+            if i["sottocategoria"] == self.nome:
+                return i["personalizzazioni"]
 
 
 

@@ -2,20 +2,13 @@ from Prodotto.Model.Prodotto import Prodotto
 
 class ControllerProdotto():
 
-    def __init__(self):
+    def __init__(self,Prodotto):
         self.Model=Prodotto
 
     def getNome(self):
         return self.Model.nome
 
-    def getDescrizione(self):
-        return self.Model.descrizione
 
-    def getImmagine(self):
-        return self.Model.immagine
-
-    def getValoriNutrizionali(self):
-        return self.Model.valoriNutrizionali
 
     def getListaIngredienti(self):
         return self.Model.listaIngredienti
