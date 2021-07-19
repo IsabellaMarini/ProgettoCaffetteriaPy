@@ -10,8 +10,12 @@ class ControllerProdotto():
 
 
 
-    def getListaIngredienti(self):
-        return self.Model.listaIngredienti
+    def getListaIngredienti1(self):
+        return self.Model.listaIngredienti1
+    def getListaIngredienti2(self):
+        return self.Model.listaIngredienti2
+    def getListaIngredienti3(self):
+        return self.Model.listaIngredienti3
 
     def getCategoria(self):
         return self.Model.categoria
