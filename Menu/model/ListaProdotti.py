@@ -37,6 +37,12 @@ class ListaProdotti():
     def aggiungi_cibo(self, prodotto):
         self.lista_cibi.append(prodotto)
 
+    def get_cibo_by_index(self, index):
+        return self.lista_cibi[index]
+
+    def get_bevanda_by_index(self, index):
+        return self.lista_bevande[index]
+
     def get_bevande(self):
         return self.lista_bevande
 

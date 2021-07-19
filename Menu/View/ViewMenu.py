@@ -2,6 +2,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
 from Menu.controller.ControllerListaProdotti import ControllerListaProdotti
+from Prodotto.View import ViewProdotto
+from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 
 class Ui_Menu(object):
@@ -113,6 +115,7 @@ class Ui_Menu(object):
 
         self.pushButton_2.clicked.connect(self.cibo)
         self.pushButton_3.clicked.connect(self.bevande)
+        self.pushButton.clicked.connect(self.clicked)
 
     def retranslateUi(self, Menu):
         _translate = QtCore.QCoreApplication.translate
@@ -121,8 +124,8 @@ class Ui_Menu(object):
         self.pushButton_2.setText(_translate("Menu", "Bevande"))
         self.pushButton_3.setText(_translate("Menu", "Cibo"))
 
-        aList = self.controller.get_bevande()
-        for i in aList:
+        self.aList = self.controller.get_bevande()
+        for i in self.aList:
             app = i.get_nome()
 
 
@@ -137,8 +140,8 @@ class Ui_Menu(object):
     def cibo(self):
 
         self.model.clear()
-        aList = self.controller.get_bevande()
-        for i in aList:
+        self.aList = self.controller.get_bevande()
+        for i in self.aList:
             app = i.get_nome()
 
 
@@ -153,8 +156,8 @@ class Ui_Menu(object):
     def bevande(self):
 
         self.model.clear()
-        aList = self.controller.get_cibi()
-        for i in aList:
+        self.aList = self.controller.get_cibi()
+        for i in self.aList:
             app = i.get_nome()
 
 
@@ -165,3 +168,18 @@ class Ui_Menu(object):
             font.setPointSize(18)
             item.setFont(font)
             self.model.appendRow(item)
+
+    def clicked(self):
+        selected = self.listView.selectedIndexes()[0].row()
+
+        #if self.aList == self.controller.get_bevande():
+
+        #else:
+            #prodotto_selezionato = self.controller.get_cibo_by_index(selected)
+
+
+        prodotto_selezionato = self.controller.get_bevanda_by_index(selected)
+        self.ViewProdotto = QtWidgets.QDialog()
+        self.ui = Ui_ViewProdotto(prodotto_selezionato)
+        self.ui.setupUi(self.ViewProdotto)
+        self.ViewProdotto.show()
