@@ -13,4 +13,3 @@ class ControllerListaProdotti():
         return self.model.get_cibi()
 
 
-

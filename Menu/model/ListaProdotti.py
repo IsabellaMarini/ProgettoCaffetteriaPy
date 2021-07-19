@@ -12,7 +12,7 @@ class ListaProdotti():
         self.lista_bevande = []  # lista vuota nel momento dell'istanzazione
         self.lista_cibi = []
 
-        with open('menu/data/lista_prodotti_iniziali.json') as f: #file di configurazione iniziale
+        with open("Menu/data/lista_prodotti_iniziali.json") as f: #file di configurazione iniziale
             lista_prodotti_iniziali = json.load(f)
         for prodotto_iniziale in lista_prodotti_iniziali:
             if prodotto_iniziale["categoria"]=="Bevande":
