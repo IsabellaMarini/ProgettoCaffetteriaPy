@@ -3,11 +3,13 @@ from PyQt5.QtGui import QStandardItem
 
 
 
-from Prodotto.View.ViewProdotto import Ui_ViewProdotto
+
 
 
 
 class Ui_CarrelloView(object):
+
+
     def __init__(self, carrello):
         self.controller = carrello
 
@@ -161,10 +163,10 @@ class Ui_CarrelloView(object):
         self.retranslateUi(CarrelloView)
         QtCore.QMetaObject.connectSlotsByName(CarrelloView)
 
-        self.pushButton.clicked.connect(Ui_ViewProdotto)
-        self.pushButton_2.clicked.connect(self.controller.getEliminaOrdine)
-        self.pushButton_3.clicked.connect(self.controller.getEliminaProdotto)
-        self.pushButton_4.clicked.connect(self.controller.getConferma)
+        #self.pushButton.clicked.connect(Ui_ViewProdotto)
+        #self.pushButton_2.clicked.connect()
+        #self.pushButton_3.clicked.connect()
+        #self.pushButton_4.clicked.connect()
 
     def retranslateUi(self, CarrelloView):
         _translate = QtCore.QCoreApplication.translate
@@ -176,20 +178,37 @@ class Ui_CarrelloView(object):
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
 
         self.label.setText(_translate("CarrelloView", "totale:"))
-        self.label_2.setText(_translate("CarrelloView", ""))
+        stringa  = str(self.controller.getTotale()) + " €"
+        self.label_2.setText(_translate("CarrelloView", stringa))
 
 
         for i in self.controller.get_carrello():
-            app = i.get_nome()
+            app1 = i.get_nome()
+            app2 = i.personalizzazione.tipo
 
+            app3 = float(i.prezzo)
+            app4 = float(i.personalizzazione.prezzo)
+            prezzo = app3 + app4
+            app5 = str(prezzo)
+            stri = app1 + " ( " + app2 + ")    " + app5 + "€"
             item = QStandardItem()
-            item.setText(app)
+            item.setText(stri)
             item.setEditable(False)
             font = item.font()
             font.setPointSize(18)
             item.setFont(font)
             self.model.appendRow(item)
 
+    def svouta(self):
+        self.controller.svuotaCarrello()
+
+
+    def conferma(self):
+        print(self.controller.Conferma())
+
+    def elimina(self):
+        selected = self.listView.selectedIndexes()[0].row()
+        self.controller.eliminaProdotto(selected)
 
 
 

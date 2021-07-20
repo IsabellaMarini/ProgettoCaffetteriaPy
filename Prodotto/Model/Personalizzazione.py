@@ -4,6 +4,10 @@ class Personalizzazione():
         self.tipo = tipo
         self.prezzo = prezzo
 
+    def setNew(self, tipo, prezzo):
+        self.tipo=tipo
+        self.prezzo = prezzo
+
 
     def get_tipo(self):
         return self.tipo

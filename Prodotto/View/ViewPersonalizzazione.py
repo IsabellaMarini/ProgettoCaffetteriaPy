@@ -161,7 +161,9 @@ class Ui_Personalizzazione(object):
 
 
     def clicked(self):
-        if self.listView.selectedIndexes()[0].row()== None:
-            self.errore()
-        else:
-            self.conferma()
+
+        self.conferma()
+        self.Personalizzazione = QtWidgets.QDialog()
+        self.ui = Ui_Personalizzazione(self.prodotto, self.carrello)
+        self.ui.setupUi(self.Personalizzazione)
+        self.Personalizzazione.show()
