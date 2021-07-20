@@ -8,6 +8,9 @@ class ControllerCarrello():
     def getAggiungi(self):
         self.Model.aggiungi_al_carrello()
 
+    def getTotale(self):
+        return self.Model.calcolaTotale()
+
     def getEliminaProdotto(self):
         self.Model.rimuoviProdotto()
 
