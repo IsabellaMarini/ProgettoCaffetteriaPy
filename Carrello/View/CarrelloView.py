@@ -159,9 +159,7 @@ class Ui_CarrelloView(object):
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
         self.label.setText(_translate("CarrelloView", "Prezzo:"))
-        self.label_2.setText(_translate("CarrelloView", "Costo"))
-
-        self.label_2.setText(_translate("CarrelloView", self.controller.getTotale))
+        self.label_2.setText(_translate("CarrelloView", print(self.model().calcolaTotale)))
 
         for Prodotto in self.model().lista_prodotti:
 
@@ -179,7 +177,7 @@ class Ui_CarrelloView(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    CarrelloView = QtWidgets.QDialog()
+    CarrelloView= QtWidgets.QDialog()
     ui = Ui_CarrelloView()
     ui.setupUi(CarrelloView)
     CarrelloView.show()
