@@ -3,6 +3,7 @@ from Prodotto.Model.Prodotto import Prodotto
 
 
 class Carrello():
+
     def __init__(self):
         super(Carrello, self).__init__()
         self.lista_prodotti= []
@@ -18,6 +19,7 @@ class Carrello():
                 prodotto_da_aggiungere["prezzo"]
             )
             )
+
 
     def confermaOrdine(self):
         n=8

@@ -3,6 +3,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Carrello.View.CarrelloView import Ui_CarrelloView
 from Menu.View.ViewMenu import Ui_Menu
 
 
@@ -209,6 +210,7 @@ class Ui_MainWindowCliente(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindowCliente)
 
         self.pushButton.clicked.connect(self.go_menu)
+        self.pushButton_3.clicked.connect(self.go_carrello)
 
     def retranslateUi(self, MainWindowCliente):
         _translate = QtCore.QCoreApplication.translate
@@ -226,3 +228,9 @@ class Ui_MainWindowCliente(object):
         self.ui = Ui_Menu()
         self.ui.setupUi(self.Menu)
         self.Menu.show()
+
+    def go_carrello(self):
+        self.Carrello = QtWidgets.QDialog()
+        self.ui = Ui_CarrelloView()
+        self.ui.setupUi(self.Carrello)
+        self.Carrello.show()

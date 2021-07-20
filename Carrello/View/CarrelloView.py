@@ -9,8 +9,8 @@ from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 class Ui_CarrelloView(object):
     def __init__(self):
-        self.model=Carrello
-        self.controller=ControllerCarrello
+        self.model = Carrello
+        self.controller = ControllerCarrello
 
     def setupUi(self, CarrelloView):
         CarrelloView.setObjectName("CarrelloView")
@@ -26,7 +26,7 @@ class Ui_CarrelloView(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush (QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
         self.pushButton.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
@@ -119,9 +119,9 @@ class Ui_CarrelloView(object):
         QtCore.QMetaObject.connectSlotsByName(CarrelloView)
 
         self.pushButton.clicked.connect(Ui_ViewProdotto)
-        self.pushButton_2.clicked.connect(self.controller.getEliminaOrdine())
-        self.pushButton_3.clicked.connect(self.controller.getEliminaProdotto())
-        self.pushButton_4.clicked.connect(self.controller.getConferma())
+        self.pushButton_2.clicked.connect(self.controller.getEliminaOrdine)
+        self.pushButton_3.clicked.connect(self.controller.getEliminaProdotto)
+        self.pushButton_4.clicked.connect(self.controller.getConferma)
 
     def retranslateUi(self, CarrelloView):
         _translate = QtCore.QCoreApplication.translate
@@ -132,14 +132,10 @@ class Ui_CarrelloView(object):
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
 
-        b=self.controller().getAggiungi()
-        self.List=b
-
-        for i in self.List:
-            a = i.get_nome()
+        for Prodotto in self.model().lista_prodotti:
 
             item = QStandardItem()
-            item.setText(a)
+            item.setText(Prodotto.get_nome())
             item.setEditable(False)
             font = item.font()
             font.setPointSize(18)
@@ -156,6 +152,6 @@ if __name__ == "__main__":
     CarrelloView= QtWidgets.QDialog()
     ui = Ui_CarrelloView()
     ui.setupUi(CarrelloView)
-    CarrelloView().show()
+    CarrelloView.show()
     sys.exit(app.exec_())
 
