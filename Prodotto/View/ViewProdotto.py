@@ -4,7 +4,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Prodotto.Model.Prodotto import Prodotto
 from Prodotto.Controller.ControllerProdotto import ControllerProdotto
-
+from Prodotto.View.ViewPersonalizzazione import Ui_Personalizzazione
 
 
 class Ui_ViewProdotto(object):
@@ -244,6 +244,8 @@ class Ui_ViewProdotto(object):
         self.retranslateUi(ViewProdotto)
         QtCore.QMetaObject.connectSlotsByName(ViewProdotto)
 
+        self.pushButton_3.clicked.connect(self.personalizza)
+
 
 
 
@@ -262,5 +264,9 @@ class Ui_ViewProdotto(object):
         self.label_8.setText(_translate("ViewProdotto", "Prezzo Base:"))
         self.label_9.setText(_translate("ViewProdotto", self.prodotto.prezzo))
 
-
+    def personalizza(self):
+        self.Personalizzazione = QtWidgets.QDialog()
+        self.ui = Ui_Personalizzazione(self.prodotto)
+        self.ui.setupUi(self.Personalizzazione)
+        self.Personalizzazione.show()
 
