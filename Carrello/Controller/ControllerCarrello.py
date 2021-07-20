@@ -3,7 +3,7 @@ from Carrello.Model.Carrello import Carrello
 class ControllerCarrello():
     def __init__(self):
         super(ControllerCarrello, self).__init__()
-        self.Model=Carrello()
+        self.Model = Carrello()
 
     def get_carrello(self):
         return self.Model.lista_prodotti
@@ -14,11 +14,15 @@ class ControllerCarrello():
     def getTotale(self):
         return self.Model.calcolaTotale()
 
-    def getEliminaProdotto(self):
-        self.Model.rimuoviProdotto()
+    def svuotaCarrello(self):
+        self.Model.svuotaCarrello()
 
-    def getConferma(self):
+    def Conferma(self):
         return self.Model.confermaOrdine()
 
-    def getEliminaOrdine(self):
-        self.Model.eliminaOrdine()
+
+    def getCodice(self):
+        return self.Model.codice
+
+    def eliminaProdotto(self,index):
+        self.Model.eliminaProdotto(index)
