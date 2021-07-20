@@ -3,61 +3,34 @@
     "nome": "Caffè",
     "personalizzazione": [
       { "tipo": "lungo",
-        "prezzo": 1.50
+        "prezzo": 0
       },
       { "tipo": "corto",
-        "prezzo": 1.20
+        "prezzo": 0
       },
       { "tipo": "macchiato",
-        "prezzo": 2.20
+        "prezzo": 0
       },
       { "tipo": "americano",
-        "prezzo": 1.50
-      }
-    ],
-    "personalizzazioneMultipla":[
-      { "tipo": "zucchero",
-        "prezzo": 0.20
-      },
-      { "tipo": "panna",
         "prezzo": 1.00
-      },
-      { "tipo": "freddo",
-        "prezzo": 0.00
       }
-
     ]
 
   },
 
 
   {
-    "nome": "Latte",
+    "nome": "Cappuccino",
     "personalizzazione": [
-      { "tipo": "macchiato",
-        "prezzo": 1.50
+      { "tipo": "Classico",
+        "prezzo": 0
       },
-      { "tipo": "caramel macchiato",
-        "prezzo": 1.20
-      },
-      { "tipo": "vanilla macchiato",
-        "prezzo": 2.20
-      },
-      { "tipo": "cappuccino",
-        "prezzo": 1.50
-      }
-    ],
-    "personalizzazioneMultipla":[
-      { "tipo": "zucchero",
-        "prezzo": 0.20
-      },
-      { "tipo": "panna",
+      { "tipo": "Caramel macchiato",
         "prezzo": 1.00
       },
-      { "tipo": "freddo",
-        "prezzo": 0.00
+      { "tipo": "Vanilla macchiato",
+        "prezzo": 1.00
       }
-
     ]
 
   },
@@ -67,16 +40,16 @@
     "nome": "Croissant",
     "personalizzazione": [
       { "tipo": "vuoto",
-        "prezzo": 2.00
+        "prezzo": 0
       },
       { "tipo": "al cioccolato",
-        "prezzo": 2.20
+        "prezzo": 0
       },
       { "tipo": "al miele",
-        "prezzo": 2.20
+        "prezzo": 0.20
       },
       { "tipo": "alla crema",
-        "prezzo": 2.20
+        "prezzo": 0
       }
     ]
 
@@ -87,11 +60,21 @@
     "personalizzazione": [
       {
         "tipo": "cioccolato al latte",
-        "prezzo": 3.50
+        "prezzo": 0
       },
       {
         "tipo": "cioccolato bianco",
-        "prezzo": 3.50
+        "prezzo": 0.20
+      },
+
+      {
+        "tipo": "Crema",
+        "prezzo": 0
+      }
+      ,
+      {
+        "tipo": "Pistacchio",
+        "prezzo": 0.20
       }
     ]
   },
@@ -103,71 +86,73 @@
     "nome": "Cookie",
     "personalizzazione": [
       { "tipo": "al burro",
-        "prezzo": 1.50
+        "prezzo": 0
       },
       { "tipo": "gocce di cioccolato",
-        "prezzo": 1.20
+        "prezzo": 0
       }
 
     ]
   },
 
   {
-    "nome": "Tè",
+    "nome": "The",
     "personalizzazione": [
       { "tipo": "pesca",
-        "prezzo": 1.50
+        "prezzo": 0
       },
       { "tipo": "limone",
-        "prezzo": 1.20
+        "prezzo": 0
       },
       { "tipo": "nero",
-        "prezzo": 2.20
-      },
-      { "tipo": "verde",
-        "prezzo": 1.50
-      }
-    ],
-    "personalizzazioneMultipla":[
-      { "tipo": "zucchero",
         "prezzo": 0.20
       },
-
-      { "tipo": "freddo",
-        "prezzo": 0.00
+      { "tipo": "verde",
+        "prezzo": 0.20
       }
-
     ]
 
   },
 
   {
-    "nome": "Sandwitch",
+    "nome": "Sandwich",
     "personalizzazione": [
-      { "tipo": "pomodoro e mozzarella",
-        "prezzo": 5.50
+      { "tipo": "Prosciutto crudo",
+        "prezzo": 0
       },
-      { "tipo": "pollo e bacon",
-        "prezzo": 7.20
+      { "tipo": "Tonno e Maionese",
+        "prezzo": 0
       },
-      { "tipo": "prosciutto e formaggio",
-        "prezzo": 6.20
+      { "tipo": "Prosciutto cotto e Formaggio",
+        "prezzo": 0
       },
       { "tipo": "uova strapazzate e bacon",
-        "prezzo": 6.50
-      }
-    ],
-    "personalizzazioneMultipla":[
-      { "tipo": "maionese",
-        "prezzo": 1.20
+        "prezzo": 2.00
       },
-      { "tipo": "senape",
-        "prezzo": 1.20
-      },
-      { "tipo": "salsa barbecue",
-        "prezzo": 1.20
+      { "tipo": "Pomodoro e Mozzarella",
+        "prezzo": 1.00
       }
+    ]
 
+  },
+  {
+    "nome": "Torta",
+    "personalizzazione": [
+      { "tipo": "Cheesecake",
+        "prezzo": 1.00
+      },
+      { "tipo": "Della Nonna",
+        "prezzo": 1.00
+      },
+      { "tipo": "Crostata",
+        "prezzo": 0.00
+      },
+      { "tipo": "Sacher",
+        "prezzo": 1.00
+      },
+      { "tipo": "Alle mele",
+        "prezzo": 0.50
+      }
     ]
 
   }

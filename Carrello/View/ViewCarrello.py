@@ -121,12 +121,12 @@ class Ui_Carrello(object):
         self.retranslateUi(Carrello)
         QtCore.QMetaObject.connectSlotsByName(Carrello)
 
-        self.controller = ControllerCarrello()
+        #self.controller = ControllerCarrello()
 
-        self.pushButton.clicked.connect(self.clicked)
-        self.pushButton_2.clicked.connect(self.clicked)
-        self.pushButton_3.clicked.connect(self.clicked)
-        self.pushButton_4.clicked.connect(self.clicked)
+        #self.pushButton.clicked.connect(self.clicked)
+        #self.pushButton_2.clicked.connect(self.clicked)
+        #self.pushButton_3.clicked.connect(self.clicked)
+        #self.pushButton_4.clicked.connect(self.clicked)
 
     def retranslateUi(self, Carrello):
         _translate = QtCore.QCoreApplication.translate
@@ -149,7 +149,7 @@ class Ui_Carrello(object):
             item.setFont(font)
             self.model.appendRow(item)
 
-    def clicked(self):
+
 
 
 

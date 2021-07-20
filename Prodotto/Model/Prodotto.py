@@ -1,5 +1,6 @@
 import json
 
+from Prodotto.Model.Personalizzazione import Personalizzazione
 
 
 class Prodotto():
@@ -15,15 +16,20 @@ class Prodotto():
         self.categoria=categoria
         self.sottocategoria=sottocategoria
         self.prezzo=prezzo
+        self.personalizzazione = None
+        self.personalizzazioni = []
 
-        self.personalizzazioni = self.personalizza()
+
 
     def personalizza(self):
-        with open("Prodotto/Database/personalizzazioni.json") as f:
+        with open("Prodotto/Database/personalizzazione.json") as f:
             personalizzazioni = json.load(f)
         for i in personalizzazioni:
-            if i["sottocategoria"] == self.nome:
-                return i["personalizzazioni"]
+            if i["nome"] == self.nome:
+                for n in i["personalizzazioni"]:
+                    appoggio = Personalizzazione(n["tipo"],n["prezzo"])
+                    self.personalizzazioni.append(appoggio)
+
 
 
 

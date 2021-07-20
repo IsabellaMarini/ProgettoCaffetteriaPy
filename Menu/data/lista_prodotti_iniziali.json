@@ -1,38 +1,37 @@
 [
   {
-    "nome": "Caffè",
+    "nome": "Caffe'",
     "immagine": "immagine",
-
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
+    "lista_ingredienti1": " Caffe'",
+    "lista_ingredienti2": "  ",
     "lista_ingredienti3": " ",
     "categoria": "Bevande",
     "sottocategoria": "Caffè",
-    "prezzo":"3.99"
+    "prezzo":"1.00"
   },
 
   {
-    "nome": "Latte",
+    "nome": "Cappuccino",
     "immagine": "immagine",
 
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
+    "lista_ingredienti1": " Latte,  Caffe'",
+    "lista_ingredienti2": " ",
     "lista_ingredienti3": " ",
     "categoria": "Bevande",
     "sottocategoria": "Caffè",
-    "prezzo":"3.99"
+    "prezzo":"1.50"
   },
 
   {
     "nome": "Croissant",
     "immagine": "immagine",
 
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
+    "lista_ingredienti1": " Farina, Uova, Lievito ",
+    "lista_ingredienti2": " Zucchero, Burro, ",
     "lista_ingredienti3": " ",
     "categoria": "Cibo",
     "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "prezzo":"1.00"
 
 
   },
@@ -41,35 +40,35 @@
     "nome": "Donut",
     "immagine": "immagine",
 
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
-    "lista_ingredienti3": " ",
+    "lista_ingredienti1": " Farina, Uova, Lievito",
+    "lista_ingredienti2": " Zucchero, Burro, ",
+    "lista_ingredienti3": " Ripieno a scelta ",
     "categoria": "Cibo",
     "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "prezzo":"1.00"
 },
 
   {
     "nome": "Cookie",
     "immagine": "immagine",
 
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
-    "lista_ingredienti3": " ",
+    "lista_ingredienti1": " Farina, Uova, Latte,",
+    "lista_ingredienti2": " Zucchero, Burro, ",
+    "lista_ingredienti3": "  ",
     "categoria": "Cibo",
     "sottocategoria": "Salato",
-    "prezzo":"3.99"
+    "prezzo":"0.50"
 },
 
   {
-    "nome": "Tè",
+    "nome": "The",
     "immagine": "immagine",
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
+    "lista_ingredienti1": " Acqua,",
+    "lista_ingredienti2": " Foglie di The ",
     "lista_ingredienti3": " ",
     "categoria": "Bevande",
     "sottocategoria": "Caffè",
-    "prezzo":"3.99"
+    "prezzo":"1.50"
 
   },
 
@@ -77,44 +76,33 @@
     "nome": "Latte Macchiato",
     "immagine": "immagine",
     "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
+    "lista_ingredienti2": " ",
     "lista_ingredienti3": " ",
     "categoria": "Bevande",
     "sottocategoria": "Caffè",
-    "prezzo":"3.99"
+    "prezzo":"1.50"
   },
 
   {
-    "nome": "Sandwitch",
+    "nome": "Sandwich",
     "immagine": "immagine",
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
+    "lista_ingredienti1": "Pane, ",
+    "lista_ingredienti2": " Ripieno a scelta ",
     "lista_ingredienti3": " ",
     "categoria": "Cibo",
     "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "prezzo":"1.50"
  },
 
   {
-    "nome": "Donut",
+    "nome": "Torta",
     "immagine": "immagine",
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
-    "lista_ingredienti3": " ",
+    "lista_ingredienti1": " Farina, Uova, Latte,",
+    "lista_ingredienti2": " Zucchero, Burro, ",
+    "lista_ingredienti3": " Topping a scelta",
     "categoria": "Cibo",
     "sottocategoria": "Bakery",
-    "prezzo":"3.99"
+    "prezzo":"3.00"
 
-  },
-
-  {
-    "nome": "Patatine fritte",
-    "immagine": "immagine",
-    "lista_ingredienti1": "Latte,  caffè,",
-    "lista_ingredienti2": " Zucchero ",
-    "lista_ingredienti3": " ",
-    "categoria": "Cibo",
-    "sottocategoria": "Salato",
-    "prezzo":"3.99"
-}
+  }
 ]
