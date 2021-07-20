@@ -18,18 +18,29 @@ class Prodotto():
         self.prezzo=prezzo
         self.personalizzazione = None
         self.personalizzazioni = []
-
-
-
-    def personalizza(self):
         with open("Prodotto/Database/personalizzazione.json") as f:
             personalizzazioni = json.load(f)
         for i in personalizzazioni:
             if i["nome"] == self.nome:
-                for n in i["personalizzazioni"]:
+
+                for n in i["personalizzazione"]:
                     appoggio = Personalizzazione(n["tipo"],n["prezzo"])
+
                     self.personalizzazioni.append(appoggio)
 
+
+
+
+
+
+
+
+
+    def personalizza(self, personalizzazione):
+        self.personalizzazione = personalizzazione
+
+    def get_personalizzazione_by_index(self, index):
+        return self.personalizzazioni[index]
 
 
 
