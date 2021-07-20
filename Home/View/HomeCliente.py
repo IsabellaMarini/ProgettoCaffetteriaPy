@@ -3,7 +3,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from Carrello.View.CarrelloView import Ui_CarrelloView
+from Carrello.View.ViewCarrello import Ui_CarrelloView
 from Menu.View.ViewMenu import Ui_Menu
 
 

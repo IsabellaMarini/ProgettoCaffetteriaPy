@@ -1,10 +1,10 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
 from Carrello.Model.Carrello import Carrello
 from Carrello.Controller.ControllerCarrello import ControllerCarrello
 from Prodotto.View.ViewProdotto import Ui_ViewProdotto
+
 
 
 class Ui_CarrelloView(object):
@@ -15,6 +15,17 @@ class Ui_CarrelloView(object):
     def setupUi(self, CarrelloView):
         CarrelloView.setObjectName("CarrelloView")
         CarrelloView.resize(968, 579)
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
+        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
+        CarrelloView.setPalette(palette)
         self.pushButton = QtWidgets.QPushButton(CarrelloView)
         self.pushButton.setGeometry(QtCore.QRect(140, 370, 121, 61))
         palette = QtGui.QPalette()
@@ -26,7 +37,7 @@ class Ui_CarrelloView(object):
         palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
         brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
         brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush (QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
         self.pushButton.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
@@ -35,10 +46,10 @@ class Ui_CarrelloView(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.listView = QtWidgets.QListView(CarrelloView)
-        self.listView.setGeometry(QtCore.QRect(360, 130, 256, 192))
+        self.listView.setGeometry(QtCore.QRect(380, 100, 281, 251))
         self.listView.setObjectName("listView")
         self.Carrello = QtWidgets.QLabel(CarrelloView)
-        self.Carrello.setGeometry(QtCore.QRect(450, 70, 81, 31))
+        self.Carrello.setGeometry(QtCore.QRect(470, 60, 81, 31))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -114,6 +125,22 @@ class Ui_CarrelloView(object):
         font.setItalic(True)
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
+        self.label = QtWidgets.QLabel(CarrelloView)
+        self.label.setGeometry(QtCore.QRect(480, 310, 91, 31))
+        font = QtGui.QFont()
+        font.setFamily("Harlow Solid Italic")
+        font.setPointSize(14)
+        font.setItalic(True)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(CarrelloView)
+        self.label_2.setGeometry(QtCore.QRect(570, 320, 61, 20))
+        font = QtGui.QFont()
+        font.setFamily("Harlow Solid Italic")
+        font.setPointSize(14)
+        font.setItalic(True)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
 
         self.retranslateUi(CarrelloView)
         QtCore.QMetaObject.connectSlotsByName(CarrelloView)
@@ -131,6 +158,10 @@ class Ui_CarrelloView(object):
         self.pushButton_3.setText(_translate("CarrelloView", "Modifica"))
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
+        self.label.setText(_translate("CarrelloView", "Prezzo:"))
+        self.label_2.setText(_translate("CarrelloView", "Costo"))
+
+        self.label_2.setText(_translate("CarrelloView", self.controller.getTotale))
 
         for Prodotto in self.model().lista_prodotti:
 
@@ -145,13 +176,11 @@ class Ui_CarrelloView(object):
 
 
 
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    CarrelloView= QtWidgets.QDialog()
+    CarrelloView = QtWidgets.QDialog()
     ui = Ui_CarrelloView()
     ui.setupUi(CarrelloView)
     CarrelloView.show()
     sys.exit(app.exec_())
-
