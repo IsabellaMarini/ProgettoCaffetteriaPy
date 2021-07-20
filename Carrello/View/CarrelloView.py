@@ -1,33 +1,23 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
-from Carrello.Model.Carrello import Carrello
-from Carrello.Controller.ControllerCarrello import ControllerCarrello
+
+
 from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 
 
 class Ui_CarrelloView(object):
-    def __init__(self):
-        self.model = Carrello
-        self.controller = ControllerCarrello
+    def __init__(self, carrello):
+        self.controller = carrello
 
     def setupUi(self, CarrelloView):
         CarrelloView.setObjectName("CarrelloView")
-        CarrelloView.resize(968, 579)
-        palette = QtGui.QPalette()
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
-        CarrelloView.setPalette(palette)
+
+        CarrelloView.resize(662, 559)
+
         self.pushButton = QtWidgets.QPushButton(CarrelloView)
-        self.pushButton.setGeometry(QtCore.QRect(140, 370, 121, 61))
+        self.pushButton.setGeometry(QtCore.QRect(20, 480, 121, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -41,15 +31,33 @@ class Ui_CarrelloView(object):
         self.pushButton.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(15)
+        font.setPointSize(18)
         font.setItalic(True)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.listView = QtWidgets.QListView(CarrelloView)
-        self.listView.setGeometry(QtCore.QRect(380, 100, 281, 251))
+
+        self.listView.setGeometry(QtCore.QRect(50, 80, 571, 311))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Text, brush)
+        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Text, brush)
+        self.listView.setPalette(palette)
+        font = QtGui.QFont()
+        font.setFamily("Harlow Solid Italic")
+        font.setPointSize(16)
+        font.setItalic(True)
+        self.listView.setFont(font)
         self.listView.setObjectName("listView")
         self.Carrello = QtWidgets.QLabel(CarrelloView)
-        self.Carrello.setGeometry(QtCore.QRect(470, 60, 81, 31))
+        self.Carrello.setGeometry(QtCore.QRect(270, 20, 251, 51))
+
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -63,13 +71,13 @@ class Ui_CarrelloView(object):
         self.Carrello.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(15)
+        font.setPointSize(24)
         font.setItalic(True)
         self.Carrello.setFont(font)
         self.Carrello.setAccessibleName("")
         self.Carrello.setObjectName("Carrello")
         self.pushButton_3 = QtWidgets.QPushButton(CarrelloView)
-        self.pushButton_3.setGeometry(QtCore.QRect(330, 370, 121, 61))
+        self.pushButton_3.setGeometry(QtCore.QRect(190, 480, 121, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -83,12 +91,12 @@ class Ui_CarrelloView(object):
         self.pushButton_3.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(15)
+        font.setPointSize(18)
         font.setItalic(True)
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_2 = QtWidgets.QPushButton(CarrelloView)
-        self.pushButton_2.setGeometry(QtCore.QRect(710, 370, 131, 61))
+        self.pushButton_2.setGeometry(QtCore.QRect(340, 480, 131, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -102,12 +110,12 @@ class Ui_CarrelloView(object):
         self.pushButton_2.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(15)
+        font.setPointSize(18)
         font.setItalic(True)
         self.pushButton_2.setFont(font)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_4 = QtWidgets.QPushButton(CarrelloView)
-        self.pushButton_4.setGeometry(QtCore.QRect(510, 370, 121, 61))
+        self.pushButton_4.setGeometry(QtCore.QRect(500, 480, 121, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -121,26 +129,34 @@ class Ui_CarrelloView(object):
         self.pushButton_4.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(15)
+        font.setPointSize(18)
         font.setItalic(True)
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         self.label = QtWidgets.QLabel(CarrelloView)
-        self.label.setGeometry(QtCore.QRect(480, 310, 91, 31))
+
+        self.label.setGeometry(QtCore.QRect(240, 410, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(14)
+        font.setPointSize(18)
+
         font.setItalic(True)
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(CarrelloView)
-        self.label_2.setGeometry(QtCore.QRect(570, 320, 61, 20))
+
+        self.label_2.setGeometry(QtCore.QRect(350, 410, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(14)
+        font.setPointSize(18)
         font.setItalic(True)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
+
+
+        self.model = QtGui.QStandardItemModel()
+        self.listView.setModel(self.model)
+
 
         self.retranslateUi(CarrelloView)
         QtCore.QMetaObject.connectSlotsByName(CarrelloView)
@@ -158,13 +174,16 @@ class Ui_CarrelloView(object):
         self.pushButton_3.setText(_translate("CarrelloView", "Modifica"))
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
-        self.label.setText(_translate("CarrelloView", "Prezzo:"))
-        self.label_2.setText(_translate("CarrelloView", print(self.model().calcolaTotale)))
 
-        for Prodotto in self.model().lista_prodotti:
+        self.label.setText(_translate("CarrelloView", "totale:"))
+        self.label_2.setText(_translate("CarrelloView", ""))
+
+
+        for i in self.controller.get_carrello():
+            app = i.get_nome()
 
             item = QStandardItem()
-            item.setText(Prodotto.get_nome())
+            item.setText(app)
             item.setEditable(False)
             font = item.font()
             font.setPointSize(18)

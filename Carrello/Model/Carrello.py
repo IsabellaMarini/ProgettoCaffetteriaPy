@@ -8,17 +8,8 @@ class Carrello():
         super(Carrello, self).__init__()
         self.lista_prodotti= []
 
-    def aggiungi_al_carrello(self):
-        for prodotto_da_aggiungere in self.lista_prodotti:
-            self.lista_prodotti.append(Prodotto(
-                prodotto_da_aggiungere["nome"],
-                prodotto_da_aggiungere["immagine"],
-                prodotto_da_aggiungere["listaIngredienti"],
-                prodotto_da_aggiungere["categoria"],
-                prodotto_da_aggiungere["sottocategoria"],
-                prodotto_da_aggiungere["prezzo"]
-            )
-            )
+    def aggiungi_al_carrello(self, prodotto_da_aggiugnere):
+        self.lista_prodotti.append(prodotto_da_aggiugnere)
 
     def calcolaTotale(self):
         prezzi=[]
