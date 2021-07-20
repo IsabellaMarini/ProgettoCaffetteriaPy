@@ -246,6 +246,8 @@ class Ui_ViewProdotto(object):
 
 
 
+
+
     def retranslateUi(self, ViewProdotto):
         _translate = QtCore.QCoreApplication.translate
         ViewProdotto.setWindowTitle(_translate("ViewProdotto", "Prodotto"))
