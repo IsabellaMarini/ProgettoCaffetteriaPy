@@ -1,5 +1,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QStandardItem
+
 from Carrello.Model.Carrello import Carrello
 from Carrello.Controller.ControllerCarrello import ControllerCarrello
 from Prodotto.View.ViewProdotto import Ui_ViewProdotto
@@ -130,12 +132,30 @@ class Ui_CarrelloView(object):
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
 
+        b=self.controller().getAggiungi()
+        self.List=b
+
+        for i in self.List:
+            a = i.get_nome()
+
+            item = QStandardItem()
+            item.setText(a)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
+
+
+
+
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    CarrelloView = QtWidgets.QDialog()
+    CarrelloView= QtWidgets.QDialog()
     ui = Ui_CarrelloView()
     ui.setupUi(CarrelloView)
-    CarrelloView.show()
+    CarrelloView().show()
     sys.exit(app.exec_())
+
