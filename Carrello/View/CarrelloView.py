@@ -1,4 +1,3 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
@@ -7,13 +6,16 @@ from PyQt5.QtGui import QStandardItem
 from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 
+
 class Ui_CarrelloView(object):
     def __init__(self, carrello):
         self.controller = carrello
 
     def setupUi(self, CarrelloView):
         CarrelloView.setObjectName("CarrelloView")
+
         CarrelloView.resize(662, 559)
+
         self.pushButton = QtWidgets.QPushButton(CarrelloView)
         self.pushButton.setGeometry(QtCore.QRect(20, 480, 121, 61))
         palette = QtGui.QPalette()
@@ -34,6 +36,7 @@ class Ui_CarrelloView(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.listView = QtWidgets.QListView(CarrelloView)
+
         self.listView.setGeometry(QtCore.QRect(50, 80, 571, 311))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
@@ -54,6 +57,7 @@ class Ui_CarrelloView(object):
         self.listView.setObjectName("listView")
         self.Carrello = QtWidgets.QLabel(CarrelloView)
         self.Carrello.setGeometry(QtCore.QRect(270, 20, 251, 51))
+
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -130,14 +134,17 @@ class Ui_CarrelloView(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         self.label = QtWidgets.QLabel(CarrelloView)
+
         self.label.setGeometry(QtCore.QRect(240, 410, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
         font.setPointSize(18)
+
         font.setItalic(True)
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(CarrelloView)
+
         self.label_2.setGeometry(QtCore.QRect(350, 410, 91, 41))
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
@@ -149,6 +156,7 @@ class Ui_CarrelloView(object):
 
         self.model = QtGui.QStandardItemModel()
         self.listView.setModel(self.model)
+
 
         self.retranslateUi(CarrelloView)
         QtCore.QMetaObject.connectSlotsByName(CarrelloView)
@@ -166,8 +174,10 @@ class Ui_CarrelloView(object):
         self.pushButton_3.setText(_translate("CarrelloView", "Modifica"))
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
+
         self.label.setText(_translate("CarrelloView", "totale:"))
         self.label_2.setText(_translate("CarrelloView", ""))
+
 
         for i in self.controller.get_carrello():
             app = i.get_nome()
@@ -191,4 +201,3 @@ if __name__ == "__main__":
     ui.setupUi(CarrelloView)
     CarrelloView.show()
     sys.exit(app.exec_())
-

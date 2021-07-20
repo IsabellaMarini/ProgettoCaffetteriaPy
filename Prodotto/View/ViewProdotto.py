@@ -1,6 +1,3 @@
-
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Prodotto.Model.Prodotto import Prodotto
 from Prodotto.Controller.ControllerProdotto import ControllerProdotto
