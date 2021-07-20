@@ -20,6 +20,12 @@ class Carrello():
             )
             )
 
+    def calcolaTotale(self):
+        prezzi=[]
+        for prodotto in self.lista_prodotti:
+            prezzi.append(prodotto["prezzo"])
+        costo=sum(prezzi)
+        return costo
 
     def confermaOrdine(self):
         n=8
