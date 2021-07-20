@@ -5,8 +5,11 @@ class ControllerCarrello():
         super(ControllerCarrello, self).__init__()
         self.Model=Carrello()
 
-    def getAggiungi(self):
-        self.Model.aggiungi_al_carrello()
+    def get_carrello(self):
+        return self.Model.lista_prodotti
+
+    def getAggiungi(self, Prodotto):
+        self.Model.aggiungi_al_carrello(Prodotto)
 
     def getTotale(self):
         return self.Model.calcolaTotale()

@@ -9,9 +9,9 @@ from Prodotto.View.ViewPersonalizzazione import Ui_Personalizzazione
 
 class Ui_ViewProdotto(object):
 
-    def __init__(self,Prodotto):
+    def __init__(self,Prodotto,Carrello):
         self.prodotto = Prodotto
-
+        self.carrello = Carrello
 
     def setupUi(self, ViewProdotto):
         ViewProdotto.setObjectName("ViewProdotto")
@@ -266,7 +266,7 @@ class Ui_ViewProdotto(object):
 
     def personalizza(self):
         self.Personalizzazione = QtWidgets.QDialog()
-        self.ui = Ui_Personalizzazione(self.prodotto)
+        self.ui = Ui_Personalizzazione(self.prodotto, self.carrello)
         self.ui.setupUi(self.Personalizzazione)
         self.Personalizzazione.show()
 

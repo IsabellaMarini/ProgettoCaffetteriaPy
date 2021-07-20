@@ -3,11 +3,15 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Carrello.Controller.ControllerCarrello import ControllerCarrello
+
 from Carrello.View.CarrelloView import Ui_CarrelloView
 from Menu.View.ViewMenu import Ui_Menu
 
 
 class Ui_MainWindowCliente(object):
+    def __init__(self):
+        self.carrello = ControllerCarrello()
     def setupUi(self, MainWindowCliente):
         MainWindowCliente.setObjectName("MainWindowCliente")
         MainWindowCliente.resize(752, 551)
@@ -225,12 +229,12 @@ class Ui_MainWindowCliente(object):
 
     def go_menu(self):
         self.Menu = QtWidgets.QDialog()
-        self.ui = Ui_Menu()
+        self.ui = Ui_Menu(self.carrello)
         self.ui.setupUi(self.Menu)
         self.Menu.show()
 
     def go_carrello(self):
-        self.Carrello = QtWidgets.QDialog()
-        self.ui = Ui_CarrelloView()
-        self.ui.setupUi(self.Carrello)
-        self.Carrello.show()
+        self.CarrelloView = QtWidgets.QDialog()
+        self.ui = Ui_CarrelloView(self.carrello)
+        self.ui.setupUi(self.CarrelloView)
+        self.CarrelloView.show()

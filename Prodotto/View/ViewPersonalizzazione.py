@@ -1,14 +1,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
-from Prodotto.Model.Personalizzazione import Personalizzazione
+
+
+
 
 
 class Ui_Personalizzazione(object):
 
 
-    def __init__(self,Prodotto):
+    def __init__(self,Prodotto, carrello):
         self.prodotto = Prodotto
-
+        self.carrello = carrello
 
     def setupUi(self, Personalizzazione):
         Personalizzazione.setObjectName("Personalizzazione")
@@ -155,6 +157,7 @@ class Ui_Personalizzazione(object):
         personalizzazione = self.prodotto.get_personalizzazione_by_index(selected)
 
         self.prodotto.personalizza(personalizzazione)
+        self.carrello.getAggiungi(self.prodotto)
 
 
     def clicked(self):

@@ -7,6 +7,8 @@ from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 
 class Ui_Menu(object):
+    def __init__(self, carrello):
+        self.carrello = carrello
     def setupUi(self, Menu):
         Menu.setObjectName("Menu")
         Menu.resize(794, 608)
@@ -182,6 +184,6 @@ class Ui_Menu(object):
 
 
         self.ViewProdotto = QtWidgets.QDialog()
-        self.ui = Ui_ViewProdotto(prodotto_selezionato)
+        self.ui = Ui_ViewProdotto(prodotto_selezionato, self.carrello)
         self.ui.setupUi(self.ViewProdotto)
         self.ViewProdotto.show()
