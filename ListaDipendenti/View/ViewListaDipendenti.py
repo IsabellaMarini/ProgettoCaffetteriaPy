@@ -133,6 +133,8 @@ class Ui_ListaDipendentiView(object):
             self.model.appendRow(item)
 
 
+
+
     def clicked(self):
         selected = self.listView.selectedIndexes()[0].row()
         dipendente_selezionato = self.controller.Getdipendente_by_index(selected)
