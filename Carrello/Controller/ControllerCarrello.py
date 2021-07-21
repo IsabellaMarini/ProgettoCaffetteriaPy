@@ -1,9 +1,9 @@
 from Carrello.Model.Carrello import Carrello
 
 class ControllerCarrello():
-    def __init__(self):
+    def __init__(self, login):
         super(ControllerCarrello, self).__init__()
-        self.Model = Carrello()
+        self.Model = Carrello(login)
 
     def get_carrello(self):
         return self.Model.lista_prodotti

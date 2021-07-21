@@ -10,8 +10,10 @@ from Menu.View.ViewMenu import Ui_Menu
 
 
 class Ui_MainWindowCliente(object):
-    def __init__(self):
-        self.carrello = ControllerCarrello()
+    def __init__(self, login):
+        self.login = login
+        self.carrello = ControllerCarrello(self.login)
+
     def setupUi(self, MainWindowCliente):
         MainWindowCliente.setObjectName("MainWindowCliente")
         MainWindowCliente.resize(752, 551)
@@ -236,6 +238,6 @@ class Ui_MainWindowCliente(object):
 
     def go_carrello(self):
         self.CarrelloView = QtWidgets.QDialog()
-        self.ui = Ui_CarrelloView(self.carrello)
+        self.ui = Ui_CarrelloView(self.carrello, self.login)
         self.ui.setupUi(self.CarrelloView)
         self.CarrelloView.show()

@@ -9,6 +9,7 @@ from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 class Ui_Menu(object):
     def __init__(self, carrello):
         self.carrello = carrello
+
     def setupUi(self, Menu):
         Menu.setObjectName("Menu")
         Menu.resize(794, 608)
