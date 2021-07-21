@@ -5,8 +5,10 @@ class ControllerListaDipendenti():
         super(ControllerListaDipendenti, self).__init__()
         self.Model= ListaDipendenti()
 
+
+
     def getListaDipendente(self):
-        return self.Model.ListaDipendente()
+        return self.Model.ListaCompleta()
 
     def getAggiungiDipendente(self):
         self.Model.aggiungiDipendente()
