@@ -1,7 +1,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerListaDipendenti
+from ListaDipendenti.View.ViewListaDipendenti import Ui_ListaDipendentiView
+
 
 class Ui_MainWindowAmministratore(object):
+    def __init__(self):
+        self.gestionedipendenti = ControllerListaDipendenti()
     def setupUi(self, MainWindowAmministratore):
         MainWindowAmministratore.setObjectName("MainWindowAmministratore")
         MainWindowAmministratore.resize(752, 551)
@@ -203,6 +208,8 @@ class Ui_MainWindowAmministratore(object):
         self.retranslateUi(MainWindowAmministratore)
         QtCore.QMetaObject.connectSlotsByName(MainWindowAmministratore)
 
+        self.pushButton_2.clicked.connect(self.go_gestionedipendenti)
+
     def retranslateUi(self, MainWindowAmministratore):
         _translate = QtCore.QCoreApplication.translate
         MainWindowAmministratore.setWindowTitle(_translate("MainWindowAmministratore", "Home"))
@@ -212,3 +219,9 @@ class Ui_MainWindowAmministratore(object):
         self.pushButton_4.setText(_translate("MainWindowAmministratore", "Storico Prenotazioni"))
         self.label.setText(_translate("MainWindowAmministratore", "  Benvenuti nell\'app del "))
         self.label_2.setText(_translate("MainWindowAmministratore", "Penguin Cafè"))
+
+    def go_gestionedipendenti(self):
+        self.ListaDipendenti = QtWidgets.QDialog()
+        self.ui = Ui_ListaDipendentiView(self.gestionedipendenti)
+        self.ui.setupUi(self.ListaDipendenti)
+        self.ListaDipendenti.show()

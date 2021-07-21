@@ -6,7 +6,7 @@ class ControllerListaDipendenti():
         self.Model= ListaDipendenti
 
     def getListaDipendente(self):
-        self.Model.ListaDipendente()
+        return self.Model.ListaDipendente()
 
     def getAggiungiDipendente(self):
         self.Model.aggiungiDipendente()
