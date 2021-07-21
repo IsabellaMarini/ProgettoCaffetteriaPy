@@ -216,6 +216,7 @@ class Ui_MainWindowCliente(object):
         self.pushButton.clicked.connect(self.go_menu)
         self.pushButton_3.clicked.connect(self.go_carrello)
 
+
     def retranslateUi(self, MainWindowCliente):
         _translate = QtCore.QCoreApplication.translate
         MainWindowCliente.setWindowTitle(_translate("MainWindowCliente", "Home"))

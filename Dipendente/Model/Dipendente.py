@@ -7,3 +7,6 @@ class Dipendente():
         self.email=email
         self.password=password
 
+    def get_dipendente(self):
+        stringa = self.nome + " " + self.cognome
+        return stringa
