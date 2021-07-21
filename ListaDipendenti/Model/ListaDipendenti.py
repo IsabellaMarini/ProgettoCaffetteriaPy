@@ -23,9 +23,10 @@ class ListaDipendenti():
                                        dipendenteDaAggiungere["password"]
                                      ))
 
-    def eliminaDipendente(self):
-        self.listadipendenti.remove(Dipendente)
+    def eliminaDipendente(self, index):
+        self.listadipendenti.pop(index)
 
 
-
+    def getdipendente_by_index(self, index):
+        return self.listadipendenti[index]
 
