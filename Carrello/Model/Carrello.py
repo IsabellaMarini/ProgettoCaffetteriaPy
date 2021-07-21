@@ -1,13 +1,14 @@
 import time
 from Prodotto.Model.Prodotto import Prodotto
-
+from Login.Controller.ControllerLogin import ControllerLogin
 
 class Carrello():
 
-    def __init__(self):
+    def __init__(self, login):
         super(Carrello, self).__init__()
-        self.lista_prodotti= []
+        self.lista_prodotti=[]
         self.codice = None
+        self.login = login
 
 
     def aggiungi_al_carrello(self, prodotto_da_aggiugnere):
@@ -27,8 +28,10 @@ class Carrello():
         return costo.__round__(2)
 
     def confermaOrdine(self):
-        ts = time.time()
-        self.codice = ts
+        if self.calcolaTotale() != 0:
+            ts = time.time()
+            self.codice = self.login.getEmail()+ str(ts)
+            print(self.codice)
 
 
 

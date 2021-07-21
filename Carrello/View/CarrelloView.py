@@ -10,8 +10,9 @@ from PyQt5.QtGui import QStandardItem
 class Ui_CarrelloView(object):
 
 
-    def __init__(self, carrello):
+    def __init__(self, carrello, login):
         self.controller = carrello
+        self.login = login
 
     def setupUi(self, CarrelloView):
         CarrelloView.setObjectName("CarrelloView")
@@ -165,6 +166,7 @@ class Ui_CarrelloView(object):
 
         self.pushButton_2.clicked.connect(self.svouta)
         self.pushButton_3.clicked.connect(self.elimina)
+        self.pushButton_4.clicked.connect(self.conferma)
 
 
 
@@ -226,7 +228,7 @@ class Ui_CarrelloView(object):
 
 
     def conferma(self):
-        print(self.controller.Conferma())
+        self.controller.Conferma()
 
     def elimina(self):
 
