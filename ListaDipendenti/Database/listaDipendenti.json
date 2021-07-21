@@ -1,27 +1,26 @@
 [
 {
-  "dipendente1" :{
   "nome": "Aldo",
   "cognome": "Paganica",
   "numero": "3206520691",
   "email": "aldo.paganica@gmail.com",
   "password": "950327"
  },
-  "dipendente2" :{
+  {
     "nome": "Francesco",
     "cognome" : "Rossi",
     "numero" : "3319504893",
     "email" : "francesco.rossi21@outlook.it",
     "password" : "204123"
   },
-  "dipendente3":{
+  {
     "nome" : "Elisa",
     "cognome" : "Bianchi",
     "numero" : "3894523809",
     "email" : "elisa.bianchi12@gmail.com",
     "password" : "458972"
   },
-  "dipendente4":{
+  {
     "nome" : "Sara",
     "cognome" : "Neri",
     "numero" : "3237801548",
@@ -29,6 +28,4 @@
     "password" : "010357"
   }
 
-
-}
 ]

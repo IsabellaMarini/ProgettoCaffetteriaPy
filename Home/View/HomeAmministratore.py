@@ -5,8 +5,7 @@ from ListaDipendenti.View.ViewListaDipendenti import Ui_ListaDipendentiView
 
 
 class Ui_MainWindowAmministratore(object):
-    def __init__(self):
-        self.gestionedipendenti = ControllerListaDipendenti()
+
     def setupUi(self, MainWindowAmministratore):
         MainWindowAmministratore.setObjectName("MainWindowAmministratore")
         MainWindowAmministratore.resize(752, 551)
@@ -222,6 +221,6 @@ class Ui_MainWindowAmministratore(object):
 
     def go_gestionedipendenti(self):
         self.ListaDipendenti = QtWidgets.QDialog()
-        self.ui = Ui_ListaDipendentiView(self.gestionedipendenti)
+        self.ui = Ui_ListaDipendentiView()
         self.ui.setupUi(self.ListaDipendenti)
         self.ListaDipendenti.show()

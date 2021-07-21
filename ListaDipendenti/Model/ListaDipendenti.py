@@ -8,10 +8,12 @@ class ListaDipendenti():
         self.listadipendenti = []
         with open("ListaDipendenti/Database/listaDipendenti.json") as l:
             appoggio = json.load(l)
-        self.listadipendenti.append(appoggio)
+        for dipendente in appoggio:
+            self.listadipendenti.append(Dipendente(dipendente["nome"],dipendente["cognome"],dipendente["numero"],
+                                                   dipendente["email"],dipendente["password"]))
 
 
-    def ListaDipendente(self):
+    def ListaCompleta(self):
         return self.listadipendenti
 
     def aggiungiDipendente(self):
