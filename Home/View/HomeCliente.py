@@ -3,6 +3,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from AreaRiservata.View.AreaRiservata import Ui_AreaRiservata
 from Carrello.Controller.ControllerCarrello import ControllerCarrello
 from Carrello.View.CarrelloView import Ui_CarrelloView
 
@@ -217,6 +218,7 @@ class Ui_MainWindowCliente(object):
 
         self.pushButton.clicked.connect(self.go_menu)
         self.pushButton_3.clicked.connect(self.go_carrello)
+        self.pushButton_2.clicked.connect(self.go_AreaRiservata)
 
 
     def retranslateUi(self, MainWindowCliente):
@@ -241,3 +243,9 @@ class Ui_MainWindowCliente(object):
         self.ui = Ui_CarrelloView(self.carrello, self.login)
         self.ui.setupUi(self.CarrelloView)
         self.CarrelloView.show()
+
+    def go_AreaRiservata(self):
+        self.AreaRiservata = QtWidgets.QWidget()
+        self.ui = Ui_AreaRiservata(self.login)
+        self.ui.setupUi(self.AreaRiservata)
+        self.AreaRiservata.show()

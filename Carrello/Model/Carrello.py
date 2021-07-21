@@ -1,4 +1,8 @@
+import pickle
 import time
+import os
+
+from OrdiniAttivi.Model.OrdiniAttivi import OrdiniAttivi
 from Prodotto.Model.Prodotto import Prodotto
 from Login.Controller.ControllerLogin import ControllerLogin
 
@@ -29,10 +33,21 @@ class Carrello():
 
     def confermaOrdine(self):
         if self.calcolaTotale() != 0:
+            lista = []
             ts = time.time()
             self.codice = self.login.getEmail()+ str(ts)
             print(self.codice)
-
+            file_path = "OrdiniAttivi/Database/ordiniAttivi.pickle"
+            if os.stat(file_path).st_size != 0:
+                with open(file_path, 'rb') as f:
+                    lista.append(pickle.load(f))
+                f.close()
+            with open('OrdiniAttivi/Database/ordiniAttivi.pickle', 'wb') as handle:
+                app = OrdiniAttivi(self.lista_prodotti, self.codice)
+                lista.append(app)
+                pickle.dump(lista, handle)
+            handle.close()
+            self.svuotaCarrello()
 
 
 

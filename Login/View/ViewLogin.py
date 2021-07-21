@@ -108,13 +108,13 @@ class Ui_Window(object):
 
     def go_homeD(self):
         self.MainWindowDipendente = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindowDipendente(self.controller)
+        self.ui = Ui_MainWindowDipendente()
         self.ui.setupUi(self.MainWindowDipendente)
         self.MainWindowDipendente.show()
 
     def go_homeA(self):
         self.MainWindowAmministratore = QtWidgets.QMainWindow()
-        self.ui = Ui_MainWindowAmministratore(self.controller)
+        self.ui = Ui_MainWindowAmministratore()
         self.ui.setupUi(self.MainWindowAmministratore)
         self.MainWindowAmministratore.show()
 
