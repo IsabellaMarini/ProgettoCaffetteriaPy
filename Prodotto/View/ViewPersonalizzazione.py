@@ -157,13 +157,14 @@ class Ui_Personalizzazione(object):
         personalizzazione = self.prodotto.get_personalizzazione_by_index(selected)
 
         self.prodotto.personalizza(personalizzazione)
-        self.carrello.getAggiungi(self.prodotto)
+        app = self.prodotto
+        self.carrello.getAggiungi(app)
 
 
     def clicked(self):
 
         self.conferma()
-        self.Personalizzazione = QtWidgets.QDialog()
-        self.ui = Ui_Personalizzazione(self.prodotto, self.carrello)
-        self.ui.setupUi(self.Personalizzazione)
-        self.Personalizzazione.show()
+        self.chiudi
+
+    def chiudi(self):
+        self.close()

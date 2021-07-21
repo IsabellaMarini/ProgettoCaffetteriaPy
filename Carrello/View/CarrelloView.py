@@ -163,17 +163,18 @@ class Ui_CarrelloView(object):
         self.retranslateUi(CarrelloView)
         QtCore.QMetaObject.connectSlotsByName(CarrelloView)
 
-        #self.pushButton.clicked.connect(Ui_ViewProdotto)
-        #self.pushButton_2.clicked.connect()
-        #self.pushButton_3.clicked.connect()
-        #self.pushButton_4.clicked.connect()
+        self.pushButton_2.clicked.connect(self.svouta)
+        self.pushButton_3.clicked.connect(self.elimina)
+
+
+
 
     def retranslateUi(self, CarrelloView):
         _translate = QtCore.QCoreApplication.translate
         CarrelloView.setWindowTitle(_translate("CarrelloView", "CarrelloView"))
         self.pushButton.setText(_translate("CarrelloView", "Indietro"))
         self.Carrello.setText(_translate("CarrelloView", "Carrello"))
-        self.pushButton_3.setText(_translate("CarrelloView", "Modifica"))
+        self.pushButton_3.setText(_translate("CarrelloView", "Elimina"))
         self.pushButton_2.setText(_translate("CarrelloView", "Svuota"))
         self.pushButton_4.setText(_translate("CarrelloView", "Conferma"))
 
@@ -200,15 +201,65 @@ class Ui_CarrelloView(object):
             self.model.appendRow(item)
 
     def svouta(self):
+
+        self.model.clear()
         self.controller.svuotaCarrello()
+        stringa = str(self.controller.getTotale()) + " €"
+        self.label_2.setText(stringa)
+
+        for i in self.controller.get_carrello():
+            app1 = i.get_nome()
+            app2 = i.personalizzazione.tipo
+
+            app3 = float(i.prezzo)
+            app4 = float(i.personalizzazione.prezzo)
+            prezzo = app3 + app4
+            app5 = str(prezzo)
+            stri = app1 + " ( " + app2 + ")    " + app5 + "€"
+            item = QStandardItem()
+            item.setText(stri)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
 
 
     def conferma(self):
         print(self.controller.Conferma())
 
     def elimina(self):
+
         selected = self.listView.selectedIndexes()[0].row()
         self.controller.eliminaProdotto(selected)
+        self.model.clear()
+        stringa = str(self.controller.getTotale()) + " €"
+        self.label_2.setText(stringa)
+
+        for i in self.controller.get_carrello():
+            app1 = i.get_nome()
+            app2 = i.personalizzazione.tipo
+
+            app3 = float(i.prezzo)
+            app4 = float(i.personalizzazione.prezzo)
+            prezzo = app3 + app4
+            app5 = str(prezzo)
+            stri = app1 + " ( " + app2 + ")    " + app5 + "€"
+            item = QStandardItem()
+            item.setText(stri)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
+
+
+
+    def chiudi(self):
+        self.close()
+
+
+
 
 
 

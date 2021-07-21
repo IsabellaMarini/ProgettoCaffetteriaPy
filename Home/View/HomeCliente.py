@@ -4,8 +4,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from Carrello.Controller.ControllerCarrello import ControllerCarrello
-
 from Carrello.View.CarrelloView import Ui_CarrelloView
+
 from Menu.View.ViewMenu import Ui_Menu
 
 
