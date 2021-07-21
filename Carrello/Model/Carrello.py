@@ -35,7 +35,7 @@ class Carrello():
 
 
     def eliminaProdotto(self, index):
-        self.lista_prodotti.remove(self.lista_prodotti[index])
+        self.lista_prodotti.pop(index)
 
     def svuotaCarrello(self):
         self.lista_prodotti.clear()

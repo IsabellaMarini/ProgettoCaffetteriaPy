@@ -267,3 +267,4 @@ class Ui_ViewProdotto(object):
         self.ui.setupUi(self.Personalizzazione)
         self.Personalizzazione.show()
 
+
