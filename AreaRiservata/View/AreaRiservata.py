@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from AreaRiservata.View.OrdiniAttivi import Ui_OrdiniAttivi
+from AreaRiservata.View.ViewOrdiniAttivi import Ui_OrdiniAttivi
 
 
 class Ui_AreaRiservata(object):
