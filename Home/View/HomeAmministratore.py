@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerListaDipendenti
 from ListaDipendenti.View.ViewListaDipendenti import Ui_ListaDipendentiView
+from Menu.View.ViewMenuAmm import Ui_ViewMenuAmm
 
 
 class Ui_MainWindowAmministratore(object):
@@ -208,6 +209,7 @@ class Ui_MainWindowAmministratore(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindowAmministratore)
 
         self.pushButton_2.clicked.connect(self.go_gestionedipendenti)
+        self.pushButton.clicked.connect(self.go_menuamministratore)
 
     def retranslateUi(self, MainWindowAmministratore):
         _translate = QtCore.QCoreApplication.translate
@@ -224,3 +226,9 @@ class Ui_MainWindowAmministratore(object):
         self.ui = Ui_ListaDipendentiView()
         self.ui.setupUi(self.ListaDipendenti)
         self.ListaDipendenti.show()
+
+    def go_menuamministratore(self):
+        self.ViewMenuAmm = QtWidgets.QDialog()
+        self.ui = Ui_ViewMenuAmm()
+        self.ui.setupUi(self.ViewMenuAmm)
+        self.ViewMenuAmm.show()
