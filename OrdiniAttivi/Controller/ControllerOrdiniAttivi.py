@@ -9,15 +9,17 @@ class ControllerOrdiniAttivi():
         file_path = "OrdiniAttivi/Database/ordiniAttivi.pickle"
         if os.stat(file_path).st_size != 0:
             with open(file_path, 'rb') as f:
-                self.lista_totale.append(pickle.load(f))
+                self.lista_totale = pickle.load(f)
             f.close()
 
     def ordiniCliente(self):
         for i in self.lista_totale:
-            app = i.codice
-            app2 = self.login.email
+
+            app =i.codice
+            app2 = self.login.getEmail()
             num = len(app2)
-            if app[0:num-1] == app2 :
+            print(app[0:num])
+            if app[0:num] == app2 :
                 self.lista.append(i)
         return self.lista
 
