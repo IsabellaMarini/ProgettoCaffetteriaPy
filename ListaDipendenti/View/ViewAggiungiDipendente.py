@@ -1,4 +1,5 @@
 import json
+import pickle
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
@@ -207,11 +208,11 @@ class Ui_AggiungiDipendente(object):
           #  QMessageBox.critical(self, 'Errore', "Per favore, inserisci tutte le informazioni richieste",
                                 # QMessageBox.Ok, QMessageBox.Ok)
        # else:
-        self.controller2.aggiungiDipendente(
-            Dipendente( nome, cognome, numero, email, password))
-
-
-
+        app=self.controller2.aggiungiDipendente(
+            Dipendente(nome, cognome, numero, email, password))
+        with open('ListaDipendenti.py/Database/listaDipendenti.pickle', 'wb') as handle:
+            pickle.dump(app, handle, pickle.HIGHEST_PROTOCOL)
+        handle.close()
 
 
 
