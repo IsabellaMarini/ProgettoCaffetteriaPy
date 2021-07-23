@@ -1,8 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
-
-
+from Prodotto.Model.Personalizzazione import Personalizzazione
 
 
 class Ui_Personalizzazione(object):
@@ -114,7 +113,7 @@ class Ui_Personalizzazione(object):
         self.retranslateUi(Personalizzazione)
         QtCore.QMetaObject.connectSlotsByName(Personalizzazione)
 
-        self.pushButton.clicked.connect(self.clicked)
+        self.pushButton.clicked.connect(self.conferma)
 
 
 
@@ -153,18 +152,17 @@ class Ui_Personalizzazione(object):
     def conferma(self):
         selected = self.listView.selectedIndexes()[0].row()
 
-
-        personalizzazione = self.prodotto.get_personalizzazione_by_index(selected)
-
-        self.prodotto.personalizza(personalizzazione)
-        app = self.prodotto
-        self.carrello.getAggiungi(app)
+        app = self.prodotto.get_personalizzazione_by_index(selected)
+        app1 = str(app.tipo)
+        app2 = float(app.prezzo)
+        appoggio = Personalizzazione(app1, app2)
 
 
-    def clicked(self):
 
-        self.conferma()
-        self.chiudi
 
-    def chiudi(self):
-        self.close()
+
+
+        self.carrello.getAggiungi(self.prodotto, appoggio)
+
+
+

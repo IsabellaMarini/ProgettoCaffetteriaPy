@@ -8,8 +8,8 @@ class ControllerCarrello():
     def get_carrello(self):
         return self.Model.lista_prodotti
 
-    def getAggiungi(self, Prodotto):
-        self.Model.aggiungi_al_carrello(Prodotto)
+    def getAggiungi(self, Prodotto, personalizzazione):
+        self.Model.aggiungi_al_carrello(Prodotto, personalizzazione)
 
     def getTotale(self):
         return self.Model.calcolaTotale()
