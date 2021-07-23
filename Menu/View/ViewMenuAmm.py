@@ -11,7 +11,8 @@ from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 
 class Ui_ViewMenuAmm(object):
-
+    def __init__(self, carrello):
+        self.carrello=carrello
 
     def setupUi(self, ViewMenuAmm):
         ViewMenuAmm.setObjectName("ViewMenuAmm")
