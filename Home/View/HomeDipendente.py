@@ -1,7 +1,13 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+
+from OrdineDipendente.OrdineDipendenteView import Ui_ViewOrdineDipendente
+from OrdiniAttivi.Controller.ControllerOrdiniAttivi import ControllerOrdiniAttivi
 
 
 class Ui_MainWindowDipendente(object):
+    def __init__(self, login):
+        self.ordini = ControllerOrdiniAttivi(login.model)
     def setupUi(self, MainWindowDipendente):
         MainWindowDipendente.setObjectName("MainWindowDipendente")
         MainWindowDipendente.resize(752, 551)
@@ -125,6 +131,10 @@ class Ui_MainWindowDipendente(object):
         self.retranslateUi(MainWindowDipendente)
         QtCore.QMetaObject.connectSlotsByName(MainWindowDipendente)
 
+        self.pushButton.clicked.connect(self.prendiOrdine)
+
+
+
     def retranslateUi(self, MainWindowDipendente):
         _translate = QtCore.QCoreApplication.translate
         MainWindowDipendente.setWindowTitle(_translate("MainWindowDipendente", "Home"))
@@ -132,3 +142,21 @@ class Ui_MainWindowDipendente(object):
         self.label_2.setText(_translate("MainWindowDipendente", "Penguin Cafè"))
         self.label_3.setText(_translate("MainWindowDipendente", "Inserire codice  ordine:"))
         self.pushButton.setText(_translate("MainWindowDipendente", "Conferma"))
+
+    def popUp(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("Errore!")
+        msg.setText("Codice non esistente!")
+
+        x = msg.exec_()
+
+    def prendiOrdine(self):
+        app = self.lineEdit.text()
+        app2 = self.ordini.convalida_ordine(app)
+        if app2  == 0:
+            self.popUp()
+        else:
+            self.ViewOrdineDipendente = QtWidgets.QDialog()
+            self.ui = Ui_ViewOrdineDipendente(app2)
+            self.ui.setupUi(self.ViewOrdineDipendente)
+            self.ViewOrdineDipendente.show()
