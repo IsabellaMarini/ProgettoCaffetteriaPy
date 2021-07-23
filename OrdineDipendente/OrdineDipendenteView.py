@@ -1,15 +1,17 @@
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
+from OrdiniAttivi.Controller.ControllerOrdiniAttivi import ControllerOrdiniAttivi
 
-class Ui_ViewOrdine(object):
-    def __init__(self, ordine):
-        self.ordine = ordine
 
-    def setupUi(self, ViewOrdine):
-        ViewOrdine.setObjectName("ViewOrdine")
-        ViewOrdine.resize(673, 608)
-        self.listView = QtWidgets.QListView(ViewOrdine)
+class Ui_ViewOrdineDipendente(object):
+    def __init__(self,lista):
+        self.lista = lista
+    def setupUi(self, ViewOrdineDipendente):
+        ViewOrdineDipendente.setObjectName("ViewOrdineDipendente")
+        ViewOrdineDipendente.resize(673, 518)
+        self.listView = QtWidgets.QListView(ViewOrdineDipendente)
         self.listView.setGeometry(QtCore.QRect(50, 70, 571, 371))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
@@ -28,7 +30,7 @@ class Ui_ViewOrdine(object):
         font.setItalic(True)
         self.listView.setFont(font)
         self.listView.setObjectName("listView")
-        self.Carrello = QtWidgets.QLabel(ViewOrdine)
+        self.Carrello = QtWidgets.QLabel(ViewOrdineDipendente)
         self.Carrello.setGeometry(QtCore.QRect(160, 10, 401, 51))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
@@ -48,48 +50,8 @@ class Ui_ViewOrdine(object):
         self.Carrello.setFont(font)
         self.Carrello.setAccessibleName("")
         self.Carrello.setObjectName("Carrello")
-        self.Carrello_2 = QtWidgets.QLabel(ViewOrdine)
-        self.Carrello_2.setGeometry(QtCore.QRect(260, 510, 111, 51))
-        palette = QtGui.QPalette()
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
-        self.Carrello_2.setPalette(palette)
-        font = QtGui.QFont()
-        font.setFamily("Harlow Solid Italic")
-        font.setPointSize(20)
-        font.setItalic(True)
-        self.Carrello_2.setFont(font)
-        self.Carrello_2.setAccessibleName("")
-        self.Carrello_2.setObjectName("Carrello_2")
-        self.Carrello_3 = QtWidgets.QLabel(ViewOrdine)
-        self.Carrello_3.setGeometry(QtCore.QRect(20, 550, 651, 51))
-        palette = QtGui.QPalette()
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.WindowText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.WindowText, brush)
-        self.Carrello_3.setPalette(palette)
-        font = QtGui.QFont()
-        font.setFamily("Harlow Solid Italic")
-        font.setPointSize(18)
-        font.setItalic(True)
-        self.Carrello_3.setFont(font)
-        self.Carrello_3.setAccessibleName("")
-        self.Carrello_3.setObjectName("Carrello_3")
-        self.Carrello_4 = QtWidgets.QLabel(ViewOrdine)
-        self.Carrello_4.setGeometry(QtCore.QRect(230, 440, 111, 51))
+        self.Carrello_4 = QtWidgets.QLabel(ViewOrdineDipendente)
+        self.Carrello_4.setGeometry(QtCore.QRect(220, 460, 111, 51))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -108,8 +70,8 @@ class Ui_ViewOrdine(object):
         self.Carrello_4.setFont(font)
         self.Carrello_4.setAccessibleName("")
         self.Carrello_4.setObjectName("Carrello_4")
-        self.Carrello_5 = QtWidgets.QLabel(ViewOrdine)
-        self.Carrello_5.setGeometry(QtCore.QRect(380, 440, 111, 51))
+        self.Carrello_5 = QtWidgets.QLabel(ViewOrdineDipendente)
+        self.Carrello_5.setGeometry(QtCore.QRect(350, 460, 181, 51))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -129,27 +91,23 @@ class Ui_ViewOrdine(object):
         self.Carrello_5.setAccessibleName("")
         self.Carrello_5.setObjectName("Carrello_5")
 
-
         self.model = QtGui.QStandardItemModel()
         self.listView.setModel(self.model)
 
-        self.retranslateUi(ViewOrdine)
-        QtCore.QMetaObject.connectSlotsByName(ViewOrdine)
+        self.retranslateUi(ViewOrdineDipendente)
+        QtCore.QMetaObject.connectSlotsByName(ViewOrdineDipendente)
 
-    def retranslateUi(self, ViewOrdine):
+
+
+    def retranslateUi(self, ViewOrdineDipendente):
         _translate = QtCore.QCoreApplication.translate
-        ViewOrdine.setWindowTitle(_translate("ViewOrdine", "Ordine"))
-        self.Carrello.setText(_translate("ViewOrdine", "Prodotti dell\'ordine"))
-        self.Carrello_2.setText(_translate("ViewOrdine", "Codice: "))
-        self.Carrello_3.setText(_translate("ViewOrdine", self.ordine.codice))
-        self.Carrello_4.setText(_translate("ViewOrdine", "Totale:"))
-        app = str(self.ordine.get_totale())
-        stringa = app + "€"
-        self.Carrello_5.setText(_translate("ViewOrdine",stringa))
+        ViewOrdineDipendente.setWindowTitle(_translate("ViewOrdineDipendente", "Ordine"))
+        self.Carrello.setText(_translate("ViewOrdineDipendente", "Prodotti dell\'ordine"))
+        self.Carrello_4.setText(_translate("ViewOrdineDipendente", "Totale:"))
+        stringa = str(self.lista.get_totale()) + "€"
+        self.Carrello_5.setText(_translate("ViewOrdineDipendente", stringa))
 
-
-
-        for i in  self.ordine.lista_prodotti:
+        for i in  self.lista.lista_prodotti:
             app1 = i.get_nome()
             app2 = i.personalizzazione.tipo
 
@@ -168,11 +126,3 @@ class Ui_ViewOrdine(object):
 
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    ViewOrdine = QtWidgets.QDialog()
-    ui = Ui_ViewOrdine()
-    ui.setupUi(ViewOrdine)
-    ViewOrdine.show()
-    sys.exit(app.exec_())

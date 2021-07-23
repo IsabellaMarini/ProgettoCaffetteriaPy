@@ -1,10 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
-
-
-
-
-
+from PyQt5.QtWidgets import QMessageBox
 
 
 class Ui_CarrelloView(object):
@@ -229,7 +225,9 @@ class Ui_CarrelloView(object):
 
     def conferma(self):
         self.controller.Conferma()
+        self.popUp(self.controller.Model.codice)
         self.svouta()
+
 
     def elimina(self):
 
@@ -258,9 +256,12 @@ class Ui_CarrelloView(object):
 
 
 
-    def chiudi(self):
-        self.close()
+    def popUp(self, txt):
+        msg = QMessageBox()
+        msg.setWindowTitle("Codice")
+        msg.setText(txt)
 
+        x = msg.exec_()
 
 
 
