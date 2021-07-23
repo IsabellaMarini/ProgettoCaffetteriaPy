@@ -1,11 +1,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+from Carrello.Controller.ControllerCarrello import ControllerCarrello
 from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerListaDipendenti
 from ListaDipendenti.View.ViewListaDipendenti import Ui_ListaDipendentiView
 from Menu.View.ViewMenuAmm import Ui_ViewMenuAmm
 
 
 class Ui_MainWindowAmministratore(object):
+
+    def __init__(self, login):
+        self.login=login
+        self.carrello=ControllerCarrello(self.login)
 
     def setupUi(self, MainWindowAmministratore):
         MainWindowAmministratore.setObjectName("MainWindowAmministratore")
@@ -229,6 +234,6 @@ class Ui_MainWindowAmministratore(object):
 
     def go_menuamministratore(self):
         self.ViewMenuAmm = QtWidgets.QDialog()
-        self.ui = Ui_ViewMenuAmm()
+        self.ui = Ui_ViewMenuAmm(self.carrello)
         self.ui.setupUi(self.ViewMenuAmm)
         self.ViewMenuAmm.show()
