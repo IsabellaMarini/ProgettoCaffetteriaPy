@@ -15,17 +15,17 @@ class ListaDipendenti():
         return self.listadipendenti
 
     def aggiungiDipendente(self, dipendente):
-           self.listadipendenti.append(dipendente)
+        self.listadipendenti.append(dipendente)
 
-   # def elimina_ordine(self, ordine):
-       # for i in self.listadipendenti:
-          #  if ordine == i:
-            #    self.listadipendenti.remove(i)
-            #    self.lista.remove(i)
+    def eliminaDipendente(self, dipendente):
+       for i in self.listadipendenti:
+          if dipendente == i:
+              self.listadipendenti.remove(i)
+              self.lista.remove(i)
 
-     #   with open('OrdiniAttivi/Database/ordiniAttivi.pickle', 'wb') as handle:
-     #       pickle.dump(self.listadipendenti, handle, pickle.HIGHEST_PROTOCOL)
-      #  handle.close()
+          with open('ListaDipendenti.py/Database/listaDipendenti.pickle', 'wb') as handle:
+              pickle.dump(self.listadipendenti, handle, pickle.HIGHEST_PROTOCOL)
+       handle.close()
 
 
     def getdipendente_by_index(self, index):
