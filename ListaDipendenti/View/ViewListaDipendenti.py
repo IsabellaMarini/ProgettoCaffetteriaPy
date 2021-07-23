@@ -7,8 +7,7 @@ from PyQt5.QtGui import QStandardItem
 from Dipendente.View.ViewDipendente import Ui_ViewDipendente
 from ListaDipendenti.Model.ListaDipendenti import ListaDipendenti
 from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerListaDipendenti
-
-
+from ListaDipendenti.View.ViewAggiungiDipendente import Ui_AggiungiDipendente
 
 
 class Ui_ListaDipendentiView(object):
@@ -103,6 +102,8 @@ class Ui_ListaDipendentiView(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
 
+
+
         self.model = QtGui.QStandardItemModel()
         self.listView.setModel(self.model)
 
@@ -111,6 +112,7 @@ class Ui_ListaDipendentiView(object):
 
         self.pushButton_3.clicked.connect(self.clicked)
         self.pushButton_4.clicked.connect(self.elimina)
+        self.pushButton_2.clicked.connect(self.aggiungi)
 
     def retranslateUi(self, ListaDipendentiView):
         _translate = QtCore.QCoreApplication.translate
@@ -137,7 +139,7 @@ class Ui_ListaDipendentiView(object):
 
     def clicked(self):
         selected = self.listView.selectedIndexes()[0].row()
-        dipendente_selezionato = self.controller.Getdipendente_by_index(selected)
+        dipendente_selezionato = self.gestionedipendenti.Getdipendente_by_index(selected)
 
         self.ViewDipendente = QtWidgets.QDialog()
         self.ui = Ui_ViewDipendente(dipendente_selezionato)
@@ -148,10 +150,10 @@ class Ui_ListaDipendentiView(object):
     def elimina(self):
 
         selected = self.listView.selectedIndexes()[0].row()
-        self.controller.getEliminaDipendente(selected)
+        self.gestionedipendenti.getEliminaDipendente(selected)
         self.model.clear()
 
-        for i in self.controller.getListaDipendente():
+        for i in self.gestionedipendenti.getListaDipendente():
             app = i.get_dipendente()
 
             item = QStandardItem()
@@ -161,6 +163,15 @@ class Ui_ListaDipendentiView(object):
             font.setPointSize(18)
             item.setFont(font)
             self.model.appendRow(item)
+
+    def aggiungi(self):
+        self.AggiungiDipendente = QtWidgets.QDialog()
+        self.ui = Ui_AggiungiDipendente()
+        self.ui.setupUi(self.AggiungiDipendente)
+        self.AggiungiDipendente.show()
+
+
+
 
 
 
