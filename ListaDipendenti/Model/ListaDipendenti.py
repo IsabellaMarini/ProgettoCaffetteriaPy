@@ -1,4 +1,7 @@
 import json
+import os
+import pickle
+
 from Dipendente.Model.Dipendente import Dipendente
 
 
@@ -6,27 +9,23 @@ class ListaDipendenti():
     def __init__(self):
         super(ListaDipendenti, self).__init__()
         self.listadipendenti = []
-        with open("ListaDipendenti/Database/listaDipendenti.json") as l:
-            appoggio = json.load(l)
-        for dipendente in appoggio:
-            self.listadipendenti.append(Dipendente(dipendente["nome"],dipendente["cognome"],dipendente["numero"],
-                                                   dipendente["email"],dipendente["password"]))
 
 
     def ListaCompleta(self):
         return self.listadipendenti
 
-    def aggiungiDipendente(self):
-        for dipendenteDaAggiungere in self.listadipendenti:
-           self.listadipendenti.append(Dipendente (dipendenteDaAggiungere["nome"],
-                                       dipendenteDaAggiungere["cognome"],
-                                       dipendenteDaAggiungere["numero"],
-                                       dipendenteDaAggiungere["email"],
-                                       dipendenteDaAggiungere["password"]
-                                     ))
+    def aggiungiDipendente(self, dipendente):
+           self.listadipendenti.append(dipendente)
 
-    def eliminaDipendente(self, index):
-        self.listadipendenti.pop(index)
+   # def elimina_ordine(self, ordine):
+       # for i in self.listadipendenti:
+          #  if ordine == i:
+            #    self.listadipendenti.remove(i)
+            #    self.lista.remove(i)
+
+     #   with open('OrdiniAttivi/Database/ordiniAttivi.pickle', 'wb') as handle:
+     #       pickle.dump(self.listadipendenti, handle, pickle.HIGHEST_PROTOCOL)
+      #  handle.close()
 
 
     def getdipendente_by_index(self, index):

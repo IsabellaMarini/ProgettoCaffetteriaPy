@@ -1,6 +1,7 @@
 import json
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 
 from Dipendente.Controller.ControllerDipendente import ControllerDipendente
 from Dipendente.Model.Dipendente import Dipendente
@@ -8,6 +9,10 @@ from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerLista
 
 
 class Ui_AggiungiDipendente(object):
+    def __init__(self, controller, callback):
+        super(Ui_AggiungiDipendente, self).__init__()
+        self.controller2= controller
+        self.callback=callback
     def setupUi(self, AggiungiDipendente):
         AggiungiDipendente.setObjectName("AggiungiDipendente")
         AggiungiDipendente.resize(1050, 669)
@@ -166,11 +171,10 @@ class Ui_AggiungiDipendente(object):
         self.retranslateUi(AggiungiDipendente)
         QtCore.QMetaObject.connectSlotsByName(AggiungiDipendente)
 
-
-        self.controller = ControllerDipendente()
         self.controller2 = ControllerListaDipendenti()
+        self.controller = ControllerDipendente()
 
-
+        self.pushButton.clicked.connect(self.aggiungi_dipendente)
 
     def retranslateUi(self, AggiungiDipendente):
         _translate = QtCore.QCoreApplication.translate
@@ -185,24 +189,28 @@ class Ui_AggiungiDipendente(object):
 
 
     def aggiungi_dipendente(self):
-        app = self.lineEdit.text()
+        nome = self.lineEdit.text()
 
-        app1 = self.lineEdit_2.text()
+        cognome = self.lineEdit_2.text()
 
-        app2 = self.lineEdit_3.text()
+        numero = self.lineEdit_3.text()
 
-        app3 = self.lineEdit.text()
+        email = self.lineEdit_4.text()
 
-        app4 = self.lineEdit.text()
+        password = self.lineEdit_5.text()
 
 
-        self.controller.setNome(app)
-        self.controller.setCognome(app1)
-        self.controller.setNumero(app2)
-        self.controller.setEmail(app3)
-        self.controller.setPassword(app4)
 
-        self.controller2.getAggiungiDipendente()
+
+        #if (
+         #       nome == "" or cognome == "" or numero == "" or email == "" or password == "" ):
+          #  QMessageBox.critical(self, 'Errore', "Per favore, inserisci tutte le informazioni richieste",
+                                # QMessageBox.Ok, QMessageBox.Ok)
+       # else:
+        self.controller2.aggiungiDipendente(
+            Dipendente( nome, cognome, numero, email, password))
+
+
 
 
 
