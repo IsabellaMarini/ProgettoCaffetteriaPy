@@ -2,7 +2,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-from PyQt5.QtGui import QStandardItem
+from PyQt5.QtGui import QStandardItem, QStandardItemModel
 
 from Dipendente.View.ViewDipendente import Ui_ViewDipendente
 from ListaDipendenti.Model.ListaDipendenti import ListaDipendenti
@@ -13,7 +13,7 @@ from ListaDipendenti.View.ViewAggiungiDipendente import Ui_AggiungiDipendente
 class Ui_ListaDipendentiView(object):
     def __init__(self):
         self.gestionedipendenti = ControllerListaDipendenti()
-
+        super(Ui_ListaDipendentiView, self).__init__()
     def setupUi(self, ListaDipendentiView):
         ListaDipendentiView.setObjectName("ListaDipendentiView")
         ListaDipendentiView.resize(986, 604)
@@ -166,10 +166,20 @@ class Ui_ListaDipendentiView(object):
 
     def aggiungi(self):
         self.AggiungiDipendente = QtWidgets.QDialog()
-        self.ui = Ui_AggiungiDipendente()
+        self.ui = Ui_AggiungiDipendente(self.gestionedipendenti, self.update_ui())
         self.ui.setupUi(self.AggiungiDipendente)
         self.AggiungiDipendente.show()
 
+    def update_ui(self):
+        self.listView = QStandardItemModel(self.listView)
+        for dipendente in self.gestionedipendenti.getListaDipendente():
+            item = QStandardItem()
+            item.setText(dipendente.nome + " " + dipendente.cognome + " " + dipendente.numero + " " + dipendente.email + " " + dipendente.password)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.listView.appendRow(item)
 
 
 
