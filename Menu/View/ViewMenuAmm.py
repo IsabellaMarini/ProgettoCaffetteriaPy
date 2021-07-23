@@ -4,8 +4,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 from PyQt5.QtGui import QStandardItem
 
-from Menu.controller.ControllerListaProdotti import ControllerListaProdotti
 from Prodotto.View.ViewPersonalizzazione import Ui_Personalizzazione
+from Menu.controller.ControllerListaProdotti import ControllerListaProdotti
+
 from Prodotto.View.ViewProdotto import Ui_ViewProdotto
 
 

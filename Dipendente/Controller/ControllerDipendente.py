@@ -22,13 +22,16 @@ class ControllerDipendente():
         return self.Model.password
 
     def setNome(self, nome):
-        self.Model.nome=nome
+        self.Model.nome(nome)
 
     def setCognome(self, cognome):
-        self.Model.cognome=cognome
+        self.Model.cognome(cognome)
 
     def setNumero(self, numero):
-        self.Model.numero=numero
+        self.Model.numero(numero)
 
     def setEmail(self, email):
-        self.Model.email=email
+        self.Model.email(email)
+
+    def setPassword(self, password):
+        self.Model.password(password)
