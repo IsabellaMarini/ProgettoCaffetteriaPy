@@ -15,7 +15,8 @@ class Carrello():
         self.login = login
 
 
-    def aggiungi_al_carrello(self, prodotto_da_aggiugnere):
+    def aggiungi_al_carrello(self, prodotto_da_aggiugnere, personalizzazione):
+        prodotto_da_aggiugnere.personalizza(personalizzazione)
         self.lista_prodotti.append(prodotto_da_aggiugnere)
 
     def calcolaTotale(self):

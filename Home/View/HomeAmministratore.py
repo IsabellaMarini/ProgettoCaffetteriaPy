@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerListaDipendenti
 from ListaDipendenti.View.ViewListaDipendenti import Ui_ListaDipendentiView
 from Menu.View.ViewMenuAmm import Ui_ViewMenuAmm
+from StoricoOrdini.View.StoricoOrdiniView import Ui_StoricoOrdini
 
 
 class Ui_MainWindowAmministratore(object):
@@ -210,6 +211,7 @@ class Ui_MainWindowAmministratore(object):
 
         self.pushButton_2.clicked.connect(self.go_gestionedipendenti)
         self.pushButton.clicked.connect(self.go_menuamministratore)
+        self.pushButton_3.clicked.connect(self.go_storico_ordini)
 
     def retranslateUi(self, MainWindowAmministratore):
         _translate = QtCore.QCoreApplication.translate
@@ -232,3 +234,10 @@ class Ui_MainWindowAmministratore(object):
         self.ui = Ui_ViewMenuAmm()
         self.ui.setupUi(self.ViewMenuAmm)
         self.ViewMenuAmm.show()
+
+
+    def go_storico_ordini(self):
+        self.StoricoOrdini = QtWidgets.QDialog()
+        self.ui = Ui_StoricoOrdini()
+        self.ui.setupUi(self.StoricoOrdini)
+        self.StoricoOrdini.show()
