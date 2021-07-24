@@ -84,7 +84,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton_2.setFont(font)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton.setGeometry(QtCore.QRect(20, 530, 201, 61))
+        self.pushButton.setGeometry(QtCore.QRect(150, 530, 201, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -103,7 +103,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.pushButton_4 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_4.setGeometry(QtCore.QRect(900, 530, 211, 61))
+        self.pushButton_4.setGeometry(QtCore.QRect(780, 530, 211, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -122,7 +122,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_5 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_5.setGeometry(QtCore.QRect(620, 530, 221, 61))
+        self.pushButton_5.setGeometry(QtCore.QRect(470, 530, 221, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -140,38 +140,19 @@ class Ui_ViewMenuAmm(object):
         font.setItalic(True)
         self.pushButton_5.setFont(font)
         self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_6 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_6.setGeometry(QtCore.QRect(280, 530, 301, 61))
-        palette = QtGui.QPalette()
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.ButtonText, brush)
-        brush = QtGui.QBrush(QtGui.QColor(120, 120, 120))
-        brush.setStyle(QtCore.Qt.SolidPattern)
-        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.ButtonText, brush)
-        self.pushButton_6.setPalette(palette)
-        font = QtGui.QFont()
-        font.setFamily("Harlow Solid Italic")
-        font.setPointSize(14)
-        font.setItalic(True)
-        self.pushButton_6.setFont(font)
-        self.pushButton_6.setObjectName("pushButton_6")
 
         self.controller = ControllerListaProdotti()
 
         self.model = QtGui.QStandardItemModel()
         self.listView.setModel(self.model)
 
-        self.retranslateUi(ViewMenuAmm)
-        QtCore.QMetaObject.connectSlotsByName(ViewMenuAmm)
-
         self.pushButton_2.clicked.connect(self.bevande)
         self.pushButton_3.clicked.connect(self.cibo)
         self.pushButton_5.clicked.connect(self.clicked)
-        self.pushButton_6.clicked.connect(self.personalizza)
+
+
+        self.retranslateUi(ViewMenuAmm)
+        QtCore.QMetaObject.connectSlotsByName(ViewMenuAmm)
 
     def retranslateUi(self, ViewMenuAmm):
         _translate = QtCore.QCoreApplication.translate
@@ -181,8 +162,6 @@ class Ui_ViewMenuAmm(object):
         self.pushButton.setText(_translate("ViewMenuAmm", "Elimina Prodotto"))
         self.pushButton_4.setText(_translate("ViewMenuAmm", "Aggiungi Prodotto"))
         self.pushButton_5.setText(_translate("ViewMenuAmm", "Visualizza Prodotto"))
-        self.pushButton_6.setText(_translate("ViewMenuAmm", "Visualizza personalizzazioni"))
-
 
         self.aList = self.controller.get_bevande()
         for i in self.aList:
@@ -196,7 +175,6 @@ class Ui_ViewMenuAmm(object):
             font.setPointSize(18)
             item.setFont(font)
             self.model.appendRow(item)
-
 
 
     def bevande(self):
@@ -248,9 +226,11 @@ class Ui_ViewMenuAmm(object):
         self.ViewProdotto.show()
 
 
-    def personalizza(self):
-        self.Personalizzazione = QtWidgets.QDialog()
-        self.ui = Ui_Personalizzazione(self.prodotto, self.carrello)
-        self.ui.setupUi(self.Personalizzazione)
-        self.Personalizzazione.show()
-
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    ViewMenuAmm = QtWidgets.QDialog()
+    ui = Ui_ViewMenuAmm()
+    ui.setupUi(ViewMenuAmm)
+    ViewMenuAmm.show()
+    sys.exit(app.exec_())
