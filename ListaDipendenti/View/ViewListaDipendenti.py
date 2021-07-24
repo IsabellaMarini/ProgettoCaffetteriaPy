@@ -1,5 +1,3 @@
-
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from PyQt5.QtGui import QStandardItem, QStandardItemModel
@@ -12,9 +10,7 @@ from ListaDipendenti.View.ViewAggiungiDipendente import Ui_AggiungiDipendente
 
 class Ui_ListaDipendentiView(object):
     def __init__(self):
-
         self.gestionedipendenti = ControllerListaDipendenti()
-
 
     def setupUi(self, ListaDipendentiView):
         ListaDipendentiView.setObjectName("ListaDipendentiView")
@@ -126,7 +122,7 @@ class Ui_ListaDipendentiView(object):
         self.pushButton_4.setText(_translate("ListaDipendentiView", "Elimina dipendente"))
 
 
-        for i in  self.lista:
+        for i in  self.gestionedipendenti.getListaDipendente():
             app = i.get_dipendente()
 
             item = QStandardItem()
@@ -142,7 +138,7 @@ class Ui_ListaDipendentiView(object):
 
     def clicked(self):
         selected = self.listView.selectedIndexes()[0].row()
-        dipendente_selezionato = self.lista_dinamica.Getdipendente_by_index(selected)
+        dipendente_selezionato = self.gestionedipendenti.Getdipendente_by_index(selected)
 
         self.ViewDipendente = QtWidgets.QDialog()
         self.ui = Ui_ViewDipendente(dipendente_selezionato)
@@ -153,13 +149,11 @@ class Ui_ListaDipendentiView(object):
     def elimina(self):
 
         selected = self.listView.selectedIndexes()[0].row()
-
         app = self.gestionedipendenti.Model.getdipendente_by_index(selected)
         self.gestionedipendenti.getEliminaDipendente(app)
-
         self.model.clear()
 
-        for i in self.lista:
+        for i in self.gestionedipendenti.getListaDipendente():
             app = i.get_dipendente()
 
             item = QStandardItem()
@@ -172,20 +166,15 @@ class Ui_ListaDipendentiView(object):
 
     def aggiungi(self):
         self.AggiungiDipendente = QtWidgets.QDialog()
-        self.ui = Ui_AggiungiDipendente(self.gestionedipendenti, self.update_ui(), self.lista_dinamica)
+        self.ui = Ui_AggiungiDipendente(self.gestionedipendenti, self.update_ui())
         self.ui.setupUi(self.AggiungiDipendente)
         self.AggiungiDipendente.show()
 
-    def closeEvent(self, event):
-        self.gestionedipendenti.getSaveData()
-
     def update_ui(self):
-
         self.model.clear()
 
         for i in self.gestionedipendenti.getListaDipendente():
             app = i.get_dipendente()
-
 
             item = QStandardItem()
             item.setText(app)
