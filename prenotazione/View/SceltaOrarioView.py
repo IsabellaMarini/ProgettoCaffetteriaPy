@@ -55,7 +55,7 @@ class Ui_PrenotazioneView(object):
             for orario in self.orari:
                 tav_num = 0
                 for tavolo in orario['tavoli']:
-                    if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] >= now:
+                    if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] >= int(orario['orario'][1]):
                         self.prenotabile = False
 
                     tav_num += 1
@@ -325,7 +325,7 @@ class Ui_PrenotazioneView(object):
                         if tavolo == tavoloScelto:
                             # print(orario['tavoli'][tavolo])
                              orario['tavoli'][tavolo]['email'] = email
-                             orario['tavoli'][tavolo]['ora'] = now
+                             orario['tavoli'][tavolo]['ora']= int(orario['orario'][1])
 
                     #print(orario['tavoli'])
 
