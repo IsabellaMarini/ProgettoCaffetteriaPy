@@ -8,6 +8,7 @@ from Prodotto.View.ViewPersonalizzazione import Ui_Personalizzazione
 from Menu.controller.ControllerListaProdotti import ControllerListaProdotti
 
 from Prodotto.View.ViewProdotto import Ui_ViewProdotto
+from Prodotto.View.ViewProdottoAmm import Ui_Viewprodottoamm
 
 
 class Ui_ViewMenuAmm(object):
@@ -220,10 +221,10 @@ class Ui_ViewMenuAmm(object):
             prodotto_selezionato = self.controller.get_cibo_by_index(selected)
 
 
-        self.ViewProdotto= QtWidgets.QDialog()
-        self.ui = Ui_ViewProdotto(prodotto_selezionato, self.carrello)
-        self.ui.setupUi(self.ViewProdotto)
-        self.ViewProdotto.show()
+        self.Viewprodottoamm= QtWidgets.QDialog()
+        self.ui = Ui_Viewprodottoamm(prodotto_selezionato)
+        self.ui.setupUi(self.Viewprodottoamm)
+        self.Viewprodottoamm.show()
 
 
 if __name__ == "__main__":
