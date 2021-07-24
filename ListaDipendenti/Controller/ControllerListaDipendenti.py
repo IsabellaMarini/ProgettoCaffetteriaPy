@@ -12,7 +12,9 @@ from Login.Model.Login import Login
 
 class ControllerListaDipendenti():
     def __init__(self):
+        self.Model = ListaDipendenti()
         super(ControllerListaDipendenti, self).__init__()
+
         self.Model= ListaDipendenti()
 
         if os.path.isfile('ListaDipendenti/Database/listaDipendenti.pickle'):
@@ -28,6 +30,7 @@ class ControllerListaDipendenti():
                                  )
                                  with open('ListaDipendenti/Database/listaDipendenti.pickle', 'wb') as handle:
                                         pickle.dump(self.Model, handle, pickle.HIGHEST_PROTOCOL)
+
 
     def getListaDipendente(self):
         return self.Model.ListaCompleta()
@@ -58,4 +61,10 @@ class ControllerListaDipendenti():
 
 
 
+
+    def getSaveData(self):
+        self.Model.saveData()
+
+    def getRefreshData(self):
+        self.Model.refreshData()
 
