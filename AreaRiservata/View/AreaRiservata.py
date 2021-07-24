@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from AreaRiservata.View.ViewOrdiniAttivi import Ui_OrdiniAttivi
+from AreaRiservata.View.ViewPrenotazioniAttive import Ui_PrenotazioniAttive
 
 
 class Ui_AreaRiservata(object):
@@ -90,6 +91,7 @@ class Ui_AreaRiservata(object):
         QtCore.QMetaObject.connectSlotsByName(AreaRiservata)
 
         self.pushButton_2.clicked.connect(self.go_OrdiniAttivi)
+        self.pushButton.clicked.connect(self.go_PrenotazioniAttive)
 
     def retranslateUi(self, AreaRiservata):
         _translate = QtCore.QCoreApplication.translate
@@ -104,3 +106,9 @@ class Ui_AreaRiservata(object):
         self.ui = Ui_OrdiniAttivi(self.login)
         self.ui.setupUi(self.OrdiniAttivi)
         self.OrdiniAttivi.show()
+
+    def go_PrenotazioniAttive(self):
+        self.PrenotazioniAttive = QtWidgets.QDialog()
+        self.ui = Ui_PrenotazioniAttive(self.login)
+        self.ui.setupUi(self.PrenotazioniAttive)
+        self.PrenotazioniAttive.show()
