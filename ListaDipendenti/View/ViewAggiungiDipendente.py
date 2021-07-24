@@ -10,11 +10,10 @@ from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerLista
 
 
 class Ui_AggiungiDipendente(object):
-    def __init__(self, controller, setUpUi, lista_dinamica):
+    def __init__(self, controller, callback):
         super(Ui_AggiungiDipendente, self).__init__()
         self.controller2= controller
-        self.setupUi=setUpUi
-        self.lista_dinamica=lista_dinamica
+        self.callback=callback
     def setupUi(self, AggiungiDipendente):
         AggiungiDipendente.setObjectName("AggiungiDipendente")
         AggiungiDipendente.resize(1050, 669)
@@ -192,21 +191,13 @@ class Ui_AggiungiDipendente(object):
 
 
     def aggiungi_dipendente(self):
+        nome = self.lineEdit.text()
 
+        cognome = self.lineEdit_2.text()
 
-        dipendente=Dipendente(
-                self.qlines["nome"].text(),
-                self.qlines["cognome"].text(),
-                self.qlines["numero"].text(),
-                self.qlines["email"].text(),
-                self.qlines["password"].text()
-        )
+        numero = self.lineEdit_3.text()
 
-        self.controller2.aggiungiDipendente(dipendente)
-        self.lista_dinamica(dipendente)
-        self.setupUi()
-        self.close()
-
+        email = self.lineEdit_4.text()
 
         password = self.lineEdit_5.text()
 
@@ -226,7 +217,6 @@ class Ui_AggiungiDipendente(object):
         msg = QMessageBox()
         msg.setWindowTitle("Conferma")
         msg.setText("Registrazione Completata!")
-
 
         x = msg.exec_()
 
