@@ -12,10 +12,10 @@ from ListaDipendenti.View.ViewAggiungiDipendente import Ui_AggiungiDipendente
 
 class Ui_ListaDipendentiView(object):
     def __init__(self):
-        super(Ui_ListaDipendentiView, self).__init__()
+
         self.gestionedipendenti = ControllerListaDipendenti()
-        self.lista = self.gestionedipendenti.getListaDipendente()
-        self.lista_dinamica = self.lista[:]
+
+
     def setupUi(self, ListaDipendentiView):
         ListaDipendentiView.setObjectName("ListaDipendentiView")
         ListaDipendentiView.resize(986, 604)
@@ -115,6 +115,7 @@ class Ui_ListaDipendentiView(object):
         self.pushButton_3.clicked.connect(self.clicked)
         self.pushButton_4.clicked.connect(self.elimina)
         self.pushButton_2.clicked.connect(self.aggiungi)
+        self.pushButton_2.clicked.connect(ListaDipendentiView.reject)
 
     def retranslateUi(self, ListaDipendentiView):
         _translate = QtCore.QCoreApplication.translate
@@ -152,7 +153,10 @@ class Ui_ListaDipendentiView(object):
     def elimina(self):
 
         selected = self.listView.selectedIndexes()[0].row()
-        self.lista_dinamica.getEliminaDipendente(selected)
+
+        app = self.gestionedipendenti.Model.getdipendente_by_index(selected)
+        self.gestionedipendenti.getEliminaDipendente(app)
+
         self.model.clear()
 
         for i in self.lista:
@@ -176,16 +180,20 @@ class Ui_ListaDipendentiView(object):
         self.gestionedipendenti.getSaveData()
 
     def update_ui(self):
-        self.listView = QStandardItemModel(self.listView)
-        for dipendente in self.lista:
+
+        self.model.clear()
+
+        for i in self.gestionedipendenti.getListaDipendente():
+            app = i.get_dipendente()
+
+
             item = QStandardItem()
-            item.setText(dipendente.nome + " " + dipendente.cognome + " " + dipendente.numero + " " + dipendente.email + " " + dipendente.password)
+            item.setText(app)
             item.setEditable(False)
             font = item.font()
             font.setPointSize(18)
             item.setFont(font)
-            self.listView.appendRow(item)
-
+            self.model.appendRow(item)
 
 
 

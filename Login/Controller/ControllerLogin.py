@@ -65,9 +65,40 @@ class ControllerLogin():
 
 
 
+    def registrazioneDipendente(self):
+        file_path = "Login/Database/login.pickle"
+        if os.stat(file_path).st_size != 0:
+            with open(file_path, 'rb') as f:
+                aList = pickle.load(f)
+            f.close()
+        for i in aList:
+             if i.email == self.model.email:
+                return 1
+
+        self.model.setRole("Dipendente")
+        aList.append(self.model)
+        with open('Login/Database/login.pickle', 'wb') as handle:
+            pickle.dump(aList, handle, pickle.HIGHEST_PROTOCOL)
+        handle.close()
 
 
 
+    def eliminaDipendente(self):
+        file_path = "Login/Database/login.pickle"
+        if os.stat(file_path).st_size != 0:
+            with open(file_path, 'rb') as f:
+                aList = pickle.load(f)
+            f.close()
 
+        self.model.setRole("Dipendente")
+
+        for i in aList:
+            if i.email == self.model.email and i.password == self.model.password and i.role == self.model.role:
+                aList.remove(i)
+
+
+        with open('Login/Database/login.pickle', 'wb') as handle:
+            pickle.dump(aList, handle, pickle.HIGHEST_PROTOCOL)
+        handle.close()
 
 

@@ -204,6 +204,7 @@ class Ui_ViewDipendente(object):
 
         self.retranslateUi(ViewDipendente)
         QtCore.QMetaObject.connectSlotsByName(ViewDipendente)
+        self.pushButton.clicked.connect(ViewDipendente.reject)
 
     def retranslateUi(self, ViewDipendente):
         _translate = QtCore.QCoreApplication.translate

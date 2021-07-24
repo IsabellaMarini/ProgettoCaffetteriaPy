@@ -178,6 +178,7 @@ class Ui_AggiungiDipendente(object):
 
         self.pushButton.clicked.connect(self.aggiungi_dipendente)
 
+
     def retranslateUi(self, AggiungiDipendente):
         _translate = QtCore.QCoreApplication.translate
         AggiungiDipendente.setWindowTitle(_translate("AggiungiDipendente", "AggiungiDipendente"))
@@ -207,6 +208,27 @@ class Ui_AggiungiDipendente(object):
         self.close()
 
 
+        password = self.lineEdit_5.text()
+
+
+
+
+        if ( nome == "" or cognome == "" or numero == "" or email == "" or password == "" ):
+           QMessageBox.critical(self, 'Errore', "Per favore, inserisci tutte le informazioni richieste",
+                                QMessageBox.Ok, QMessageBox.Ok)
+        else:
+            self.controller2.aggiungiDipendente(
+            Dipendente(nome, cognome, numero, email, password))
+            self.popUp()
+
+
+    def popUp(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("Conferma")
+        msg.setText("Registrazione Completata!")
+
+
+        x = msg.exec_()
 
 
 if __name__ == "__main__":
