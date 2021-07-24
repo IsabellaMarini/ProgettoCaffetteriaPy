@@ -2,6 +2,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Prodotto.View.ViewPersonalizzazione import Ui_Personalizzazione
+from Prodotto.View.ViewPersonalizzazioneAmm import Ui_ViewPersonalizzazioneAmm
+
 
 class Ui_Viewprodottoamm(object):
     def __init__(self,Prodotto):
@@ -233,26 +235,28 @@ class Ui_Viewprodottoamm(object):
         self.retranslateUi(Viewprodottoamm)
         QtCore.QMetaObject.connectSlotsByName(Viewprodottoamm)
 
+        self.pushButton_3.clicked.connect(self.personalizza)
+
     def retranslateUi(self, Viewprodottoamm):
         _translate = QtCore.QCoreApplication.translate
         Viewprodottoamm.setWindowTitle(_translate("Viewprodottoamm", "ProdottoAmm"))
         self.pushButton_4.setText(_translate("Viewprodottoamm", "Indietro"))
         self.pushButton_3.setText(_translate("Viewprodottoamm", "Visualizza personalizzazioni"))
-        self.label_3.setText(_translate("Viewprodottoamm", "Ingredienti:"))
+        self.label_3.setText(_translate("Viewprodottoamm", "Ingredienti: "))
         self.label_5.setText(_translate("Viewprodottoamm", self.prodotto.listaIngredienti1))
         self.label_6.setText(_translate("Viewprodottoamm", self.prodotto.listaIngredienti2))
         self.label_7.setText(_translate("Viewprodottoamm", self.prodotto.listaIngredienti3))
-        self.label_4.setText(_translate("Viewprodottoamm", "Informazioni"))
-        self.label_8.setText(_translate("Viewprodottoamm", "Informazioni"))
+        self.label_4.setText(_translate("Viewprodottoamm", ""))
+        self.label_8.setText(_translate("Viewprodottoamm", "Prezzo base: "))
         self.label_9.setText(_translate("Viewprodottoamm", self.prodotto.prezzo))
-        self.label.setText(_translate("Viewprodottoamm", "Nome"))
+        self.label.setText(_translate("Viewprodottoamm", self.prodotto.nome))
 
 
     def personalizza(self):
-        self.Personalizzazione = QtWidgets.QDialog()
-        self.ui = Ui_Personalizzazione(self.prodotto, self.carrello)
-        self.ui.setupUi(self.Personalizzazione)
-        self.Personalizzazione.show()
+        self.ViewPersonalizzazioneAmm = QtWidgets.QDialog()
+        self.ui = Ui_ViewPersonalizzazioneAmm(self.prodotto)
+        self.ui.setupUi(self.ViewPersonalizzazioneAmm)
+        self.ViewPersonalizzazioneAmm.show()
 
 
 if __name__ == "__main__":
