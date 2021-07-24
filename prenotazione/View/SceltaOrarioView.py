@@ -1,4 +1,7 @@
 import json
+import datetime as dt
+import os
+
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal
@@ -32,14 +35,29 @@ class Ui_PrenotazioneView(object):
         self.labelTable = []
         self.prenotabile = True
 
-        with open('prenotazione/Database/prenotazioni.json', 'r') as o:
+        now = dt.datetime.now().hour+1
+        today = dt.datetime.today()
+        if now > 17 and now < 6 :
+            today += dt.timedelta(days = 1)
+
+        self.filePath = 'prenotazione/Database/prenotazioni-' + today.strftime("%d-%m-%Y") + '.json'
+
+        if not os.path.exists(self.filePath):
+            with open('prenotazione/Database/prenotazioni-vuoto.json', 'r') as o:
+                self.orari = json.load(o)
+            with open(self.filePath, 'w') as o:
+                json.dump(self.orari, o, ensure_ascii=False, indent=4)
+
+
+        with open(self.filePath, 'r') as o:
             self.orari = json.load(o)
 
             for orario in self.orari:
                 tav_num = 0
                 for tavolo in orario['tavoli']:
-                    if orario['tavoli'][tavolo]['email'] == self.login.getEmail():
+                    if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] >= now:
                         self.prenotabile = False
+
                     tav_num += 1
 
 
@@ -48,9 +66,17 @@ class Ui_PrenotazioneView(object):
         PrenotazioneView.resize(835, 629)
         self.timeEdit = QtWidgets.QTimeEdit(PrenotazioneView)
         self.timeEdit.setGeometry(QtCore.QRect(415, 54, 118, 24))
+        now = dt.datetime.now().hour+1
+
+        if now > 17 or now < 6:
+            self.timeEdit.setMinimumTime(QtCore.QTime(6, 0, 0))
+
+        else:
+            self.timeEdit.setMinimumTime(QtCore.QTime(now, 0, 0))
         self.timeEdit.setMaximumTime(QtCore.QTime(17, 0, 0))
-        self.timeEdit.setMinimumTime(QtCore.QTime(6, 0, 0))
-        self.timeEdit.setTime(QtCore.QTime(8, 0, 0))
+
+
+
         self.timeEdit.setObjectName("timeEdit")
         self.label = QtWidgets.QLabel(PrenotazioneView)
         self.label.setGeometry(QtCore.QRect(330, 100, 161, 71))
@@ -224,8 +250,9 @@ class Ui_PrenotazioneView(object):
 
 
     def sceltaOrarioUpdate(self):
+        todaySTR = dt.datetime.today().strftime("%d/%m/%Y")
 
-        with open('prenotazione/Database/prenotazioni.json', 'r') as o:
+        with open(self.filePath, 'r') as o:
             self.orari = json.load(o)
             self.orario_scelto = self.timeEdit.time() #orario selezionato
             self.orario_str= self.orario_scelto.toString("HH:00") #converto in str per poter fare confronto
@@ -267,7 +294,7 @@ class Ui_PrenotazioneView(object):
         i = 1
         for lab in self.labelTable:
 
-            if i == lab_num and lab.isClickable() and self.prenotabile:
+            if i == lab_num and lab.isClickable() and self.prenotabile :
                 self.tavoloScelto = lab_num
                 lab.setStyleSheet("border: 3px solid blue")
             else:
@@ -280,6 +307,7 @@ class Ui_PrenotazioneView(object):
         self.orario_str = self.orario_scelto.toString("HH:00")
         tavoloScelto = "tavolo"+str(self.tavoloScelto)
         email = self.login.getEmail()
+        now = dt.datetime.now().hour + 1
 
         if not self.prenotabile:
             print("Non puoi più prenotare")
@@ -287,7 +315,7 @@ class Ui_PrenotazioneView(object):
 
         print("Sono nel pulsante", self.tavoloScelto, "at", self.orario_str, "for", email)
 
-        with open('prenotazione/Database/prenotazioni.json', 'r') as o:
+        with open(self.filePath, 'r') as o:
             self.orari = json.load(o)
 
             for orario in self.orari:
@@ -297,18 +325,19 @@ class Ui_PrenotazioneView(object):
                         if tavolo == tavoloScelto:
                             # print(orario['tavoli'][tavolo])
                              orario['tavoli'][tavolo]['email'] = email
+                             orario['tavoli'][tavolo]['ora'] = now
 
                     #print(orario['tavoli'])
 
 
-        with open('prenotazione/Database/prenotazioni.json', 'w') as o:
+        with open(self.filePath, 'w') as o:
             json.dump(self.orari, o, ensure_ascii=False, indent=4)
 
         self.prenotabile = False
         self.sceltaOrarioUpdate()
         self.selezionaTavoloUpdate(20)
 
-        #open confirm dialog
+
 
 
 
@@ -318,7 +347,14 @@ class Ui_PrenotazioneView(object):
         self.timeEdit.setDisplayFormat(_translate("PrenotazioneView", "HH:00"))
         self.label.setText(_translate("PrenotazioneView", "  Seleziona tavolo:"))
         self.pushButton.setText(_translate("PrenotazioneView", "Conferma"))
-        self.label_7.setText(_translate("PrenotazioneView", "  Seleziona orario:"))
+        now = dt.datetime.now().hour+1
+
+        if now > 17 or now < 6:
+            self.label_7.setText(_translate("PrenotazioneView", "  Seleziona orario:*"))
+
+        else:
+            self.label_7.setText(_translate("PrenotazioneView", "  Seleziona orario:"))
+
 
 
 

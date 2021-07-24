@@ -1,0 +1,424 @@
+[
+    {
+        "orario": "06:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "07:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "08:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "09:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "10:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+
+
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "11:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "12:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "13:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "14:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "15:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "16:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    },
+    {
+        "orario": "17:00",
+        "tavoli": {
+            "tavolo1": {
+                "email": null
+            },
+            "tavolo2": {
+                "email": null
+            },
+            "tavolo3": {
+                "email": null
+            },
+            "tavolo4": {
+                "email": null
+            },
+            "tavolo5": {
+                "email": null
+            },
+            "tavolo6": {
+                "email": null
+            },
+            "tavolo7": {
+                "email": null
+            },
+            "tavolo8": {
+                "email": null
+            },
+            "tavolo9": {
+                "email": null
+            },
+            "tavolo10": {
+                "email": null
+            }
+        }
+    }
+]

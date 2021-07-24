@@ -76,7 +76,7 @@
                 "email": null
             },
             "tavolo2": {
-                "email": "chica@libero.it"
+                "email": null
             },
             "tavolo3": {
                 "email": null
@@ -97,7 +97,7 @@
                 "email": null
             },
             "tavolo9": {
-                "email": "fabio2@libero.it"
+                "email": null
             },
             "tavolo10": {
                 "email": null
@@ -146,7 +146,7 @@
                 "email": null
             },
             "tavolo2": {
-                "email": null
+                "email": "2"
             },
             "tavolo3": {
                 "email": null
@@ -216,7 +216,7 @@
                 "email": null
             },
             "tavolo2": {
-                "email": "2"
+                "email": null
             },
             "tavolo3": {
                 "email": null

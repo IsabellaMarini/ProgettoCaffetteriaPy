@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
+from AreaRiservata.View.ViewOrdine import Ui_ViewOrdine
 from OrdiniAttivi.Controller.ControllerOrdiniAttivi import ControllerOrdiniAttivi
 
 
@@ -78,18 +79,19 @@ class Ui_OrdiniAttivi(object):
         self.retranslateUi(OrdiniAttivi)
         QtCore.QMetaObject.connectSlotsByName(OrdiniAttivi)
 
+        self.pushButton_3.clicked.connect(self.clicked)
+
+
+
+
     def retranslateUi(self, OrdiniAttivi):
         _translate = QtCore.QCoreApplication.translate
         OrdiniAttivi.setWindowTitle(_translate("OrdiniAttivi", "OrdiniAttivi"))
         self.Carrello.setText(_translate("OrdiniAttivi", "Ordini Attivi"))
         self.pushButton_3.setText(_translate("OrdiniAttivi", "Visualizza Ordine"))
 
+        for i in  self.ordini.ordiniCliente():
 
-
-
-        self.aList =  self.ordini.ordiniCliente()
-
-        for i in self.aList:
             app = i.codice
             item = QStandardItem()
 
@@ -99,3 +101,12 @@ class Ui_OrdiniAttivi(object):
             font.setPointSize(18)
             item.setFont(font)
             self.model.appendRow(item)
+
+
+    def clicked(self):
+        selected = self.listView.selectedIndexes()[0].row()
+        ordine = self.ordini.lista[selected]
+        self.ViewOrdine = QtWidgets.QDialog()
+        self.ui = Ui_ViewOrdine(ordine)
+        self.ui.setupUi(self.ViewOrdine)
+        self.ViewOrdine.show()

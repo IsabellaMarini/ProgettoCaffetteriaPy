@@ -40,12 +40,19 @@ class Carrello():
             file_path = "OrdiniAttivi/Database/ordiniAttivi.pickle"
             if os.stat(file_path).st_size != 0:
                 with open(file_path, 'rb') as f:
-                    lista.append(pickle.load(f))
-                f.close()
+
+                    lista =pickle.load(f)
+                for i in lista:
+                    print(i.codice)
+
+
             with open('OrdiniAttivi/Database/ordiniAttivi.pickle', 'wb') as handle:
                 app = OrdiniAttivi(self.lista_prodotti, self.codice)
+                print  (app)
+                print (app.codice)
+                print(app.lista_prodotti[0].nome)
                 lista.append(app)
-                pickle.dump(lista, handle)
+                pickle.dump(lista, handle, pickle.HIGHEST_PROTOCOL)
             handle.close()
             self.svuotaCarrello()
 

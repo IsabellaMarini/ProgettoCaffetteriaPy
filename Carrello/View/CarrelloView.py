@@ -229,6 +229,7 @@ class Ui_CarrelloView(object):
 
     def conferma(self):
         self.controller.Conferma()
+        self.svouta()
 
     def elimina(self):
 
