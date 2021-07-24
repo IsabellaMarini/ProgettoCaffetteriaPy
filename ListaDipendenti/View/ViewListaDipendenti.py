@@ -12,8 +12,8 @@ from ListaDipendenti.View.ViewAggiungiDipendente import Ui_AggiungiDipendente
 
 class Ui_ListaDipendentiView(object):
     def __init__(self):
-        self.gestionedipendenti = ControllerListaDipendenti()
         super(Ui_ListaDipendentiView, self).__init__()
+        self.gestionedipendenti = ControllerListaDipendenti()
     def setupUi(self, ListaDipendentiView):
         ListaDipendentiView.setObjectName("ListaDipendentiView")
         ListaDipendentiView.resize(986, 604)
@@ -169,6 +169,9 @@ class Ui_ListaDipendentiView(object):
         self.ui = Ui_AggiungiDipendente(self.gestionedipendenti, self.update_ui())
         self.ui.setupUi(self.AggiungiDipendente)
         self.AggiungiDipendente.show()
+
+    def closeEvent(self, event):
+        self.gestionedipendenti.getSaveData()
 
     def update_ui(self):
         self.listView = QStandardItemModel(self.listView)

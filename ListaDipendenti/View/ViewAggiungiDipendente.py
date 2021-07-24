@@ -10,10 +10,11 @@ from ListaDipendenti.Controller.ControllerListaDipendenti import ControllerLista
 
 
 class Ui_AggiungiDipendente(object):
-    def __init__(self, controller, callback):
+    def __init__(self, controller, setUpUi, lista_dinamica):
         super(Ui_AggiungiDipendente, self).__init__()
         self.controller2= controller
-        self.callback=callback
+        self.setupUi=setUpUi
+        self.lista_dinamica=lista_dinamica
     def setupUi(self, AggiungiDipendente):
         AggiungiDipendente.setObjectName("AggiungiDipendente")
         AggiungiDipendente.resize(1050, 669)
@@ -190,29 +191,21 @@ class Ui_AggiungiDipendente(object):
 
 
     def aggiungi_dipendente(self):
-        nome = self.lineEdit.text()
-
-        cognome = self.lineEdit_2.text()
-
-        numero = self.lineEdit_3.text()
-
-        email = self.lineEdit_4.text()
-
-        password = self.lineEdit_5.text()
 
 
+        dipendente=Dipendente(
+                self.qlines["nome"].text(),
+                self.qlines["cognome"].text(),
+                self.qlines["numero"].text(),
+                self.qlines["email"].text(),
+                self.qlines["password"].text()
+        )
 
+        self.controller2.aggiungiDipendente(dipendente)
+        self.lista_dinamica(dipendente)
+        self.setupUi()
+        self.close()
 
-        #if (
-         #       nome == "" or cognome == "" or numero == "" or email == "" or password == "" ):
-          #  QMessageBox.critical(self, 'Errore', "Per favore, inserisci tutte le informazioni richieste",
-                                # QMessageBox.Ok, QMessageBox.Ok)
-       # else:
-        app=self.controller2.aggiungiDipendente(
-            Dipendente(nome, cognome, numero, email, password))
-        with open('ListaDipendenti.py/Database/listaDipendenti.pickle', 'wb') as handle:
-            pickle.dump(app, handle, pickle.HIGHEST_PROTOCOL)
-        handle.close()
 
 
 
