@@ -7,13 +7,13 @@ from Home.View.HomeDipendente import Ui_MainWindowDipendente
 
 from Login.Controller.ControllerLogin import ControllerLogin
 from Login.Model.Login import Login
-
+from Login.View.ViewRegistrazione import Ui_Registrazione
 
 
 class Ui_Window(object):
     def setupUi(self, Window):
         Window.setObjectName("Window")
-        Window.resize(454, 215)
+        Window.resize(454, 282)
         Window.setMinimumSize(QtCore.QSize(454, 215))
         Window.setSizeIncrement(QtCore.QSize(1, 1))
         palette = QtGui.QPalette()
@@ -49,6 +49,13 @@ class Ui_Window(object):
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label)
+        self.lineEdit = QtWidgets.QLineEdit(self.formWidget)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.lineEdit.setFont(font)
+        self.lineEdit.setText("")
+        self.lineEdit.setObjectName("lineEdit")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
         self.label_2 = QtWidgets.QLabel(self.formWidget)
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -61,25 +68,44 @@ class Ui_Window(object):
         self.lineEdit_2.setFont(font)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_2)
-        self.lineEdit = QtWidgets.QLineEdit(self.formWidget)
+        self.label_3 = QtWidgets.QLabel(Window)
+        self.label_3.setGeometry(QtCore.QRect(100, 120, 281, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setText("")
-        self.lineEdit.setObjectName("lineEdit")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
-        self.label_3 = QtWidgets.QLabel(Window)
-        self.label_3.setGeometry(QtCore.QRect(140, 125, 211, 21))
+        self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(Window)
+        self.label_4.setGeometry(QtCore.QRect(200, 0, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(Window)
+        self.label_5.setGeometry(QtCore.QRect(100, 200, 331, 31))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.label_5.setFont(font)
+        self.label_5.setObjectName("label_5")
+        self.pushButton_2 = QtWidgets.QPushButton(Window)
+        self.pushButton_2.setGeometry(QtCore.QRect(180, 240, 93, 28))
+        self.pushButton_2.setMinimumSize(QtCore.QSize(93, 28))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setObjectName("pushButton_2")
 
         self.retranslateUi(Window)
         QtCore.QMetaObject.connectSlotsByName(Window)
+
 
 
         model = Login("def","def")
         self.controller = ControllerLogin(model)
 
         self.pushButton.clicked.connect(self.clicked)
+        self.pushButton_2.clicked.connect(self.registrazione)
 
     def retranslateUi(self, Window):
         _translate = QtCore.QCoreApplication.translate
@@ -88,7 +114,10 @@ class Ui_Window(object):
         self.label.setText(_translate("Window", "Email:"))
         self.label_2.setText(_translate("Window", "Password:"))
         self.label_3.setText(_translate("Window",
-                                        "<html><head/><body><p><span style=\" font-size:9pt; color:#0055ff;\">Inserire email e password...</span></p></body></html>"))
+                                        "<html><head/><body><p><span style=\" color:#0055ff;\">Inserire email e password...</span></p></body></html>"))
+        self.label_4.setText(_translate("Window", "Login"))
+        self.label_5.setText(_translate("Window", "Sei un nuovo cliente? Registrati :)"))
+        self.pushButton_2.setText(_translate("Window", "Registrati"))
 
     def clicked(self):
         app = self.lineEdit.text()
@@ -129,6 +158,11 @@ class Ui_Window(object):
 
 
     def errore(self):
-        self.label_3.setText("<html><head/><body><p><span style=\" font-size:9pt; color:#ff0000;\">Email e/o password sbagliati!</span></p></body></html>")
+        self.label_3.setText("<html><head/><body><p><span style=\"  color:#ff0000;\">Email e/o password sbagliati!</span></p></body></html>")
         self.label_3.adjustSize()
 
+    def registrazione(self):
+        self.Registrazione = QtWidgets.QDialog()
+        self.ui = Ui_Registrazione()
+        self.ui.setupUi(self.Registrazione)
+        self.Registrazione.show()

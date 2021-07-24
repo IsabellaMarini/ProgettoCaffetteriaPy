@@ -114,6 +114,8 @@ class Ui_Personalizzazione(object):
         QtCore.QMetaObject.connectSlotsByName(Personalizzazione)
 
         self.pushButton.clicked.connect(self.conferma)
+        self.pushButton.clicked.connect(Personalizzazione.reject)
+
 
 
 
@@ -145,7 +147,7 @@ class Ui_Personalizzazione(object):
             self.model.appendRow(item)
 
 
-    def errore(self):
+    def errore(self, Personalizzazione):
         self.label.setText("Personalizzazione", "Scegli una personalizzazione prima di aggungere al carrello...")
         self.label.adjustSize()
 
@@ -153,16 +155,13 @@ class Ui_Personalizzazione(object):
         selected = self.listView.selectedIndexes()[0].row()
 
         app = self.prodotto.get_personalizzazione_by_index(selected)
-        app1 = str(app.tipo)
-        app2 = float(app.prezzo)
-        appoggio = Personalizzazione(app1, app2)
+
+        self.carrello.getAggiungi(self.prodotto, app)
 
 
 
 
 
-
-        self.carrello.getAggiungi(self.prodotto, appoggio)
 
 
 
