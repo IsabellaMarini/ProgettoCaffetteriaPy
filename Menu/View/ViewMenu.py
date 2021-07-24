@@ -119,6 +119,7 @@ class Ui_Menu(object):
         self.pushButton_2.clicked.connect(self.bevande)
         self.pushButton_3.clicked.connect(self.cibo)
         self.pushButton.clicked.connect(self.clicked)
+        self.pushButton.clicked.connect(Menu.reject)
 
     def retranslateUi(self, Menu):
         _translate = QtCore.QCoreApplication.translate

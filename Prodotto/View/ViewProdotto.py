@@ -242,6 +242,8 @@ class Ui_ViewProdotto(object):
         QtCore.QMetaObject.connectSlotsByName(ViewProdotto)
 
         self.pushButton_3.clicked.connect(self.personalizza)
+        self.pushButton_3.clicked.connect(ViewProdotto.reject)
+        self.pushButton_4.clicked.connect(ViewProdotto.reject)
 
 
 

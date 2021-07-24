@@ -2,7 +2,7 @@ import json
 import os
 import pickle
 
-import self
+
 
 from Dipendente.Model.Dipendente import Dipendente
 from ListaDipendenti.Model.ListaDipendenti import ListaDipendenti
