@@ -14,6 +14,8 @@ class Ui_ListaDipendentiView(object):
     def __init__(self):
         super(Ui_ListaDipendentiView, self).__init__()
         self.gestionedipendenti = ControllerListaDipendenti()
+        self.lista = self.gestionedipendenti.getListaDipendente()
+        self.lista_dinamica = self.lista[:]
     def setupUi(self, ListaDipendentiView):
         ListaDipendentiView.setObjectName("ListaDipendentiView")
         ListaDipendentiView.resize(986, 604)
@@ -123,7 +125,7 @@ class Ui_ListaDipendentiView(object):
         self.pushButton_4.setText(_translate("ListaDipendentiView", "Elimina dipendente"))
 
 
-        for i in  self.gestionedipendenti.getListaDipendente():
+        for i in  self.lista:
             app = i.get_dipendente()
 
             item = QStandardItem()
@@ -139,7 +141,7 @@ class Ui_ListaDipendentiView(object):
 
     def clicked(self):
         selected = self.listView.selectedIndexes()[0].row()
-        dipendente_selezionato = self.gestionedipendenti.Getdipendente_by_index(selected)
+        dipendente_selezionato = self.lista_dinamica.Getdipendente_by_index(selected)
 
         self.ViewDipendente = QtWidgets.QDialog()
         self.ui = Ui_ViewDipendente(dipendente_selezionato)
@@ -150,10 +152,10 @@ class Ui_ListaDipendentiView(object):
     def elimina(self):
 
         selected = self.listView.selectedIndexes()[0].row()
-        self.gestionedipendenti.getEliminaDipendente(selected)
+        self.lista_dinamica.getEliminaDipendente(selected)
         self.model.clear()
 
-        for i in self.gestionedipendenti.getListaDipendente():
+        for i in self.lista:
             app = i.get_dipendente()
 
             item = QStandardItem()
@@ -166,7 +168,7 @@ class Ui_ListaDipendentiView(object):
 
     def aggiungi(self):
         self.AggiungiDipendente = QtWidgets.QDialog()
-        self.ui = Ui_AggiungiDipendente(self.gestionedipendenti, self.update_ui())
+        self.ui = Ui_AggiungiDipendente(self.gestionedipendenti, self.update_ui(), self.lista_dinamica)
         self.ui.setupUi(self.AggiungiDipendente)
         self.AggiungiDipendente.show()
 
@@ -175,7 +177,7 @@ class Ui_ListaDipendentiView(object):
 
     def update_ui(self):
         self.listView = QStandardItemModel(self.listView)
-        for dipendente in self.gestionedipendenti.getListaDipendente():
+        for dipendente in self.lista:
             item = QStandardItem()
             item.setText(dipendente.nome + " " + dipendente.cognome + " " + dipendente.numero + " " + dipendente.email + " " + dipendente.password)
             item.setEditable(False)
