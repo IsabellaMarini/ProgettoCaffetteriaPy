@@ -138,7 +138,7 @@ class Ui_ListaDipendentiView(object):
 
     def clicked(self):
         selected = self.listView.selectedIndexes()[0].row()
-        dipendente_selezionato = self.gestionedipendenti.Getdipendente_by_index(selected)
+        dipendente_selezionato = self.gestionedipendenti.Model.getdipendente_by_index(selected)
 
         self.ViewDipendente = QtWidgets.QDialog()
         self.ui = Ui_ViewDipendente(dipendente_selezionato)
