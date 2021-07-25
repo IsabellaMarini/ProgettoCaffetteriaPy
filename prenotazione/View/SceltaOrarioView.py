@@ -68,7 +68,7 @@ class Ui_PrenotazioneView(object):
         self.timeEdit.setGeometry(QtCore.QRect(415, 54, 118, 24))
         now = dt.datetime.now().hour+1
 
-        if now > 17 or now < 6:
+        if now > 17 and now < 24:
             self.timeEdit.setMinimumTime(QtCore.QTime(6, 0, 0))
 
         else:
@@ -349,7 +349,7 @@ class Ui_PrenotazioneView(object):
         self.pushButton.setText(_translate("PrenotazioneView", "Conferma"))
         now = dt.datetime.now().hour+1
 
-        if now > 17 or now < 6:
+        if now > 17 or now < 24:
             self.label_7.setText(_translate("PrenotazioneView", "  Seleziona orario:*"))
 
         else:

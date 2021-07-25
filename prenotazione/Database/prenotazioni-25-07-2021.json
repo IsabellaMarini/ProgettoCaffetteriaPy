@@ -125,8 +125,8 @@
                 "ora": 0
             },
             "tavolo9": {
-                "email": "2",
-                "ora": 8
+                "email": null,
+                "ora": 0
             },
             "tavolo10": {
                 "email": null,
@@ -232,8 +232,8 @@
                 "ora": 0
             },
             "tavolo2": {
-                "email": null,
-                "ora": 0
+                "email": "2",
+                "ora": 1
             },
             "tavolo3": {
                 "email": null,

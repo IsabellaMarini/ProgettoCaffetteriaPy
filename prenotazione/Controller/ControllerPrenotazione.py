@@ -25,21 +25,27 @@ class ControllerPrenotazioneAttiva:
             with open(filePath, 'r') as o:
                 orari = json.load(o)
 
-                for orario in orari:
-                    for tavolo in orario['tavoli']:
-                        if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] > int(orario['orario'][1]):
-                            self.Model.set_orario(str(orario['tavoli'][tavolo]['ora']))
-                            self.Model.set_data(today.strftime("%d-%m-%Y"))
-                            self.Model.set_tavolo(orario['tavoli'][tavolo])
 
+                for orario in orari:
+                    i = 1
+                    for tavolo in orario['tavoli']:
+
+
+                        if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] > 0:
+                            self.Model.set_orario(str(orario["orario"]))
+                            self.Model.set_data(today.strftime("%d-%m-%Y"))
+                            stringa = "Tavolo " + str(i)
+                            self.Model.set_tavolo(stringa)
+
+                        i += 1
 
 
 
         def get_orario(self):
-            return self.model.get_orario()
+            return self.Model.get_orario()
 
         def get_tavolo(self):
-            return self.model.get_tavolo()
+            return self.Model.get_tavolo()
 
         def get_data(self):
-            return self.model.get_data()
+            return self.Model.get_data()
