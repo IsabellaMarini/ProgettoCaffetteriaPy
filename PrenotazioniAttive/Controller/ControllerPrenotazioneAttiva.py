@@ -13,7 +13,6 @@ class ControllerPrenotazioneAttiva:
 
             now = dt.datetime.now().hour
             today = dt.datetime.today()
-
             tomorrow = today+dt.timedelta(days=1)
 
 
@@ -28,14 +27,19 @@ class ControllerPrenotazioneAttiva:
 
                 for orario in orari:
                     for tavolo in orario['tavoli']:
-                        if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] > now:
-                            self.Model.set_orario(orario['tavoli'][tavolo]['ora'])
+                        if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] > int(orario['orario'][1]):
+                            self.Model.set_orario(str(orario['tavoli'][tavolo]['ora']))
                             self.Model.set_data(today.strftime("%d-%m-%Y"))
-                            self.Model.set_tavolo( orario['tavoli'][tavolo])
-
-                            print(self.Model.orario)
-                            print(self.Model.data)
-                            print(self.Model.tavolo)
+                            self.Model.set_tavolo(orario['tavoli'][tavolo])
 
 
 
+
+        def get_orario(self):
+            return self.model.get_orario()
+
+        def get_tavolo(self):
+            return self.model.get_tavolo()
+
+        def get_data(self):
+            return self.model.get_data()

@@ -111,9 +111,9 @@ class Ui_PrenotazioniAttive(object):
 
 
 
-        app = self.prenotazioni.Model.get_orario
-        app1 = self.prenotazioni.Model.get_tavolo
-        app2 = self.prenotazioni.Model.get_data
+        app = self.prenotazioni.get_orario
+        app1 = self.prenotazioni.get_tavolo
+        app2 = self.prenotazioni.get_data
         stringa = app1 + " ( " + app2 + " " + app + " )"
         item = QStandardItem()
         item.setText(stringa)
