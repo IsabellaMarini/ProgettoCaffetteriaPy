@@ -106,7 +106,7 @@ class Ui_PrenotazioneView(object):
         self.label.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(18)
+        font.setPointSize(14)
         font.setItalic(True)
         self.label.setFont(font)
         self.label.setTextFormat(QtCore.Qt.PlainText)
@@ -226,7 +226,7 @@ class Ui_PrenotazioneView(object):
 
         font2 = QtGui.QFont()
         font2.setFamily("Harlow Solid Italic")
-        font2.setPointSize(13)
+        font2.setPointSize(11)
         font2.setItalic(True)
         self.label_15 = QtWidgets.QLabel(PrenotazioneView)
         self.label_15.setGeometry(QtCore.QRect(250, 60, 260, 70))
