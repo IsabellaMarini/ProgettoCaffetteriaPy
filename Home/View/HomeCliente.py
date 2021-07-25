@@ -1,6 +1,9 @@
 
 
 
+
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from AreaRiservata.View.AreaRiservata import Ui_AreaRiservata
@@ -8,6 +11,7 @@ from Carrello.Controller.ControllerCarrello import ControllerCarrello
 from Carrello.View.CarrelloView import Ui_CarrelloView
 
 from Menu.View.ViewMenu import Ui_Menu
+from prenotazione.View.SceltaOrarioView import Ui_PrenotazioneView
 
 
 class Ui_MainWindowCliente(object):
@@ -219,6 +223,7 @@ class Ui_MainWindowCliente(object):
         self.pushButton.clicked.connect(self.go_menu)
         self.pushButton_3.clicked.connect(self.go_carrello)
         self.pushButton_2.clicked.connect(self.go_AreaRiservata)
+        self.pushButton_4.clicked.connect(self.go_prenotazioni)
 
 
     def retranslateUi(self, MainWindowCliente):
@@ -249,3 +254,9 @@ class Ui_MainWindowCliente(object):
         self.ui = Ui_AreaRiservata(self.login)
         self.ui.setupUi(self.AreaRiservata)
         self.AreaRiservata.show()
+
+    def go_prenotazioni(self):
+        self.PrenotazioneView = QtWidgets.QDialog()
+        self.ui = Ui_PrenotazioneView(self.login)
+        self.ui.setupUi(self.PrenotazioneView)
+        self.PrenotazioneView.show()
