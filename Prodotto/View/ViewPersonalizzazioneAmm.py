@@ -100,6 +100,8 @@ class Ui_ViewPersonalizzazioneAmm(object):
         self.retranslateUi(ViewPersonalizzazioneAmm)
         QtCore.QMetaObject.connectSlotsByName(ViewPersonalizzazioneAmm)
 
+        self.pushButton_2.clicked.connect(ViewPersonalizzazioneAmm.reject)
+
     def retranslateUi(self, ViewPersonalizzazioneAmm):
         _translate = QtCore.QCoreApplication.translate
         ViewPersonalizzazioneAmm.setWindowTitle(_translate("ViewPersonalizzazioneAmm", "PersonalizzazioneAmm"))

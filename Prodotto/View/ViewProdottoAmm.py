@@ -13,7 +13,7 @@ class Ui_Viewprodottoamm(object):
         Viewprodottoamm.setObjectName("Viewprodottoamm")
         Viewprodottoamm.resize(804, 661)
         self.pushButton_4 = QtWidgets.QPushButton(Viewprodottoamm)
-        self.pushButton_4.setGeometry(QtCore.QRect(150, 520, 171, 81))
+        self.pushButton_4.setGeometry(QtCore.QRect(90, 520, 171, 81))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -32,7 +32,7 @@ class Ui_Viewprodottoamm(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_3 = QtWidgets.QPushButton(Viewprodottoamm)
-        self.pushButton_3.setGeometry(QtCore.QRect(400, 520, 331, 81))
+        self.pushButton_3.setGeometry(QtCore.QRect(350, 520, 381, 81))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -92,7 +92,7 @@ class Ui_Viewprodottoamm(object):
         self.label_5.setPalette(palette)
         font = QtGui.QFont()
         font.setFamily("Harlow Solid Italic")
-        font.setPointSize(16)
+        font.setPointSize(22)
         font.setItalic(True)
         self.label_5.setFont(font)
         self.label_5.setLineWidth(0)
@@ -205,9 +205,11 @@ class Ui_Viewprodottoamm(object):
         self.label_9.setObjectName("label_9")
         self.verticalLayout_2.addWidget(self.label_9)
         self.label_2 = QtWidgets.QLabel(Viewprodottoamm)
-        self.label_2.setGeometry(QtCore.QRect(500, 170, 211, 221))
+        self.label_2.setGeometry(QtCore.QRect(470, 170, 241, 251))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("../Folders/frost.jpg"))
+        app = self.prodotto.nome
+        stringa = "Pictures/" + app + ".png"
+        self.label_2.setPixmap(QtGui.QPixmap(stringa))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label = QtWidgets.QLabel(Viewprodottoamm)
@@ -232,10 +234,13 @@ class Ui_Viewprodottoamm(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
 
+
+
         self.retranslateUi(Viewprodottoamm)
         QtCore.QMetaObject.connectSlotsByName(Viewprodottoamm)
 
         self.pushButton_3.clicked.connect(self.personalizza)
+        self.pushButton_4.clicked.connect(Viewprodottoamm.reject)
 
     def retranslateUi(self, Viewprodottoamm):
         _translate = QtCore.QCoreApplication.translate
