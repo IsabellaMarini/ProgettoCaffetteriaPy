@@ -163,6 +163,7 @@ class Ui_CarrelloView(object):
         self.pushButton_2.clicked.connect(self.svouta)
         self.pushButton_3.clicked.connect(self.elimina)
         self.pushButton_4.clicked.connect(self.conferma)
+        self.pushButton.clicked.connect(CarrelloView.reject)
 
 
 
