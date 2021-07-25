@@ -75,6 +75,8 @@ class Ui_StroricoPrenotazioni(object):
         self.retranslateUi(StroricoPrenotazioni)
         QtCore.QMetaObject.connectSlotsByName(StroricoPrenotazioni)
 
+        self.pushButton_3.clicked.connect(StroricoPrenotazioni.reject)
+
     def retranslateUi(self, StroricoPrenotazioni):
         _translate = QtCore.QCoreApplication.translate
         StroricoPrenotazioni.setWindowTitle(_translate("StroricoPrenotazioni", "Strorico Prenotazioni"))
