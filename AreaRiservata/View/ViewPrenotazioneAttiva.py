@@ -111,10 +111,12 @@ class Ui_PrenotazioniAttive(object):
 
 
 
-        app = self.prenotazioni.get_orario
-        app1 = self.prenotazioni.get_tavolo
-        app2 = self.prenotazioni.get_data
-        stringa = app1 + " ( " + app2 + " " + app + " )"
+        app = self.prenotazioni.get_orario()
+        app1 = self.prenotazioni.get_tavolo()
+        app2 = self.prenotazioni.get_data()
+        stringa = "Nessuna prenotazione attiva"
+        if app != None and app1 != None and app2 != None:
+            stringa = app1 + " ( " + app2 + " " + app + " )"
         item = QStandardItem()
         item.setText(stringa)
         item.setEditable(False)
