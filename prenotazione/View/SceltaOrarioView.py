@@ -5,9 +5,7 @@ import os
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import pyqtSignal
-from PyQt5.QtWidgets import QLabel
-
-
+from PyQt5.QtWidgets import QLabel, QMessageBox
 
 
 class ClickableLabel(QLabel):
@@ -34,11 +32,12 @@ class Ui_PrenotazioneView(object):
         self.login = login
         self.labelTable = []
         self.prenotabile = True
+        self.orario_Prenotazione = -1
 
         now = dt.datetime.now().hour+1
         today = dt.datetime.today()
-        if now > 17 or now < 6 :
-            today += dt.timedelta(days = 1)
+        if now > 17:
+            today += dt.timedelta(days=1)
 
         self.filePath = 'prenotazione/Database/prenotazioni-' + today.strftime("%d-%m-%Y") + '.json'
 
@@ -54,9 +53,14 @@ class Ui_PrenotazioneView(object):
 
             for orario in self.orari:
                 tav_num = 0
+
+                if int(orario['orario'][:2]) < now:
+                    continue
+
                 for tavolo in orario['tavoli']:
-                    if orario['tavoli'][tavolo]['email'] == self.login.getEmail() and orario['tavoli'][tavolo]['ora'] >= int(orario['orario'][1]):
+                    if orario['tavoli'][tavolo]['email'] == self.login.getEmail():
                         self.prenotabile = False
+                        self.orario_Prenotazione = int(orario['orario'][:2])
 
                     tav_num += 1
 
@@ -68,7 +72,7 @@ class Ui_PrenotazioneView(object):
         self.timeEdit.setGeometry(QtCore.QRect(415, 54, 118, 24))
         now = dt.datetime.now().hour+1
 
-        if now > 17 and now < 24:
+        if now > 17 or now < 6:
             self.timeEdit.setMinimumTime(QtCore.QTime(6, 0, 0))
 
         else:
@@ -191,7 +195,7 @@ class Ui_PrenotazioneView(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.label_7 = QtWidgets.QLabel(PrenotazioneView)
-        self.label_7.setGeometry(QtCore.QRect(250, 30, 161, 71))
+        self.label_7.setGeometry(QtCore.QRect(250, 30, 160, 70))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -219,6 +223,17 @@ class Ui_PrenotazioneView(object):
         self.label_7.setFont(font)
         self.label_7.setTextFormat(QtCore.Qt.PlainText)
         self.label_7.setObjectName("label_7")
+
+        font2 = QtGui.QFont()
+        font2.setFamily("Harlow Solid Italic")
+        font2.setPointSize(13)
+        font2.setItalic(True)
+        self.label_15 = QtWidgets.QLabel(PrenotazioneView)
+        self.label_15.setGeometry(QtCore.QRect(250, 60, 260, 70))
+        self.label_15.setFont(font2)
+        self.label_15.setTextFormat(QtCore.Qt.PlainText)
+        self.label_15.setObjectName("label_15")
+        self.label_15.setPalette(palette)
 
         self.retranslateUi(PrenotazioneView)
         QtCore.QMetaObject.connectSlotsByName(PrenotazioneView)
@@ -250,7 +265,6 @@ class Ui_PrenotazioneView(object):
 
 
     def sceltaOrarioUpdate(self):
-        todaySTR = dt.datetime.today().strftime("%d/%m/%Y")
 
         with open(self.filePath, 'r') as o:
             self.orari = json.load(o)
@@ -291,10 +305,20 @@ class Ui_PrenotazioneView(object):
     def selezionaTavoloUpdate(self, lab_num):
 
         self.tavoloScelto = 0
+
+        '''if not self.prenotabile:
+            self.msg = QMessageBox()
+            self.msg.setIcon(QMessageBox.Information)
+            self.msg.setText("Hai già una prenotazione attiva.")
+            self.msg.setWindowTitle("Info Message")
+            self.msg.show()
+            print("Non puoi più prenotare")
+            return
+        '''
         i = 1
         for lab in self.labelTable:
 
-            if i == lab_num and lab.isClickable() and self.prenotabile :
+            if i == lab_num and lab.isClickable() and self.prenotabile:
                 self.tavoloScelto = lab_num
                 lab.setStyleSheet("border: 3px solid blue")
             else:
@@ -307,9 +331,13 @@ class Ui_PrenotazioneView(object):
         self.orario_str = self.orario_scelto.toString("HH:00")
         tavoloScelto = "tavolo"+str(self.tavoloScelto)
         email = self.login.getEmail()
-        now = dt.datetime.now().hour + 1
 
         if not self.prenotabile:
+            self.msg = QMessageBox()
+            self.msg.setIcon(QMessageBox.Information)
+            self.msg.setText("Hai già una prenotazione attiva per le ore "+str(self.orario_Prenotazione)+":00.")
+            self.msg.setWindowTitle("Info Message")
+            self.msg.show()
             print("Non puoi più prenotare")
             return
 
@@ -325,7 +353,8 @@ class Ui_PrenotazioneView(object):
                         if tavolo == tavoloScelto:
                             # print(orario['tavoli'][tavolo])
                              orario['tavoli'][tavolo]['email'] = email
-                             orario['tavoli'][tavolo]['ora']= int(orario['orario'][1])
+                             orario['tavoli'][tavolo]['ora'] = int(orario['orario'][:2])
+                             self.orario_Prenotazione = int(orario['orario'][:2])
 
                     #print(orario['tavoli'])
 
@@ -338,9 +367,6 @@ class Ui_PrenotazioneView(object):
         self.selezionaTavoloUpdate(20)
 
 
-
-
-
     def retranslateUi(self, PrenotazioneView):
         _translate = QtCore.QCoreApplication.translate
         PrenotazioneView.setWindowTitle(_translate("PrenotazioneView", "Prenotazione"))
@@ -349,11 +375,13 @@ class Ui_PrenotazioneView(object):
         self.pushButton.setText(_translate("PrenotazioneView", "Conferma"))
         now = dt.datetime.now().hour+1
 
-        if now > 17 or now < 24:
-            self.label_7.setText(_translate("PrenotazioneView", "  Seleziona orario:*"))
+        if now > 17:
+            self.label_7.setText(_translate("PrenotazioneView", "Seleziona orario:*"))
+            self.label_15.setText(_translate("PrenotazioneView", "*la prenotazione si riferisce a domani"))
 
         else:
-            self.label_7.setText(_translate("PrenotazioneView", "  Seleziona orario:"))
+            self.label_7.setText(_translate("PrenotazioneView", "Seleziona orario:"))
+            self.label_15.setText(_translate("PrenotazioneView", ""))
 
 
 

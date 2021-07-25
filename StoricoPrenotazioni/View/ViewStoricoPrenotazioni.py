@@ -1,22 +1,16 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItem
 
-from prenotazione.Controller.ControllerPrenotazione import ControllerPrenotazioneAttiva
+from StoricoPrenotazioni.Controller.ControllerStoricoPrenotazioni import ControllerStoricoPrenotazioni
 
 
-
-
-class Ui_PrenotazioniAttive(object):
-
-    def __init__(self, login):
-        self.login = login
-        self.prenotazioni = ControllerPrenotazioneAttiva(self.login)
-
-
-    def setupUi(self, PrenotazioniAttive):
-        PrenotazioniAttive.setObjectName("PrenotazioniAttive")
-        PrenotazioniAttive.resize(797, 601)
-        self.listView = QtWidgets.QListView(PrenotazioniAttive)
+class Ui_StroricoPrenotazioni(object):
+    def __init__(self):
+        self.controller = ControllerStoricoPrenotazioni()
+    def setupUi(self, StroricoPrenotazioni):
+        StroricoPrenotazioni.setObjectName("StroricoPrenotazioni")
+        StroricoPrenotazioni.resize(797, 601)
+        self.listView = QtWidgets.QListView(StroricoPrenotazioni)
         self.listView.setGeometry(QtCore.QRect(50, 80, 701, 421))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
@@ -35,8 +29,8 @@ class Ui_PrenotazioniAttive(object):
         font.setItalic(True)
         self.listView.setFont(font)
         self.listView.setObjectName("listView")
-        self.Carrello = QtWidgets.QLabel(PrenotazioniAttive)
-        self.Carrello.setGeometry(QtCore.QRect(210, 10, 411, 51))
+        self.Carrello = QtWidgets.QLabel(StroricoPrenotazioni)
+        self.Carrello.setGeometry(QtCore.QRect(220, 20, 401, 51))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -55,8 +49,8 @@ class Ui_PrenotazioniAttive(object):
         self.Carrello.setFont(font)
         self.Carrello.setAccessibleName("")
         self.Carrello.setObjectName("Carrello")
-        self.pushButton_3 = QtWidgets.QPushButton(PrenotazioniAttive)
-        self.pushButton_3.setGeometry(QtCore.QRect(250, 520, 301, 61))
+        self.pushButton_3 = QtWidgets.QPushButton(StroricoPrenotazioni)
+        self.pushButton_3.setGeometry(QtCore.QRect(240, 520, 301, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -75,46 +69,40 @@ class Ui_PrenotazioniAttive(object):
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
 
-
-
         self.model = QtGui.QStandardItemModel()
         self.listView.setModel(self.model)
 
-        self.retranslateUi(PrenotazioniAttive)
-        QtCore.QMetaObject.connectSlotsByName(PrenotazioniAttive)
+        self.retranslateUi(StroricoPrenotazioni)
+        QtCore.QMetaObject.connectSlotsByName(StroricoPrenotazioni)
 
-        self.pushButton_3.clicked.connect(PrenotazioniAttive.reject)
-
-
-    def retranslateUi(self, PrenotazioniAttive):
+    def retranslateUi(self, StroricoPrenotazioni):
         _translate = QtCore.QCoreApplication.translate
-        PrenotazioniAttive.setWindowTitle(_translate("PrenotazioniAttive", "Prenotazione Attiva"))
-        self.Carrello.setText(_translate("PrenotazioniAttive", "Prenotazione Attiva"))
-        self.pushButton_3.setText(_translate("PrenotazioniAttive", "Indietro"))
+        StroricoPrenotazioni.setWindowTitle(_translate("StroricoPrenotazioni", "Strorico Prenotazioni"))
+        self.Carrello.setText(_translate("StroricoPrenotazioni", "Storico Prenotazioni"))
+        self.pushButton_3.setText(_translate("StroricoPrenotazioni", "Indietro"))
+
+        for i in  self.controller.lista:
+
+            app = i.get_giorno()
+            app2 = i.get_prenotazioni()
+            stringa = "Prenotazioni:   " + str(app2) + " ( " + app + " )"
+            item = QStandardItem()
+
+            item.setText(stringa)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(18)
+            item.setFont(font)
+            self.model.appendRow(item)
 
 
-
-
-        app = self.prenotazioni.get_orario()
-        app1 = self.prenotazioni.get_tavolo()
-        app2 = self.prenotazioni.get_data()
-        stringa = "Nessuna prenotazione attiva"
-        if app != None and app1 != None and app2 != None:
-            stringa = app1 + " ( " + app2 + " " + app + " )"
-        item = QStandardItem()
-        item.setText(stringa)
-        item.setEditable(False)
-        font = item.font()
-        font.setPointSize(18)
-        item.setFont(font)
-        self.model.appendRow(item)
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    PrenotazioniAttive = QtWidgets.QDialog()
-    ui = Ui_PrenotazioniAttive()
-    ui.setupUi(PrenotazioniAttive)
-    PrenotazioniAttive.show()
+    StroricoPrenotazioni = QtWidgets.QDialog()
+    ui = Ui_StroricoPrenotazioni()
+    ui.setupUi(StroricoPrenotazioni)
+    StroricoPrenotazioni.show()
     sys.exit(app.exec_())
