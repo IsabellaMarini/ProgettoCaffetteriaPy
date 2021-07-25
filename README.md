@@ -6,7 +6,7 @@ Studenti del corso di Ingegneria Informatica e dell'Automazione
 Consegna 25/07/2021
 
 Componenti del gruppo:
-Marini Isabella
-Paganica Aldo
-Paganica Federica
-Sefa Endri
+Marini Isabella,
+Paganica Aldo,
+Paganica Federica,
+Sefa Endri.
