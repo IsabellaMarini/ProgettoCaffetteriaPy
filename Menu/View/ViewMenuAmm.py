@@ -3,6 +3,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 from PyQt5.QtGui import QStandardItem
+from PyQt5.QtWidgets import QMessageBox
 
 from Prodotto.View.ViewPersonalizzazione import Ui_Personalizzazione
 from Menu.controller.ControllerListaProdotti import ControllerListaProdotti
@@ -17,9 +18,9 @@ class Ui_ViewMenuAmm(object):
 
     def setupUi(self, ViewMenuAmm):
         ViewMenuAmm.setObjectName("ViewMenuAmm")
-        ViewMenuAmm.resize(1121, 660)
+        ViewMenuAmm.resize(796, 625)
         self.pushButton_3 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_3.setGeometry(QtCore.QRect(630, 20, 331, 81))
+        self.pushButton_3.setGeometry(QtCore.QRect(410, 30, 331, 81))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -38,7 +39,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
         self.listView = QtWidgets.QListView(ViewMenuAmm)
-        self.listView.setGeometry(QtCore.QRect(250, 120, 681, 391))
+        self.listView.setGeometry(QtCore.QRect(60, 130, 681, 391))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -66,7 +67,7 @@ class Ui_ViewMenuAmm(object):
         self.listView.setFont(font)
         self.listView.setObjectName("listView")
         self.pushButton_2 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_2.setGeometry(QtCore.QRect(150, 30, 331, 81))
+        self.pushButton_2.setGeometry(QtCore.QRect(60, 30, 331, 81))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -85,7 +86,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton_2.setFont(font)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton.setGeometry(QtCore.QRect(150, 530, 201, 61))
+        self.pushButton.setGeometry(QtCore.QRect(60, 530, 201, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -104,7 +105,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
         self.pushButton_4 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_4.setGeometry(QtCore.QRect(780, 530, 211, 61))
+        self.pushButton_4.setGeometry(QtCore.QRect(530, 530, 211, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -123,7 +124,7 @@ class Ui_ViewMenuAmm(object):
         self.pushButton_4.setFont(font)
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_5 = QtWidgets.QPushButton(ViewMenuAmm)
-        self.pushButton_5.setGeometry(QtCore.QRect(470, 530, 221, 61))
+        self.pushButton_5.setGeometry(QtCore.QRect(290, 530, 221, 61))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(206, 186, 115))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -142,18 +143,26 @@ class Ui_ViewMenuAmm(object):
         self.pushButton_5.setFont(font)
         self.pushButton_5.setObjectName("pushButton_5")
 
+
+        QtCore.QMetaObject.connectSlotsByName(ViewMenuAmm)
         self.controller = ControllerListaProdotti()
 
         self.model = QtGui.QStandardItemModel()
         self.listView.setModel(self.model)
 
-        self.pushButton_2.clicked.connect(self.bevande)
-        self.pushButton_3.clicked.connect(self.cibo)
-        self.pushButton_5.clicked.connect(self.clicked)
+
+
 
 
         self.retranslateUi(ViewMenuAmm)
         QtCore.QMetaObject.connectSlotsByName(ViewMenuAmm)
+
+
+        self.pushButton_2.clicked.connect(self.bevande)
+        self.pushButton_3.clicked.connect(self.cibo)
+        self.pushButton_5.clicked.connect(self.clicked)
+        self.pushButton.clicked.connect(self.popUp)
+        self.pushButton_4.clicked.connect(self.popUp)
 
     def retranslateUi(self, ViewMenuAmm):
         _translate = QtCore.QCoreApplication.translate
@@ -225,6 +234,13 @@ class Ui_ViewMenuAmm(object):
         self.ui = Ui_Viewprodottoamm(prodotto_selezionato)
         self.ui.setupUi(self.Viewprodottoamm)
         self.Viewprodottoamm.show()
+
+    def popUp(self):
+        msg = QMessageBox()
+        msg.setWindowTitle("Attenzione!")
+        msg.setText("In fase di Progettazione! :)")
+
+        x = msg.exec_()
 
 
 if __name__ == "__main__":
