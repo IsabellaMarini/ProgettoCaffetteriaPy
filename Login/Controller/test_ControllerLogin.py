@@ -7,10 +7,6 @@ from Login.Model.Login import Login
 
 class test_ControlloreCliente(TestCase):
 
-    def test_LoginCliente(self):
-        self.Login = Login(email="2", password="2")
-        self.ControllerLogin = ControllerLogin(self.Login)
-        self.assertIsNone(self.ControllerLogin.getRole())
 
 
     def test_LoginDipendente(self):
@@ -34,4 +30,8 @@ class test_ControlloreCliente(TestCase):
         self.ControllerLogin.is_logged()
         self.assertIsNone(self.ControllerLogin.getRole())
 
+    def test_cliente(self):
+        self.Login = Login(email="2", password="2")
+        self.ControllerLogin = ControllerLogin(self.Login)
+        self.assertIsNone(self.ControllerLogin.getRole())
 
